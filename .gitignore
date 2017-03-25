@@ -88,3 +88,6 @@ hs_err_pid*
 
 # Javadoc output
 /docs/
+
+# Local libraries
+!/lib/*
