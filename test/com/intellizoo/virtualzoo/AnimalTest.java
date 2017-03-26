@@ -19,10 +19,11 @@ import static org.junit.Assert.*;
  */
 
 public class AnimalTest {
-    @Test
-    public void plus() throws Exception {
-        Animal animal = new Animal();
-        assertEquals("2+3 equals 5", 5, animal.plus(2,3));
-    }
+
+  @Test
+  public void plus() throws Exception {
+    Animal animal = new Animal();
+    assertEquals("2+3 equals 5", 5, animal.plus(2, 3));
+  }
 
 }
