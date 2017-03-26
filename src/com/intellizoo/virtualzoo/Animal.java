@@ -1,3 +1,4 @@
+package com.intellizoo.virtualzoo;
 
 public class Animal {
 
