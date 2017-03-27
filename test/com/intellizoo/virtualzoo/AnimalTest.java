@@ -1,5 +1,8 @@
 package com.intellizoo.virtualzoo;
 
+import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import com.intellizoo.virtualzoo.zoo.animal.aves.owl.Owl;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -22,8 +25,10 @@ public class AnimalTest {
 
   @Test
   public void plus() throws Exception {
-    Animal animal = new Animal();
-    assertEquals("2+3 equals 5", 5, animal.plus(2, 3));
+    Point P = new Point(5, 5);
+    Animal animal = new Owl(P, 100, true);
+    assertEquals(animal.GetPosition(), P);
+
   }
 
 }

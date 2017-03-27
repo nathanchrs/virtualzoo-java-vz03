@@ -1,11 +1,15 @@
 package com.intellizoo.virtualzoo;
 
-public class Main {
+import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import com.intellizoo.virtualzoo.zoo.animal.aves.owl.Owl;
 
+public class Main {
   public static void main(String args[]) {
     System.out.println("Hello world!");
     System.out.print("2+3=");
-    Animal animal = new Animal();
-    System.out.println(animal.plus(2, 3));
+    Point P = new Point(5,5);
+    Owl animal = new Owl(P, 50, true);
+    System.out.println(animal.GetDescription());
   }
 }

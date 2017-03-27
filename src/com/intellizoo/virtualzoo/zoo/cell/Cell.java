@@ -10,7 +10,7 @@ import com.intellizoo.virtualzoo.renderer.point.Point;
 /**
  * @class cell Kelas abstrak cell yang merepesentasikan sebuah petak tanah.
  */
-public abstract class Cell extends Renderable {
+public abstract class Cell implements Renderable {
 
   private Point position;
   private boolean accessible;
