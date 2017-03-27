@@ -28,7 +28,6 @@ public class AnimalTest {
     Point P = new Point(5, 5);
     Animal animal = new Owl(P, 100, true);
     assertEquals(animal.GetPosition(), P);
-
   }
 
 }
