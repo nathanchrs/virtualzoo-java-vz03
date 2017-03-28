@@ -17,11 +17,11 @@ public class Main {
     try {
       Scanner scanner = new Scanner(inputFile);
       zoo = new Zoo(scanner);
+      scanner.close();
 
-      Controller controller = new Controller(zoo, true);
+      Controller controller = new Controller(zoo, false);
       controller.displayMenu();
 
-      scanner.close();
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
