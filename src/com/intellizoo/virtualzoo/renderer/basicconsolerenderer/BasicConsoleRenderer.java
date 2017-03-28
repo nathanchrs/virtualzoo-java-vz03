@@ -129,7 +129,6 @@ public class BasicConsoleRenderer implements Renderer {
     }
 
     fb.setInputPrompt("Input [back] to return to menu: ");
-    //fb.ClearScreen();
     System.out.print(fb.toString());
   }
 
@@ -161,7 +160,6 @@ public class BasicConsoleRenderer implements Renderer {
         FrameBuffer.Color.LIGHT_GRAY, FrameBuffer.Color.TRANSPARENT);
 
     fb.setInputPrompt("Select menu option [1|2|3|4]: ");
-    //fb.ClearScreen();
     System.out.print(fb.toString());
   }
 }

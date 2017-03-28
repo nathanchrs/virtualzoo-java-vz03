@@ -29,7 +29,9 @@ import com.intellizoo.virtualzoo.zoo.cell.Restaurant;
 import com.intellizoo.virtualzoo.zoo.cell.Road;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
+import com.sun.corba.se.spi.orbutil.fsm.Input;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,14 +54,53 @@ import java.util.Scanner;
  * @author Jordhy Fernando
  */
 public class Zoo {
-  
+
   private int rows;
   private int cols;
   private List<Cell> cells;
   private List<Zone> zones;
 
   /**
-   * Menciptakan kebun binatang dengan ukuran tertentu.
+   * Kelas runtime exception yang menyatakan kandang tidak ditemukan ketika dicari berdasarkan
+   * nama.
+   *
+   * @author Jonathan Christopher
+   */
+  public class CageNotFoundException extends RuntimeException {
+
+  }
+
+  /**
+   * Kelas runtime exception yang menyatakan zona tidak ditemukan ketika dicari berdasarkan nama.
+   *
+   * @author Jonathan Christopher
+   */
+  public class ZoneNotFoundException extends RuntimeException {
+
+  }
+
+  /**
+   * Kelas runtime exception yang menyatakan zona dengan nama tersebut sudah ada dan tidak dapat
+   * kembali ditambahkan pada Zoo.
+   *
+   * @author Jonathan Christopher
+   */
+  public class ZoneAlreadyExistsException extends RuntimeException {
+
+  }
+
+  /**
+   * Kelas runtime exception yang terjadi ketika mencoba menambahkan sebuah hewan ke petak dengan
+   * habitat yang tidak cocok dengan jenis hewan.
+   *
+   * @author Jonathan Christopher
+   */
+  public class HabitatMismatchException extends RuntimeException {
+
+  }
+
+  /**
+   * Menciptakan kebun binatang kosong dengan ukuran tertentu.
    *
    * @param rows Ukuran vertikal kebun binatang.
    * @param cols Ukuran horizontal kebun binatang.
@@ -100,7 +141,7 @@ public class Zoo {
       } else if (zoneType.equalsIgnoreCase("Zone")) {
         addZone(new Zone(zoneName));
       } else {
-        //throw InputException();
+        throw new InputMismatchException("Jenis zona tidak dikenali, seharusnya Zone atau Cage.");
       }
 
       int cellCount;
@@ -130,7 +171,7 @@ public class Zoo {
         } else if (cellType.equalsIgnoreCase("Exit")) {
           addCell(new Road(pos, true, false, true), zoneName);
         } else {
-          //throw InputException();
+          throw new InputMismatchException("Jenis petak tidak dikenali.");
         }
       }
 
@@ -209,7 +250,7 @@ public class Zoo {
           Python animal = new Python(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else {
-          //throw InputException();
+          throw new InputMismatchException("Jenis hewan tidak dikenali");
         }
       }
     }
@@ -225,7 +266,7 @@ public class Zoo {
     if (findZone(zone.getName()) == null) {
       zones.add(zone);
     } else {
-      //throw ZoneAlreadyExistsException();
+      throw new ZoneAlreadyExistsException();
     }
   }
 
@@ -244,10 +285,10 @@ public class Zoo {
       if (zone != null) {
         zone.addCell(cells.get(idx(pos)));
       } else {
-        //throw out_of_range("Zone name not found.");
+        throw new ZoneNotFoundException();
       }
     } else {
-      //throw out_of_range("Cell position is outside of zoo.");
+      throw new IndexOutOfBoundsException("Posisi petak yang akan ditambahkan berada di luar Zoo.");
     }
   }
 
@@ -267,14 +308,15 @@ public class Zoo {
           if (animal.isValidHabitat(((Habitat) habitat).getType())) {
             ((Cage) cage).addAnimal(animal);
           } else {
-            //throw WrongHabitatException();
+            throw new HabitatMismatchException();
           }
         }
       } else {
-        //throw out_of_range("Animal position is outside of zoo.");
+        throw new IndexOutOfBoundsException(
+            "Posisi hewan yang akan ditambahkan berada di luar Zoo.");
       }
     } else {
-      //throw out_of_range("Cage name not found.");
+      throw new CageNotFoundException();
     }
   }
 
