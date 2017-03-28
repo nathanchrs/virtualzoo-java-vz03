@@ -62,7 +62,7 @@ public class Cage extends Zone {
               (cageAnimal.isWild() && cageAnimal.isPrey(animal.getClass()))
                   || (animal.isWild() && animal.isPrey(cageAnimal.getClass()))
       );
-      if (hasPreyOrPredator) {
+      if (!hasPreyOrPredator) {
         animals.add(animal);
       } else {
         throw new CageHasPreyOrPredatorException();
