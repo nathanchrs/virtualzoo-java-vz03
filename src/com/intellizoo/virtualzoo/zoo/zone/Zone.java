@@ -23,7 +23,6 @@ import java.util.List;
  * @author Alvin Sullivan
  */
 public class Zone {
-
   private String name;
   private List<Cell> cells = new ArrayList<>();
 
