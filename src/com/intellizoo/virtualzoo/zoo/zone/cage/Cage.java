@@ -2,6 +2,7 @@ package com.intellizoo.virtualzoo.zoo.zone.cage;
 
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
+import java.util.List;
 
 // Nama file         : Cage.java
 // Tanggal dibuat    : 27/03/2017
@@ -17,7 +18,7 @@ import com.intellizoo.virtualzoo.zoo.zone.Zone;
  */
 public class Cage extends Zone {
 
-  private Animal[] animals;
+  private List<Animal> animals;
 
   /**
    * @param name Nama kandang.
@@ -35,7 +36,7 @@ public class Cage extends Zone {
    */
   public void AddAnimal(Animal[] animal) {
     if (!IsFull()) {
-      animals.PushBack(animal);
+      animals.add(animal);
     } else {
       //throw CageExceedsCapacityException();
     }
@@ -52,7 +53,7 @@ public class Cage extends Zone {
    * kandang) atau belum.
    */
   boolean IsFull() {
-    return animals.Size() >= (0.3 * Size());
+    return animals.size() >= (0.3 * Size());
   }
 
 };

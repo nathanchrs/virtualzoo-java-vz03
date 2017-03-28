@@ -240,7 +240,7 @@ public class Zoo {
 
       Zone zone = findZone(zoneName);
       if(zone != null) {
-        zone.addCell(cells.get(idx(pos));
+        zone.addCell(cells.get(idx(pos)));
       } else {
         //throw out_of_range("Zone name not found.");
       }

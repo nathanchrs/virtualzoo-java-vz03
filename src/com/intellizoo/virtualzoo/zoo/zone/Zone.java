@@ -1,6 +1,7 @@
 package com.intellizoo.virtualzoo.zoo.zone;
 
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
+import java.util.List;
 
 // Nama file         : Zone.java
 // Tanggal dibuat    : 27/03/2017
@@ -13,7 +14,7 @@ import com.intellizoo.virtualzoo.zoo.cell.Cell;
 public abstract class Zone {
 
   private String name;
-  private Cell[] cells;
+  private List<Cell> cells;
 
   /**
    * @param name Nama zona.
@@ -29,7 +30,7 @@ public abstract class Zone {
    * @brief Mendaftarkan petak ke zona ini.
    */
   public abstract void AddCell(Cell[] cell) {
-    cells.PushBack(cell);
+    cells.add(cell);
   }
 
   //Getter & Setter
@@ -41,10 +42,6 @@ public abstract class Zone {
     this.name = name;
   }
 
-  /**
-   * @return Reference ke array yang mengandung daftar pointer ke Cell.
-   * @brief Mengembalikan daftar petak-petak yang terdaftar di zona ini.
-   */
   public Cell[] GetCells() {
     return cells;
   }
@@ -54,7 +51,7 @@ public abstract class Zone {
    * @brief Mengembalikan jumlah petak yang terdaftar dalam zona ini.
    */
   public int Size() {
-    return cells.Size();
+    return cells.size();
   }
 
 };
