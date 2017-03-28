@@ -59,8 +59,7 @@ public class Main {
 
     JFrame frame = new JFrame("Virtual Zoo");
     MainForm mainForm = new MainForm();
-    mainForm.getZooDisplay().setZoo(zoo);
-    mainForm.getZooDisplay().startBehaviorThreads();
+    mainForm.setZoo(zoo);
     frame.setContentPane(mainForm.getMainPanel());
     frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     frame.pack();

@@ -27,7 +27,7 @@ import java.util.Random;
 public class AnimalBehavior implements Runnable {
 
   private static final int BEHAVIOR_TICK_MIN = 1000;
-  private static final int BEHAVIOR_TICK_RANGE = 9000;
+  private static final int BEHAVIOR_TICK_RANGE = 11000;
 
   private Animal animal;
   private Cage cage;

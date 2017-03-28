@@ -15,7 +15,6 @@ package com.intellizoo.virtualzoo.ui;
 import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.AnimalMoveEventListener;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.Habitat;
 import com.intellizoo.virtualzoo.zoo.cell.Habitat.HabitatType;
@@ -36,12 +35,12 @@ import javax.swing.JPanel;
  *
  * @author Jonathan Christopher
  */
-public class ZooDisplay extends JPanel implements AnimalMoveEventListener {
+public class ZooDisplay extends JPanel {
 
   private static final int ZOO_CELL_WIDTH = 20;
   private static final int ZOO_CELL_HEIGHT = 20;
 
-  private Zoo zoo = null;
+  private Zoo zoo;
 
   public ZooDisplay() {
     setBorder(BorderFactory.createLineBorder(Color.black));
@@ -53,19 +52,6 @@ public class ZooDisplay extends JPanel implements AnimalMoveEventListener {
 
   public void setZoo(Zoo zoo) {
     this.zoo = zoo;
-
-    terminateBehaviorThreads();
-    // Register event listener for animal move event
-    List<Zone> zones = zoo.getZones();
-    for (Zone cage : zones) {
-      if (cage instanceof Cage) {
-        List<Animal> animals = ((Cage) cage).getAnimals();
-        for (Animal animal : animals) {
-          animal.addAnimalMoveEventListener(this);
-        }
-      }
-    }
-    startBehaviorThreads();
   }
 
   public Dimension getPreferredSize() {
@@ -76,19 +62,7 @@ public class ZooDisplay extends JPanel implements AnimalMoveEventListener {
     }
   }
 
-  public void startBehaviorThreads() {
-    if (zoo != null) {
-      zoo.startBehaviorThreads();
-    }
-  }
-
-  public void terminateBehaviorThreads() {
-    if (zoo != null) {
-      zoo.terminateBehaviorThreads();
-    }
-  }
-
-  public void paintComponent(Graphics graphics) {
+    public void paintComponent(Graphics graphics) {
     super.paintComponent(graphics);
 
     if (zoo == null) {
@@ -166,17 +140,5 @@ public class ZooDisplay extends JPanel implements AnimalMoveEventListener {
         }
       }
     }
-  }
-
-  /**
-   * Event listener yang akan dipanggil ketika sebuah objek Animal yang sudah mendaftarkan objek ini
-   * bergerak.
-   *
-   * @param eventSource Objek Animal yang bergerak.
-   * @param oldPosition Posisi objek Animal sebelum bergerak.
-   */
-  @Override
-  public void onAnimalMove(Animal eventSource, Point oldPosition) {
-    this.repaint();
   }
 }

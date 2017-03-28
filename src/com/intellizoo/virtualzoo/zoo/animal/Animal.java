@@ -35,7 +35,6 @@ public abstract class Animal implements Renderable {
   protected Point position;
   protected List<Class<? extends Animal>> preys = new ArrayList<>();
   protected List<AnimalMoveEventListener> animalMoveEventListeners = new ArrayList<>();
-  // TODO: add AnimalBehavior with threads
 
   public String getName() {
     return name;

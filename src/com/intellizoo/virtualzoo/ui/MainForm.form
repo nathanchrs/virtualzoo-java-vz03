@@ -30,14 +30,14 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7b7f5" class="javax.swing.JButton" binding="btnLoad">
+          <component id="7b7f5" class="javax.swing.JButton" binding="LoadButton">
             <constraints/>
             <properties>
               <label value="Buka dari File"/>
               <text value="Buka dari File"/>
             </properties>
           </component>
-          <component id="ac500" class="javax.swing.JButton" binding="btnFoodConsumption">
+          <component id="ac500" class="javax.swing.JButton" binding="FoodConsumptionButton">
             <constraints/>
             <properties>
               <label value="Kebutuhan Makanan"/>
