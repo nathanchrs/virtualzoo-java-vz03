@@ -12,7 +12,7 @@ package com.intellizoo.virtualzoo.zoo.animal;
  * Tanggal perubahan : 3/28/17
  */
 
-import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.point.Point;
 
 /**
  * Observer dari event Move pada Animal.

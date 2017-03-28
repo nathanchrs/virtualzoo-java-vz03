@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
 
-import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.point.Point;
 
 // Nama file         : FrameBuffer.java
 // Tanggal dibuat    : 27/03/2017

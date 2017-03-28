@@ -4,6 +4,7 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.intellizoo.virtualzoo.point.Point;
 import org.junit.Test;
 
 /**

@@ -1,10 +1,10 @@
 package com.intellizoo.virtualzoo.zoo.controller;
 
-import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
-import com.intellizoo.virtualzoo.zoo.cell.road.Road;
+import com.intellizoo.virtualzoo.zoo.cell.Road;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

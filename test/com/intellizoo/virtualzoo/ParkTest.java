@@ -2,7 +2,8 @@ package com.intellizoo.virtualzoo;
 
 import static junit.framework.TestCase.assertEquals;
 
-import com.intellizoo.virtualzoo.zoo.cell.park.Park;
+import com.intellizoo.virtualzoo.point.Point;
+import com.intellizoo.virtualzoo.zoo.cell.Park;
 import org.junit.Test;
 
 /**

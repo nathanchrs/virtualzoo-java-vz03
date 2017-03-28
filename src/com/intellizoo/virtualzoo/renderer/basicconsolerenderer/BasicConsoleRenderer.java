@@ -3,7 +3,7 @@ package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.renderer.Renderer;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;

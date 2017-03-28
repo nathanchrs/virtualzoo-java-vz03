@@ -3,12 +3,13 @@ package com.intellizoo.virtualzoo;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
+import com.intellizoo.virtualzoo.zoo.animal.Owl;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
-import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
-import com.intellizoo.virtualzoo.zoo.cell.park.Park;
+import com.intellizoo.virtualzoo.zoo.cell.Habitat;
+import com.intellizoo.virtualzoo.zoo.cell.Park;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import org.junit.Test;

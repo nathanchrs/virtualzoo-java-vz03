@@ -2,8 +2,9 @@ package com.intellizoo.virtualzoo;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.Leopard;
+import com.intellizoo.virtualzoo.zoo.animal.Leopard;
 import org.junit.Test;
 
 /**

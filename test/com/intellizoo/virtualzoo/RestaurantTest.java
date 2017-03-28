@@ -2,7 +2,8 @@ package com.intellizoo.virtualzoo;
 
 import static junit.framework.TestCase.assertEquals;
 
-import com.intellizoo.virtualzoo.zoo.cell.restaurant.Restaurant;
+import com.intellizoo.virtualzoo.point.Point;
+import com.intellizoo.virtualzoo.zoo.cell.Restaurant;
 import org.junit.Test;
 
 /**
