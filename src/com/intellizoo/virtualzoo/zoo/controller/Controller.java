@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.controller;
 import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
@@ -162,16 +162,16 @@ public class Controller {
         } while(!direction[cDirection]);
         switch(cDirection) {
           case 0:
-            start = start.add(new Point(-1, 0));
+            start = start.translate(new Point(-1, 0));
             break;
           case 1:
-            start = start.add(new Point(0, 1));
+            start = start.translate(new Point(0, 1));
             break;
           case 2:
-            start = start.add(new Point(1, 0));
+            start = start.translate(new Point(1, 0));
             break;
           case 3:
-            start = start.add(new Point(0, -1));
+            start = start.translate(new Point(0, -1));
             break;
         }
       }

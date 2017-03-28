@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.renderer;
 
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek

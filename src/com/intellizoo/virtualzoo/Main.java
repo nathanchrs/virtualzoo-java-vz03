@@ -1,6 +1,5 @@
 package com.intellizoo.virtualzoo;
 
-import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
 
 public class Main {

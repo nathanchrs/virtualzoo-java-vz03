@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.cell;
 import com.intellizoo.virtualzoo.renderer.Renderable;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 
 // Nama file         : Cell.java
 // Tanggal dibuat    : 26/03/2017

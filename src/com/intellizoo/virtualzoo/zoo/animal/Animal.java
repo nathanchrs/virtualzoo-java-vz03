@@ -1,13 +1,12 @@
 package com.intellizoo.virtualzoo.zoo.animal;
 
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.renderer.Renderable;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
 
 import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat.HabitatType;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -37,7 +36,7 @@ public abstract class Animal implements Renderable {
   protected Point position;
   protected List<Class<? extends Animal>> preys = new ArrayList<>();
   protected List<AnimalMoveEventListener> animalMoveEventListeners = new ArrayList<>();
-  // TODO: add AnimalBehavior with threads
+  // TODO: translate AnimalBehavior with threads
 
   public String getName() {
     return name;

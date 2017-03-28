@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
 
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
 
 /**

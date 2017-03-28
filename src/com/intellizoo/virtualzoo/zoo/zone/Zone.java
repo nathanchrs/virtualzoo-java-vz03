@@ -21,7 +21,7 @@ import java.util.List;
  *
  * @author Alvin Sullivan
  */
-public abstract class Zone {
+public class Zone {
 
   private String name;
   private List<Cell> cells;

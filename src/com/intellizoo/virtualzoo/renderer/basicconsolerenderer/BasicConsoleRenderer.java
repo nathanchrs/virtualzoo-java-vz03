@@ -1,7 +1,7 @@
 package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
 import com.intellizoo.virtualzoo.renderer.Renderer;
 import com.intellizoo.virtualzoo.renderer.framebuffer.FrameBuffer;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
@@ -52,32 +52,32 @@ public class BasicConsoleRenderer implements Renderer {
       FrameBuffer.Color.BLACK, FrameBuffer.Color.WHITE);
 
     // Draw legend
-    Point legendOffset = new Point(0, COLS + 3).add(GRID_OFFSET);
-    fb.drawRectangle(legendOffset, new Point(8, 20).add(legendOffset), '*',
+    Point legendOffset = new Point(0, COLS + 3).translate(GRID_OFFSET);
+    fb.drawRectangle(legendOffset, new Point(8, 20).translate(legendOffset), '*',
       FrameBuffer.Color.WHITE, FrameBuffer.Color.BLACK, FrameBuffer.Color.BLACK);
-    fb.drawTextBox(legendOffset.add(new Point(0, 2)), legendOffset.add(new Point(0, 7)),
+    fb.drawTextBox(legendOffset.translate(new Point(0, 2)), legendOffset.translate(new Point(0, 7)),
       "Legend", FrameBuffer.Color.BLACK, FrameBuffer.Color.WHITE);
 
-    fb.drawTextBox(legendOffset.add(new Point(1, 2)), legendOffset.add(new Point(1, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(1, 2)), legendOffset.translate(new Point(1, 18)),
       ". Road", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(2, 2)), legendOffset.add(new Point(2, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(2, 2)), legendOffset.translate(new Point(2, 18)),
       "A Air Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(3, 2)), legendOffset.add(new Point(3, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(3, 2)), legendOffset.translate(new Point(3, 18)),
       "L Land Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(4, 2)), legendOffset.add(new Point(4, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(4, 2)), legendOffset.translate(new Point(4, 18)),
       "W Water Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(5, 2)), legendOffset.add(new Point(5, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(5, 2)), legendOffset.translate(new Point(5, 18)),
       "r Restaurant", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(6, 2)), legendOffset.add(new Point(6, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(6, 2)), legendOffset.translate(new Point(6, 18)),
       "p Park", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(7, 2)), legendOffset.add(new Point(7, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(7, 2)), legendOffset.translate(new Point(7, 18)),
       "x Animal", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
 
     // Draw all cells
     for(int row = 0; row < ROWS; row++) {
       for(int col = 0; col < COLS; col++) {
-        Point drawCell = new Point(row, col).add(topLeft);
-        fb.drawPoint(new Point(row, col).add(GRID_OFFSET),
+        Point drawCell = new Point(row, col).translate(topLeft);
+        fb.drawPoint(new Point(row, col).translate(GRID_OFFSET),
           cells.get(drawCell.getRow() * zoo.getCols() + drawCell.getCol()).render(),
           FrameBuffer.Color.WHITE, FrameBuffer.Color.TRANSPARENT);
       }
@@ -93,7 +93,7 @@ public class BasicConsoleRenderer implements Renderer {
             && cageCellsPos.getCol() >= topLeft.getCol()
             && cageCellsPos.getRow() <= bottomRight.getRow()
             && cageCellsPos.getCol() <= bottomRight.getCol()) {
-            fb.drawPoint(cageCellsPos.substract(topLeft).add(GRID_OFFSET), Character.toUpperCase(cell.render()),
+            fb.drawPoint(cageCellsPos.subtract(topLeft).translate(GRID_OFFSET), Character.toUpperCase(cell.render()),
               FrameBuffer.Color.WHITE, FrameBuffer.Color.BLACK);
           }
         }
@@ -106,7 +106,7 @@ public class BasicConsoleRenderer implements Renderer {
             && animalPos.getCol() >= topLeft.getCol()
             && animalPos.getRow() <= bottomRight.getRow()
             && animalPos.getCol() <= bottomRight.getCol()) {
-            fb.drawPoint(animalPos.substract(topLeft).add(GRID_OFFSET),
+            fb.drawPoint(animalPos.subtract(topLeft).translate(GRID_OFFSET),
               animal.render(), FrameBuffer.Color.YELLOW,
               FrameBuffer.Color.BLACK);
           }

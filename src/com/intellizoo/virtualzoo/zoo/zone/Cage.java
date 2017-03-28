@@ -31,6 +31,10 @@ public class Cage extends Zone {
     super(name);
   }
 
+  public List<Animal> getAnimals() {
+    return animals;
+  }
+
   /**
    * Menambahkan seekor hewan ke dalam kandang ini.
    *

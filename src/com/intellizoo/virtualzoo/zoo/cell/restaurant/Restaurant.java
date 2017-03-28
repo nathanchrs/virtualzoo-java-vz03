@@ -1,5 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell.restaurant;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
 // Nama file         : Restaurant.java

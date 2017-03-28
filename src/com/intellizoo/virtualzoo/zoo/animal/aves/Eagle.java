@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
 
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.chameleon.Chameleon;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.cobra.Cobra;

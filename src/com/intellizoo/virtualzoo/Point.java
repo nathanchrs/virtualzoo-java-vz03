@@ -1,14 +1,25 @@
-package com.intellizoo.virtualzoo.renderer.point;
+package com.intellizoo.virtualzoo;
 
-// Nama file         : Point.java
-// Tanggal dibuat    : 26/03/2017
-// Tanggal perubahan : 26/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : Point.java
+ * Tanggal dibuat    : 3/26/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas point yang merepresentasikan sebuah titik.
+ *
  * @author Alvin Sullivan
  */
 public class Point {
+
   private int row;
   private int col;
 
@@ -22,6 +33,7 @@ public class Point {
 
   /**
    * Menciptakan titik dengan koordinat (row, col).
+   *
    * @param row Nilai baris (ordinat).
    * @param col Nilai kolom (absis).
    */
@@ -48,8 +60,8 @@ public class Point {
   }
 
   /**
-   * Memeriksa apakah point berada dalam persegi panjang (0, 0) hingga (rows-1, cols-1)
-   * inklusif.
+   * Memeriksa apakah point berada dalam persegi panjang (0, 0) hingga (rows-1, cols-1) inklusif.
+   *
    * @param rows Batas jumlah baris.
    * @param cols Batas jumlah kolom.
    * @return true jika point berada dalam batasan, false jika tidak.
@@ -60,37 +72,31 @@ public class Point {
 
   /**
    * Menambahkan (mentranslasi) current point dengan point P.
+   *
    * @param P point yang ditambahkan.
    * @return point hasil penambahan dengan point P.
    */
-  public Point add(Point P) {
+  public Point translate(Point P) {
     return new Point(row + P.row, col + P.col);
   }
 
   /**
    * Mengurangi/mentranslasi dengan negatif dari current point dengan point P.
+   *
    * @param P point yang dikurangkan.
    * @return point hasil pengurangan dengan point P.
    */
-  public Point substract(Point P) {
+  public Point subtract(Point P) {
     return new Point(row - P.row, col - P.col);
   }
 
   /**
    * Memeriksa kesamaan point ini dengan point P.
+   *
    * @param P point yang akan dibandingkan dengan point ini.
    * @return Mengembalikan true jika point ini dengan point P bernilai sama.
    */
   public boolean equals(Point P) {
     return row == P.row && col == P.col;
-  }
-
-  /**
-   * Memeriksa ketidaksamaan point ini dengan point P.
-   * @param P point yang akan dibandingkan dengan point ini.
-   * @return Mengembalikan true jika point ini dengan point P tidak sama.
-   */
-  public boolean notEquals(Point P) {
-    return !(this.equals(P));
   }
 }

@@ -1,5 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.reptile.iguana;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.Reptile;
 

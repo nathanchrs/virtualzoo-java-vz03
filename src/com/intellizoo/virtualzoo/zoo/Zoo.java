@@ -1,5 +1,6 @@
 package com.intellizoo.virtualzoo.zoo;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Eagle;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
@@ -28,79 +29,74 @@ import com.intellizoo.virtualzoo.zoo.cell.restaurant.Restaurant;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Vector;
 
-// Nama file         : Zoo.java
-// Tanggal dibuat    : 28/03/2017
-// Tanggal perubahan : 28/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : Zoo.java
+ * Tanggal dibuat    : 3/28/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas Zoo yang merepresentasikan sebuah kebun binatang.
+ *
  * @author Jordhy Fernando
  */
 public class Zoo {
-  /**
-   * Mengembalikan indeks Zoo pada baris dan kolom yang ditentukan.
-   * @param row Nilai baris.
-   * @param col Nilai kolom.
-   * @return Nilai indeks di Zoo.
-   */
-  public int idx(int row, int col) {
-    return row * cols + col;
-  }
-
-  /**
-   * Mengembalikan indeks di Zoo pada posisi yang ditentukan.
-   * @param P Nilai titik.
-   * @return Nilai indeks di Zoo.
-   */
-  public int idx(Point P) {
-    return P.getRow() * cols + P.getCol();
-  }
-
+  
   private int rows;
   private int cols;
-  private Vector<Cell> cells;
-  private Vector<Zone> zones;
+  private List<Cell> cells;
+  private List<Zone> zones;
 
   /**
    * Menciptakan kebun binatang dengan ukuran tertentu.
+   *
    * @param rows Ukuran vertikal kebun binatang.
    * @param cols Ukuran horizontal kebun binatang.
    */
   public Zoo(int rows, int cols) {
     this.rows = rows;
     this.cols = cols;
-    cells = new Vector<Cell>(rows * cols);
-    zones = new Vector<Zone>();
-    for(int i = 0; i < rows * cols; i++) {
-      cells.addElement(new Road(new Point(i / cols, i % cols), true, false, false));
+    cells = new ArrayList<>(rows * cols);
+    zones = new ArrayList<>();
+    for (int i = 0; i < rows * cols; i++) {
+      cells.add(new Road(new Point(i / cols, i % cols), true, false, false));
     }
   }
 
   /**
    * Menciptakan kebun binatang berdasarkan data dari sumber input eksternal.
+   *
    * @param reader Scanner yang membaca sumber input eksternal.
    */
   public Zoo(Scanner reader) {
     rows = reader.nextInt();
     cols = reader.nextInt();
-    cells = new Vector<Cell>(rows * cols);
-    for(int i = 0; i < rows * cols; i++) {
-      cells.addElement(new Road(new Point(i / cols, i % cols), true, false, false));
+    cells = new ArrayList<>(rows * cols);
+    for (int i = 0; i < rows * cols; i++) {
+      cells.add(new Road(new Point(i / cols, i % cols), true, false, false));
     }
 
     int zoneCount;
     zoneCount = reader.nextInt();
-    for(int i = 0; i < zoneCount; i++) {
+    for (int i = 0; i < zoneCount; i++) {
       String zoneType;
       String zoneName;
       zoneType = reader.next();
       zoneName = reader.next();
-      if(zoneType.equals("Cage")) {
+      if (zoneType.equalsIgnoreCase("Cage")) {
         addZone(new Cage(zoneName));
-      } else if(zoneType.equals("Zone")) {
+      } else if (zoneType.equalsIgnoreCase("Zone")) {
         addZone(new Zone(zoneName));
       } else {
         //throw InputException();
@@ -115,21 +111,21 @@ public class Zoo {
         row = reader.nextInt();
         col = reader.nextInt();
         Point pos = new Point(row, col);
-        if(cellType.equals("AirHabitat")) {
+        if (cellType.equalsIgnoreCase("AirHabitat")) {
           addCell(new Habitat(pos, Habitat.HabitatType.AirHabitat), zoneName);
-        } else if(cellType.equals("LandHabitat")) {
+        } else if (cellType.equalsIgnoreCase("LandHabitat")) {
           addCell(new Habitat(pos, Habitat.HabitatType.LandHabitat), zoneName);
-        } else if(cellType.equals("WaterHabitat")) {
+        } else if (cellType.equalsIgnoreCase("WaterHabitat")) {
           addCell(new Habitat(pos, Habitat.HabitatType.WaterHabitat), zoneName);
-        } else if(cellType.equals("Park")) {
+        } else if (cellType.equalsIgnoreCase("Park")) {
           addCell(new Park(pos, false), zoneName);
-        } else if(cellType.equals("Restaurant")) {
+        } else if (cellType.equalsIgnoreCase("Restaurant")) {
           addCell(new Restaurant(pos, false), zoneName);
-        } else if(cellType.equals("Road")) {
+        } else if (cellType.equalsIgnoreCase("Road")) {
           addCell(new Road(pos, true, false, false), zoneName);
-        } else if(cellType.equals("Entrance")) {
+        } else if (cellType.equalsIgnoreCase("Entrance")) {
           addCell(new Road(pos, true, true, false), zoneName);
-        } else if(cellType.equals("Exit")) {
+        } else if (cellType.equalsIgnoreCase("Exit")) {
           addCell(new Road(pos, true, false, true), zoneName);
         } else {
           //throw InputException();
@@ -140,72 +136,73 @@ public class Zoo {
       animalCount = reader.nextInt();
       for (int j = 0; j < animalCount; j++) {
         String species;
-        int row, col, weight;
+        int row, col;
+        double weight;
         boolean wild;
         species = reader.next();
         row = reader.nextInt();
         col = reader.nextInt();
-        weight = reader.nextInt();
+        weight = reader.nextDouble();
         wild = reader.nextBoolean();
         Point pos = new Point(row, col);
-        if(species.equals("Eagle")) {
-          Eagle animal = new Eagle(pos, weight, wild);
+        if (species.equalsIgnoreCase("Eagle")) {
+          Eagle animal = new Eagle(species, pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Owl")) {
+        } else if (species.equalsIgnoreCase("Owl")) {
           Owl animal = new Owl(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Parrot")) {
+        } else if (species.equalsIgnoreCase("Parrot")) {
           Parrot animal = new Parrot(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Peacock")) {
+        } else if (species.equalsIgnoreCase("Peacock")) {
           Peacock animal = new Peacock(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Pigeon")) {
+        } else if (species.equalsIgnoreCase("Pigeon")) {
           Pigeon animal = new Pigeon(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Barracuda")) {
+        } else if (species.equalsIgnoreCase("Barracuda")) {
           Barracuda animal = new Barracuda(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("FrenchAngelFish")) {
+        } else if (species.equalsIgnoreCase("FrenchAngelFish")) {
           FrenchAngelFish animal = new FrenchAngelFish(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Lionfish")) {
+        } else if (species.equalsIgnoreCase("Lionfish")) {
           Lionfish animal = new Lionfish(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Ray")) {
+        } else if (species.equalsIgnoreCase("Ray")) {
           Ray animal = new Ray(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Seahorse")) {
+        } else if (species.equalsIgnoreCase("Seahorse")) {
           Seahorse animal = new Seahorse(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Gorilla")) {
+        } else if (species.equalsIgnoreCase("Gorilla")) {
           Gorilla animal = new Gorilla(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Leopard")) {
+        } else if (species.equalsIgnoreCase("Leopard")) {
           Leopard animal = new Leopard(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Lion")) {
+        } else if (species.equalsIgnoreCase("Lion")) {
           Lion animal = new Lion(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Orangutan")) {
+        } else if (species.equalsIgnoreCase("Orangutan")) {
           Orangutan animal = new Orangutan(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Tiger")) {
+        } else if (species.equalsIgnoreCase("Tiger")) {
           Tiger animal = new Tiger(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Chameleon")) {
+        } else if (species.equalsIgnoreCase("Chameleon")) {
           Chameleon animal = new Chameleon(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Cobra")) {
+        } else if (species.equalsIgnoreCase("Cobra")) {
           Cobra animal = new Cobra(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Iguana")) {
+        } else if (species.equalsIgnoreCase("Iguana")) {
           Iguana animal = new Iguana(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("KomodoDragon")) {
+        } else if (species.equalsIgnoreCase("KomodoDragon")) {
           KomodoDragon animal = new KomodoDragon(pos, weight, wild);
           addAnimal(animal, zoneName);
-        } else if(species.equals("Python")) {
+        } else if (species.equalsIgnoreCase("Python")) {
           Python animal = new Python(pos, weight, wild);
           addAnimal(animal, zoneName);
         } else {
@@ -218,11 +215,12 @@ public class Zoo {
 
   /**
    * Menambahkan sebuah zona ke dalam kebun binatang.
+   *
    * @param zone Zona yang ditambahkan ke dalam kebun binatang.
    */
   public void addZone(Zone zone) {
-    if(findZone(zone.getName()) == null) {
-      zones.addElement(zone);
+    if (findZone(zone.getName()) == null) {
+      zones.add(zone);
     } else {
       //throw ZoneAlreadyExistsException();
     }
@@ -230,16 +228,17 @@ public class Zoo {
 
   /**
    * Menambahkan sebuah cell ke dalam kebun binatang.
+   *
    * @param cell Cell yang ditambahkan ke dalam kebun binatang.
    * @param zoneName Cell akan ditambahkan sebagai bagian dari zona dengan nama ini.
    */
   public void addCell(Cell cell, String zoneName) {
     Point pos = cell.getPosition();
-    if(pos.inArea(rows, cols)) {
+    if (pos.inArea(rows, cols)) {
       cells.set(idx(pos), cell);
 
       Zone zone = findZone(zoneName);
-      if(zone != null) {
+      if (zone != null) {
         zone.addCell(cells.get(idx(pos)));
       } else {
         //throw out_of_range("Zone name not found.");
@@ -251,17 +250,17 @@ public class Zoo {
 
   /**
    * Menambahkan seekor hewan ke dalam kebun binatang.
+   *
    * @param animal Hewan yang ditambahkan ke dalam kebun binatang.
-   * @param cageName Hewan akan ditambahkan sebagai bagian dari zona/cage
-   * dengan nama ini.
+   * @param cageName Hewan akan ditambahkan sebagai bagian dari zona/cage dengan nama ini.
    */
   public void addAnimal(Animal animal, String cageName) {
     Zone cage = findZone(cageName);
-    if(cage instanceof Cage) {
+    if (cage instanceof Cage) {
       Point pos = animal.getPosition();
-      if(pos.inArea(rows, cols)) {
+      if (pos.inArea(rows, cols)) {
         Cell habitat = cells.get(idx(pos));
-        if(habitat instanceof  Habitat) {
+        if (habitat instanceof Habitat) {
           if (animal.isValidHabitat(((Habitat) habitat).getType())) {
             ((Cage) cage).addAnimal(animal);
           } else {
@@ -276,12 +275,11 @@ public class Zoo {
     }
   }
 
-  // Getter
-  public Vector<Cell> getCells() {
+  public List<Cell> getCells() {
     return cells;
   }
 
-  public Vector<Zone> getZones() {
+  public List<Zone> getZones() {
     return zones;
   }
 
@@ -294,15 +292,15 @@ public class Zoo {
   }
 
   /**
-   * Menghitung banyaknya daging
-   * yang dikonsumsi oleh semua hewan di kebun binatang setiap harinya.
+   * Menghitung banyaknya daging yang dikonsumsi oleh semua hewan di kebun binatang setiap harinya.
+   *
    * @return Berat total daging yang dibutuhkan.
    */
   public double calculateTotalMeat() {
     double meat = 0.0;
-    for(Zone cage : zones) {
-      if(cage instanceof Cage) {
-        Vector<Animal> animals = ((Cage) cage).getAnimals();
+    for (Zone cage : zones) {
+      if (cage instanceof Cage) {
+        List<Animal> animals = ((Cage) cage).getAnimals();
         for (Animal animal : animals) {
           meat += animal.getDiet().calculateTotalMeatNeeded();
         }
@@ -312,16 +310,17 @@ public class Zoo {
   }
 
   /**
-   * Menghitung banyaknya sayuran
-   * yang dikonsumsi oleh semua hewan di kebun binatang setiap harinya.
+   * Menghitung banyaknya sayuran yang dikonsumsi oleh semua hewan di kebun binatang setiap
+   * harinya.
+   *
    * @return Berat total sayuran yang dibutuhkan.
    */
   public double calculateTotalVegetable() {
     double vegetable = 0.0;
-    for(Zone cage : zones) {
-      if(cage instanceof Cage) {
-        Vector<Animal> animals = ((Cage) cage).getAnimals();
-        for(Animal animal : animals) {
+    for (Zone cage : zones) {
+      if (cage instanceof Cage) {
+        List<Animal> animals = ((Cage) cage).getAnimals();
+        for (Animal animal : animals) {
           vegetable += animal.getDiet().calculateTotalVegetableNeeded();
         }
       }
@@ -330,38 +329,8 @@ public class Zoo {
   }
 
   /**
-   * Mencari zona yang namanya adalah zoneName.
-   * @param zoneName Nama zona yang ingin dicari.
-   * @return Zona yang ingin dicari, atau null jika tidak ada.
-   */
-  public Zone findZone(String zoneName) {
-    for(Zone zone : zones) {
-      if(zone.getName().equals(zoneName)) {
-        return zone;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * Mencari zona mana yang mengandung posisi cellPosition
-   * @param cellPosition Posisi zona yang ingin dicari.
-   * @return Pointer ke zona tersebut, jika tidak ada bernilai nullptr.
-   */
-  public Zone findZone(Point cellPosition) {
-    for(Zone zone : zones) {
-      Vector<Cell> cells = zone.getCells();
-      for(Cell cell : cells) {
-        if(cell.getPosition().equals(cellPosition)) {
-          return zone;
-        }
-      }
-    }
-    return null;
-  }
-
-  /**
    * Menghasilkan string berisi interaksi apa saja yang terkandung dalam sebuah petak.
+   *
    * @param cellPosition posisi petak.
    * @return Daftar interaksi di petak tersebut.
    */
@@ -370,7 +339,7 @@ public class Zoo {
     if (cellPosition.inArea(rows, cols)) {
       Zone cage = findZone(cellPosition);
       if (cage != null && cage instanceof Cage) {
-        Vector<Animal> animals = ((Cage) cage).getAnimals();
+        List<Animal> animals = ((Cage) cage).getAnimals();
         for (Animal animal : animals) {
           interactions.append(animal.interact()).append("\n");
         }
@@ -380,18 +349,73 @@ public class Zoo {
   }
 
   /**
-   * Menghasilkan string berisi interaksi apa saja yang terkandung dalam
-   * sebuah petak dan petak-petak lainnya yang berada tepat di sebelahnya.
+   * Menghasilkan string berisi interaksi apa saja yang terkandung dalam sebuah petak dan
+   * petak-petak lainnya yang berada tepat di sebelahnya.
+   *
    * @param cellPosition posisi petak.
    * @return Daftar interaksi di petak tersebut dan petak-petak sebelahnya.
    */
   public String listNeighboringInteractions(Point cellPosition) {
     StringBuffer interactions = new StringBuffer();
     interactions.append(listInteractions(cellPosition));
-    interactions.append(listInteractions(cellPosition.add(new Point(0, 1))));
-    interactions.append(listInteractions(cellPosition.add(new Point(0, -1))));
-    interactions.append(listInteractions(cellPosition.add(new Point(1, 0))));
-    interactions.append(listInteractions(cellPosition.add(new Point(-1, 0))));
+    interactions.append(listInteractions(cellPosition.translate(new Point(0, 1))));
+    interactions.append(listInteractions(cellPosition.translate(new Point(0, -1))));
+    interactions.append(listInteractions(cellPosition.translate(new Point(1, 0))));
+    interactions.append(listInteractions(cellPosition.translate(new Point(-1, 0))));
     return interactions.toString();
+  }
+
+  /**
+   * Mengembalikan indeks Zoo pada baris dan kolom yang ditentukan.
+   *
+   * @param row Nilai baris.
+   * @param col Nilai kolom.
+   * @return Nilai indeks di Zoo.
+   */
+  private int idx(int row, int col) {
+    return row * cols + col;
+  }
+
+  /**
+   * Mengembalikan indeks di Zoo pada posisi yang ditentukan.
+   *
+   * @param point Nilai titik.
+   * @return Nilai indeks di Zoo.
+   */
+  private int idx(Point point) {
+    return point.getRow() * cols + point.getCol();
+  }
+
+  /**
+   * Mencari zona yang namanya adalah zoneName.
+   *
+   * @param zoneName Nama zona yang ingin dicari.
+   * @return Zona yang ingin dicari, atau null jika tidak ada.
+   */
+  private Zone findZone(String zoneName) {
+    for (Zone zone : zones) {
+      if (zone.getName().equalsIgnoreCase(zoneName)) {
+        return zone;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Mencari zona mana yang mengandung posisi cellPosition
+   *
+   * @param cellPosition Posisi zona yang ingin dicari.
+   * @return Pointer ke zona tersebut, jika tidak ada bernilai nullptr.
+   */
+  private Zone findZone(Point cellPosition) {
+    for (Zone zone : zones) {
+      List<Cell> cells = zone.getCells();
+      for (Cell cell : cells) {
+        if (cell.getPosition().equals(cellPosition)) {
+          return zone;
+        }
+      }
+    }
+    return null;
   }
 }

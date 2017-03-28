@@ -1,5 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals.gorilla;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
