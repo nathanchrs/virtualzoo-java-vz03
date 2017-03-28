@@ -1,5 +1,8 @@
 package com.intellizoo.virtualzoo;
 
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
+
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Leopard;
@@ -7,7 +10,6 @@ import com.intellizoo.virtualzoo.zoo.animal.reptile.Cobra;
 import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 /**
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -21,6 +23,8 @@ import static org.junit.Assert.*;
  * Tanggal dibuat    : 25/03/2017
  * Tanggal perubahan : 25/03/2017
  * Deskripsi         : -
+ *
+ * @author : Agus Gunawan
  */
 
 public class AnimalTest {
