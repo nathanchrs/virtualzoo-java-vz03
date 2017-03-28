@@ -1,7 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.controller;
 
 import com.intellizoo.virtualzoo.point.Point;
-import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.Road;
@@ -24,76 +23,6 @@ public class Controller {
   private Zoo zoo;
   private boolean useColor;
 
-  /**
-   * Menciptakan sebuah Controller baru untuk sebuah kebun binatang.
-   *
-   * @param zoo Zoo yang akan digunakan oleh Controller ini.
-   * @param useColor Mengatur apakah Controller ini akan mencetak output secara berwarna.
-   */
-  public Controller(Zoo zoo, boolean useColor) {
-    this.zoo = zoo;
-    this.useColor = useColor;
-  }
-
-  /**
-   * Menampilkan main menu.
-   */
-  public void displayMenu() {
-    boolean exitMenuLoop = false;
-    while (!exitMenuLoop) {
-      BasicConsoleRenderer renderer = new BasicConsoleRenderer();
-      renderer.displayMenu(useColor);
-
-      int input;
-      Scanner reader = new Scanner(System.in);
-      do {
-        input = reader.nextInt();
-      } while (input < 1 || input > 4);
-      switch (input) {
-        case 1:
-          displayZoo();
-          break;
-        case 2:
-          tourZoo();
-          break;
-        case 3:
-          displayFoodStatistics();
-          break;
-        case 4:
-          exitMenuLoop = true;
-          break;
-        default:
-      }
-    }
-  }
-
-  /**
-   * Menampilkan kebun binatang di atas layar dengan batas yang ditentukan pengguna.
-   *
-   * <p>Menampilkan juga posisi hewan-hewan di atas layar.
-   */
-  public void displayZoo() {
-    zoo.startBehaviorThreads();
-
-    System.out.print("Input map limit (r1, c1, r2, c2 | from 0 to row/column count - 1): ");
-    Scanner reader = new Scanner(System.in);
-    int r1;
-    r1 = reader.nextInt();
-    int c1;
-    c1 = reader.nextInt();
-    int r2;
-    r2 = reader.nextInt();
-    int c2;
-    c2 = reader.nextInt();
-    BasicConsoleRenderer renderer = new BasicConsoleRenderer();
-    renderer.render(zoo, new Point(r1, c1), new Point(r2, c2), useColor);
-    String input;
-    do {
-      input = reader.next();
-    } while (!input.equals("back"));
-
-    zoo.terminateBehaviorThreads();
-  }
 
   /**
    * Melakukan tour keliling kebun binatang.
@@ -199,18 +128,4 @@ public class Controller {
     } while (!input.equals("back"));
   }
 
-  /**
-   * Menampilkan data jumlah makanan yang dibutuhkan untuk memberi makan hewan-hewan di dalam kebun
-   * binatang selama satu hari.
-   */
-  public void displayFoodStatistics() {
-    System.out.println("Total meat needed: " + zoo.calculateTotalMeat());
-    System.out.println("Total vegetable needed: " + zoo.calculateTotalVegetable());
-    System.out.print("Input [back] to return to menu: ");
-    Scanner reader = new Scanner(System.in);
-    String input;
-    do {
-      input = reader.next();
-    } while (!input.equals("back"));
-  }
 }

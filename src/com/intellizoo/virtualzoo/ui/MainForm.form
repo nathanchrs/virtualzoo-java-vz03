@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.intellizoo.virtualzoo.ui.MainForm">
-  <grid id="27dc6" binding="MainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+  <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
@@ -9,7 +9,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <scrollpane id="e94ed" binding="ZooScrollPane">
+      <scrollpane id="e94ed" binding="zooScrollPane">
         <constraints border-constraint="Center"/>
         <properties>
           <minimumSize width="300" height="300"/>
@@ -19,25 +19,25 @@
           <size top="0" left="20" bottom="0" right="20"/>
         </border>
         <children>
-          <component id="9920f" class="com.intellizoo.virtualzoo.ui.ZooDisplay" binding="ZooDisplay">
+          <component id="9920f" class="com.intellizoo.virtualzoo.ui.ZooDisplay" binding="zooDisplay">
             <constraints/>
             <properties/>
           </component>
         </children>
       </scrollpane>
-      <grid id="3edd9" binding="BottomPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="3edd9" binding="bottomPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="South"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7b7f5" class="javax.swing.JButton" binding="LoadButton">
+          <component id="7b7f5" class="javax.swing.JButton" binding="loadButton">
             <constraints/>
             <properties>
               <label value="Buka dari File"/>
               <text value="Buka dari File"/>
             </properties>
           </component>
-          <component id="ac500" class="javax.swing.JButton" binding="FoodConsumptionButton">
+          <component id="ac500" class="javax.swing.JButton" binding="foodConsumptionButton">
             <constraints/>
             <properties>
               <label value="Kebutuhan Makanan"/>
@@ -46,7 +46,7 @@
           </component>
         </children>
       </grid>
-      <component id="71455" class="javax.swing.JList" binding="InteractionsList">
+      <component id="71455" class="javax.swing.JList" binding="interactionsList">
         <constraints border-constraint="East"/>
         <properties>
           <preferredSize width="200" height="0"/>

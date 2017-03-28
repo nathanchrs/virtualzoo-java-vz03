@@ -54,6 +54,10 @@ public class ZooDisplay extends JPanel {
     this.zoo = zoo;
   }
 
+  /**
+   * Method ini akan dipanggil untuk mendapatkan ukuran yang diinginkan untuk komponen ini.
+   * @return Dimensi/ukaran komponen yang seharusnya.
+   */
   public Dimension getPreferredSize() {
     if (zoo == null) {
       return new Dimension(300, 200);
@@ -62,7 +66,11 @@ public class ZooDisplay extends JPanel {
     }
   }
 
-    public void paintComponent(Graphics graphics) {
+  /**
+   * Method ini akan dipanggil ketika komponen ini di-redraw.
+   * @param graphics Objek grafika yang digunakan untuk menggambar pada komponen.
+   */
+  public void paintComponent(Graphics graphics) {
     super.paintComponent(graphics);
 
     if (zoo == null) {

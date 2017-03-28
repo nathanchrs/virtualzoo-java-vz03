@@ -20,8 +20,11 @@ import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.List;
+import java.util.Scanner;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -35,22 +38,53 @@ import javax.swing.JScrollPane;
 public class MainForm implements AnimalMoveEventListener {
 
   private Zoo zoo = null;
-  private JPanel MainPanel;
-  private JScrollPane ZooScrollPane;
-  private JPanel BottomPanel;
-  private JButton LoadButton;
-  private JButton FoodConsumptionButton;
-  private ZooDisplay ZooDisplay;
-  private JList InteractionsList;
+  private JPanel mainPanel;
+  private JScrollPane zooScrollPane;
+  private JPanel bottomPanel;
+  private JButton loadButton;
+  private JButton foodConsumptionButton;
+  private ZooDisplay zooDisplay;
+  private JList interactionsList;
 
+  /**
+   * Konstruktor dari MainForm; mendaftarkan penanganan event untuk komponen-komponen di dalamnya.
+   */
   public MainForm() {
-    FoodConsumptionButton.addActionListener(new ActionListener() {
+    foodConsumptionButton.addActionListener(new ActionListener() {
       /**
-       * Menangani aksi penekanan tombol keperluan makanan.
+       * Menangani aksi penekanan tombol konsumsi makanan.
        */
       @Override
       public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(null, "Kebutuhan makanan per hari: \n 111");
+        JOptionPane.showMessageDialog(
+            mainPanel,
+            "Kebutuhan makanan per hari:\n"
+                + "Daging: " + zoo.calculateTotalMeat() + " kg \n"
+                + "Sayur: " + zoo.calculateTotalVegetable() + " kg \n"
+        );
+      }
+    });
+
+    loadButton.addActionListener(new ActionListener() {
+      /**
+       * Menangani aksi penekanan tombol buka dari file.
+       */
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        JFileChooser fileChooser = new JFileChooser();
+        int fileChooserReturnValue = fileChooser.showDialog(mainPanel, "Load");
+        if (fileChooserReturnValue == JFileChooser.APPROVE_OPTION) {
+          File inputFile = fileChooser.getSelectedFile();
+          Zoo openedZoo = null;
+          try {
+            Scanner scanner = new Scanner(inputFile);
+            openedZoo = new Zoo(scanner);
+            scanner.close();
+            setZoo(openedZoo);
+          } catch (Exception exception) {
+            JOptionPane.showMessageDialog(mainPanel, "File input gagal dibuka.");
+          }
+        }
       }
     });
   }
@@ -59,11 +93,16 @@ public class MainForm implements AnimalMoveEventListener {
     return zoo;
   }
 
+  /**
+   * Mengaitkan zoo yang diberikan dengan tampilan pada form ini, dan juga mendaftarkan penanganan
+   * event-event untuk isi Zoo.
+   * @param zoo Zoo yang akan dikaitkan dengan tampilan di form ini.
+   */
   public void setZoo(Zoo zoo) {
     terminateBehaviorThreads();
 
     this.zoo = zoo;
-    ZooDisplay.setZoo(zoo);
+    zooDisplay.setZoo(zoo);
 
     // Daftarkan event listener untuk event hewan bergerak
     List<Zone> zones = zoo.getZones();
@@ -77,6 +116,7 @@ public class MainForm implements AnimalMoveEventListener {
       }
     }
 
+    zooDisplay.revalidate();
     startBehaviorThreads();
   }
 
@@ -99,7 +139,7 @@ public class MainForm implements AnimalMoveEventListener {
   }
 
   public JPanel getMainPanel() {
-    return MainPanel;
+    return mainPanel;
   }
 
   /**
@@ -111,6 +151,6 @@ public class MainForm implements AnimalMoveEventListener {
    */
   @Override
   public void onAnimalMove(Animal eventSource, Point oldPosition) {
-    ZooDisplay.repaint();
+    zooDisplay.repaint();
   }
 }
