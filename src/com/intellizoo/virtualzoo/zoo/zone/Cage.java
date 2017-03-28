@@ -1,6 +1,7 @@
 package com.intellizoo.virtualzoo.zoo.zone;
 
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -25,7 +26,7 @@ public class Cage extends Zone {
 
   private static final double CAGE_MAX_POPULATION_DENSITY = 0.3;
 
-  private List<Animal> animals;
+  private List<Animal> animals = new ArrayList<>();
 
   public Cage(String name) {
     super(name);

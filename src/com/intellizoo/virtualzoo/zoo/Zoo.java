@@ -83,6 +83,7 @@ public class Zoo {
     rows = reader.nextInt();
     cols = reader.nextInt();
     cells = new ArrayList<>(rows * cols);
+    zones = new ArrayList<>();
     for (int i = 0; i < rows * cols; i++) {
       cells.add(new Road(new Point(i / cols, i % cols), true, false, false));
     }
@@ -143,7 +144,7 @@ public class Zoo {
         row = reader.nextInt();
         col = reader.nextInt();
         weight = reader.nextInt();
-        wild = reader.nextBoolean();
+        wild = reader.nextInt() != 0;
         Point pos = new Point(row, col);
         if (species.equalsIgnoreCase("Eagle")) {
           Eagle animal = new Eagle(species, pos, weight, wild);

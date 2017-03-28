@@ -19,7 +19,7 @@ import java.util.List;
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : Aves.java
+ * Nama file         : BasicConsoleRenderer.java
  * Tanggal dibuat    : 3/27/17
  * Tanggal perubahan : 3/28/17
  */
@@ -120,7 +120,7 @@ public class BasicConsoleRenderer implements Renderer {
 
     fb.setInputPrompt("Input [back] to return to menu: ");
     //fb.ClearScreen();
-    System.out.print(fb);
+    System.out.print(fb.toString());
   }
 
   /**
@@ -152,6 +152,6 @@ public class BasicConsoleRenderer implements Renderer {
 
     fb.setInputPrompt("Select menu option [1|2|3|4]: ");
     //fb.ClearScreen();
-    System.out.print(fb);
+    System.out.print(fb.toString());
   }
 }

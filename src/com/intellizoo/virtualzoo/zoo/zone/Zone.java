@@ -1,6 +1,7 @@
 package com.intellizoo.virtualzoo.zoo.zone;
 
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -24,7 +25,7 @@ import java.util.List;
 public class Zone {
 
   private String name;
-  private List<Cell> cells;
+  private List<Cell> cells = new ArrayList<>();
 
   public Zone(String name) {
     this.name = name;
