@@ -26,7 +26,8 @@ import java.util.Random;
  */
 public class AnimalBehavior implements Runnable {
 
-  private static final long BEHAVIOR_TICK = 1000;
+  private static final int BEHAVIOR_TICK_MIN = 1000;
+  private static final int BEHAVIOR_TICK_RANGE = 9000;
 
   private Animal animal;
   private Cage cage;
@@ -45,7 +46,7 @@ public class AnimalBehavior implements Runnable {
 
     while (!Thread.interrupted()) {
       try {
-        Thread.sleep(BEHAVIOR_TICK);
+        Thread.sleep(BEHAVIOR_TICK_MIN + rand.nextInt(BEHAVIOR_TICK_RANGE));
       } catch (InterruptedException e) {
         // Thread terinterupsi, stop thread sekarang.
         return;

@@ -28,7 +28,7 @@ public class Cage extends Zone {
   private static final double CAGE_MAX_POPULATION_DENSITY = 0.3;
 
   private List<Animal> animals = new ArrayList<>();
-  private List<Thread> animalBehaviorThreads = new ArrayList<>();
+  private List<Thread> animalBehaviorThreads = null;
 
   /**
    * Exception yang terjadi jika mencoba menambahkan hewan sedemikian sehingga hewan dalam kandang
@@ -85,11 +85,14 @@ public class Cage extends Zone {
    * Membuat dan memulai semua thread perilaku hewan untuk hewan dalam kandang ini.
    */
   public void startAnimalBehaviorThreads() {
-    for (Animal animal : animals) {
-      AnimalBehavior animalBehavior = new AnimalBehavior(animal, this);
-      Thread animalBehaviorThread = new Thread(animalBehavior);
-      animalBehaviorThreads.add(animalBehaviorThread);
-      animalBehaviorThread.start();
+    if (animalBehaviorThreads == null) {
+      animalBehaviorThreads = new ArrayList<>(animals.size());
+      for (Animal animal : animals) {
+        AnimalBehavior animalBehavior = new AnimalBehavior(animal, this);
+        Thread animalBehaviorThread = new Thread(animalBehavior);
+        animalBehaviorThreads.add(animalBehaviorThread);
+        animalBehaviorThread.start();
+      }
     }
   }
 
@@ -97,8 +100,11 @@ public class Cage extends Zone {
    * Mengirim sinyal berhenti ke semua thread perilaku hewan untuk hewan dalam kandang ini.
    */
   public void terminateAnimalBehaviorThreads() {
-    for (Thread animalBehaviorThread : animalBehaviorThreads) {
-      animalBehaviorThread.interrupt();
+    if (animalBehaviorThreads != null) {
+      for (Thread animalBehaviorThread : animalBehaviorThreads) {
+        animalBehaviorThread.interrupt();
+      }
+      animalBehaviorThreads = null;
     }
   }
 }
