@@ -13,32 +13,36 @@ package com.intellizoo.virtualzoo.zoo.animal.diet;
  * Tanggal perubahan : 3/28/17
  */
 
-import com.intellizoo.virtualzoo.zoo.animal.Animal;
-
 /**
  * Kelas Carnivore yang merepresentasikan diet karnivora.
+ *
  * @author Agus Gunawan
  */
 public class Carnivore extends Diet {
+
   /**
-   * Menciptakan diet karnivora untuk sebuah hewan.
-   * @param animal Hewan yang memiliki diet ini.
+   * Menciptakan diet untuk hewan tertentu dan perbandingan berat terhadap jumlah makanannya.
+   *
+   * @param weight Berat hewan
+   * @param foodToWeightRatio Jumlah makanan yang dibutuhkan per satuan berat hewan.
    */
-  public Carnivore(Animal animal) {
-    super(animal);
+  public Carnivore(double weight, double foodToWeightRatio) {
+    super(weight, foodToWeightRatio);
   }
 
   /**
    * Menghitung banyaknya daging yang dikonsumsi setiap hari relatif terhadap berat badannnya.
+   *
    * @return Banyaknya daging yang dikonsumsi setiap hari.
    */
   @Override
   public double calculateTotalMeatNeeded() {
-    return animal.getWeight() * animal.getFoodToWeightRatio();
+    return weight * foodToWeightRatio;
   }
 
   /**
    * Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif terhadap berat badannnya.
+   *
    * @return Banyaknya sayuran yang dikonsumsi setiap hari.
    */
   @Override

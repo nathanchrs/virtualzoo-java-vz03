@@ -30,9 +30,7 @@ public class Eagle extends Aves {
   public Eagle(String name, Point position, double weight, boolean wild) {
     this.name = name;
     this.position = position;
-    this.weight = weight;
-    this.diet = new Carnivore(this);
-    this.foodToWeightRatio = 0.25;
+    this.diet = new Carnivore(weight, 0.25);
     this.wild = wild;
     this.description = "The eagle is a (generally) large sized bird of prey meaning"
         + " that the eagle is one of the most dominant predators in the"

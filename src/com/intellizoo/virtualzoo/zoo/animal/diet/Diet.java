@@ -20,16 +20,18 @@ import com.intellizoo.virtualzoo.zoo.animal.Animal;
  * @author Agus Gunawan
  */
 public abstract class Diet {
-  protected Animal animal;
+  protected double weight;
   protected double foodToWeightRatio;
 
   /**
    * Menciptakan diet untuk hewan tertentu dan perbandingan berat terhadap jumlah makanannya.
    *
-   * @param animal Hewan yang memiliki diet ini.
+   * @param weight Berat hewan
+   * @param foodToWeightRatio Jumlah makanan yang dibutuhkan per satuan berat hewan.
    */
-  public Diet(Animal animal) {
-    this.animal = animal;
+  public Diet(double weight, double foodToWeightRatio) {
+    this.weight = weight;
+    this.foodToWeightRatio = foodToWeightRatio;
   }
 
   /**

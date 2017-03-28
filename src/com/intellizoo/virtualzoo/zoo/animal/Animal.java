@@ -34,8 +34,6 @@ public abstract class Animal implements Renderable {
   protected String description;
   protected Diet diet;
   protected boolean wild;
-  protected double weight;
-  protected double foodToWeightRatio;
   protected Point position;
   protected List<Class<? extends Animal>> preys = new ArrayList<>();
   protected List<AnimalMoveEventListener> animalMoveEventListeners = new ArrayList<>();
@@ -55,14 +53,6 @@ public abstract class Animal implements Renderable {
 
   public boolean isWild() {
     return wild;
-  }
-
-  public double getWeight() {
-    return weight;
-  }
-
-  public double getFoodToWeightRatio() {
-    return foodToWeightRatio;
   }
 
   @Override

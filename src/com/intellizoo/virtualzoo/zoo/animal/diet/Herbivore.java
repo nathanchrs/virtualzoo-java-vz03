@@ -13,19 +13,19 @@ package com.intellizoo.virtualzoo.zoo.animal.diet;
  * Tanggal perubahan : 3/28/17
  */
 
-import com.intellizoo.virtualzoo.zoo.animal.Animal;
-
 /**
  * Kelas Herbivore yang merepresentasikan diet herbivora.
  * @author Agus Gunawan
  */
 public class Herbivore extends Diet {
   /**
-   * Menciptakan diet herbivora untuk sebuah hewan.
-   * @param animal Hewan yang memiliki diet ini.
+   * Menciptakan diet untuk hewan tertentu dan perbandingan berat terhadap jumlah makanannya.
+   *
+   * @param weight Berat hewan
+   * @param foodToWeightRatio Jumlah makanan yang dibutuhkan per satuan berat hewan.
    */
-  public Herbivore(Animal animal) {
-    super(animal);
+  public Herbivore(double weight, double foodToWeightRatio) {
+    super(weight, foodToWeightRatio);
   }
 
   /**
@@ -43,6 +43,6 @@ public class Herbivore extends Diet {
    */
   @Override
   public double calculateTotalVegetableNeeded() {
-    return animal.getWeight() * animal.getFoodToWeightRatio();
+    return weight * foodToWeightRatio;
   }
 }
