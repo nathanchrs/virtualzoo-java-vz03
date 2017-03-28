@@ -1,16 +1,19 @@
 package com.intellizoo.virtualzoo;
 
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+import com.intellizoo.virtualzoo.ui.MainForm;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.Zoo.CageNotFoundException;
 import com.intellizoo.virtualzoo.zoo.Zoo.HabitatMismatchException;
 import com.intellizoo.virtualzoo.zoo.Zoo.ZoneAlreadyExistsException;
-import com.intellizoo.virtualzoo.zoo.controller.Controller;
 import com.intellizoo.virtualzoo.zoo.zone.Cage.CageFullException;
 import com.intellizoo.virtualzoo.zoo.zone.Cage.CageHasPreyOrPredatorException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 public class Main {
 
@@ -54,7 +57,12 @@ public class Main {
       zoo = new Zoo(10, 10);
     }
 
-    Controller controller = new Controller(zoo, false);
-    controller.displayMenu();
+    JFrame frame = new JFrame("Virtual Zoo");
+    MainForm mainForm = new MainForm();
+    mainForm.getZooDisplay().setZoo(zoo);
+    frame.setContentPane(mainForm.getMainPanel());
+    frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    frame.pack();
+    frame.setVisible(true);
   }
 }
