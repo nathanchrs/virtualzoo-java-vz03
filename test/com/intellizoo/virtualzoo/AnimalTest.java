@@ -2,6 +2,9 @@ package com.intellizoo.virtualzoo;
 
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Leopard;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Cobra;
+import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -23,10 +26,32 @@ import static org.junit.Assert.*;
 public class AnimalTest {
 
   @Test
-  public void plus() throws Exception {
-    Point P = new Point(5, 5);
-    Animal animal = new Owl("Agus", P, 100, true);
-    assertEquals(animal.getPosition(), P);
+  public void testaddPrey_noPrey()throws Exception {
+    Point p = new Point(5, 5);
+    Animal animal = new Owl("Owly", p, 100, true);
+    animal.addPrey(Cobra.class);
+    assertTrue(animal.isPrey(Cobra.class));
   }
 
+  @Test
+  public void testisValidHabitat_oneHabitat() throws Exception {
+    Point p = new Point(5, 5);
+    Animal animal = new Leopard("Leoly", p, 100, true);
+    assertTrue(animal.isValidHabitat(Habitat.HabitatType.LandHabitat));
+  }
+
+  @Test
+  public void testisValidHabitat_twoHabitat() throws Exception {
+    Point p = new Point(5, 5);
+    Animal animal = new Owl("Owly", p, 100, true);
+    assertTrue(animal.isValidHabitat(Habitat.HabitatType.LandHabitat));
+    assertTrue(animal.isValidHabitat(Habitat.HabitatType.AirHabitat));
+  }
+
+  @Test
+  public void testrender_noState() throws Exception {
+    Point p = new Point(5, 5);
+    Animal animal = new Owl("Owly", p, 100, true);
+    assertEquals('x', animal.render());
+  }
 }
