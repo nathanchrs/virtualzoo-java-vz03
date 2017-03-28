@@ -1,30 +1,34 @@
 package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+
 import com.intellizoo.virtualzoo.renderer.Renderer;
-import com.intellizoo.virtualzoo.renderer.framebuffer.FrameBuffer;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
-import com.intellizoo.virtualzoo.zoo.zone.cage.Cage;
-import java.util.Vector;
+import com.intellizoo.virtualzoo.zoo.zone.Cage;
+import java.util.List;
 
-// Nama file         : BasicConsoleRenderer.java
-// Tanggal dibuat    : 27/03/2017
-// Tanggal perubahan : 27/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : BasicConsoleRenderer.java
+ * Tanggal dibuat    : 3/27/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas BasicConsoleRenderer yang berfungsi untuk menggambar objek di atas console teks.
  * @author Jordhy Fernando
  */
 public class BasicConsoleRenderer implements Renderer {
-  private int getMax(int a, int b) {
-    return a > b ? a : b;
-  }
-
-  private int getMin(int a, int b) {
-    return a < b ? a : b;
-  }
 
   /**
    * Menggambar sebuah kebun binatang.
@@ -34,16 +38,16 @@ public class BasicConsoleRenderer implements Renderer {
    * @param useColor Jika true, output tampilan berwarna.
    */
   public void render(Zoo zoo, Point topLeft, Point bottomRight, boolean useColor) {
-    topLeft = new Point(getMax(topLeft.getRow(), 0), getMax(topLeft.getCol(), 0));
-    bottomRight = new Point(getMin(bottomRight.getRow(), zoo.getRows() - 1),
-      getMin(bottomRight.getCol(), zoo.getCols() - 1));
+    topLeft = new Point(max(topLeft.getRow(), 0), max(topLeft.getCol(), 0));
+    bottomRight = new Point(min(bottomRight.getRow(), zoo.getRows() - 1),
+      min(bottomRight.getCol(), zoo.getCols() - 1));
 
     final Point GRID_OFFSET = new Point(3, 3);
     final int ROWS = bottomRight.getRow() - topLeft.getRow() + 1;
     final int COLS = bottomRight.getCol() - topLeft.getCol() + 1;
 
-    Vector<Cell> cells = zoo.getCells();
-    Vector<Zone> zones = zoo.getZones();
+    List<Cell> cells = zoo.getCells();
+    List<Zone> zones = zoo.getZones();
     FrameBuffer fb = new FrameBuffer(ROWS + 5, COLS + GRID_OFFSET.getCol() * 2 + 24, useColor);
     fb.clear();
 
@@ -52,32 +56,32 @@ public class BasicConsoleRenderer implements Renderer {
       FrameBuffer.Color.BLACK, FrameBuffer.Color.WHITE);
 
     // Draw legend
-    Point legendOffset = new Point(0, COLS + 3).add(GRID_OFFSET);
-    fb.drawRectangle(legendOffset, new Point(8, 20).add(legendOffset), '*',
+    Point legendOffset = new Point(0, COLS + 3).translate(GRID_OFFSET);
+    fb.drawRectangle(legendOffset, new Point(8, 20).translate(legendOffset), '*',
       FrameBuffer.Color.WHITE, FrameBuffer.Color.BLACK, FrameBuffer.Color.BLACK);
-    fb.drawTextBox(legendOffset.add(new Point(0, 2)), legendOffset.add(new Point(0, 7)),
+    fb.drawTextBox(legendOffset.translate(new Point(0, 2)), legendOffset.translate(new Point(0, 7)),
       "Legend", FrameBuffer.Color.BLACK, FrameBuffer.Color.WHITE);
 
-    fb.drawTextBox(legendOffset.add(new Point(1, 2)), legendOffset.add(new Point(1, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(1, 2)), legendOffset.translate(new Point(1, 18)),
       ". Road", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(2, 2)), legendOffset.add(new Point(2, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(2, 2)), legendOffset.translate(new Point(2, 18)),
       "A Air Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(3, 2)), legendOffset.add(new Point(3, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(3, 2)), legendOffset.translate(new Point(3, 18)),
       "L Land Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(4, 2)), legendOffset.add(new Point(4, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(4, 2)), legendOffset.translate(new Point(4, 18)),
       "W Water Habitat", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(5, 2)), legendOffset.add(new Point(5, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(5, 2)), legendOffset.translate(new Point(5, 18)),
       "r Restaurant", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(6, 2)), legendOffset.add(new Point(6, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(6, 2)), legendOffset.translate(new Point(6, 18)),
       "p Park", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
-    fb.drawTextBox(legendOffset.add(new Point(7, 2)), legendOffset.add(new Point(7, 18)),
+    fb.drawTextBox(legendOffset.translate(new Point(7, 2)), legendOffset.translate(new Point(7, 18)),
       "x Animal", FrameBuffer.Color.GRAY, FrameBuffer.Color.TRANSPARENT);
 
     // Draw all cells
     for(int row = 0; row < ROWS; row++) {
       for(int col = 0; col < COLS; col++) {
-        Point drawCell = new Point(row, col).add(topLeft);
-        fb.drawPoint(new Point(row, col).add(GRID_OFFSET),
+        Point drawCell = new Point(row, col).translate(topLeft);
+        fb.drawPoint(new Point(row, col).translate(GRID_OFFSET),
           cells.get(drawCell.getRow() * zoo.getCols() + drawCell.getCol()).render(),
           FrameBuffer.Color.WHITE, FrameBuffer.Color.TRANSPARENT);
       }
@@ -86,27 +90,27 @@ public class BasicConsoleRenderer implements Renderer {
     for(Zone cage : zones) {
       if (cage instanceof Cage) {
         // Redraw cells that are inside a cage
-        Vector<Cell> cageCells = cage.getCells();
+        List<Cell> cageCells = cage.getCells();
         for(Cell cell : cageCells) {
           Point cageCellsPos = cell.getPosition();
           if(cageCellsPos.getRow() >= topLeft.getRow()
             && cageCellsPos.getCol() >= topLeft.getCol()
             && cageCellsPos.getRow() <= bottomRight.getRow()
             && cageCellsPos.getCol() <= bottomRight.getCol()) {
-            fb.drawPoint(cageCellsPos.substract(topLeft).add(GRID_OFFSET), Character.toUpperCase(cell.render()),
+            fb.drawPoint(cageCellsPos.subtract(topLeft).translate(GRID_OFFSET), Character.toUpperCase(cell.render()),
               FrameBuffer.Color.WHITE, FrameBuffer.Color.BLACK);
           }
         }
 
         // Draw animals
-        Vector<Animal> animals = cage.getAnimals();
+        List<Animal> animals = ((Cage) cage).getAnimals();
         for (Animal animal: animals) {
           Point animalPos = animal.getPosition();
           if (animalPos.getRow() >= topLeft.getRow()
             && animalPos.getCol() >= topLeft.getCol()
             && animalPos.getRow() <= bottomRight.getRow()
             && animalPos.getCol() <= bottomRight.getCol()) {
-            fb.drawPoint(animalPos.substract(topLeft).add(GRID_OFFSET),
+            fb.drawPoint(animalPos.subtract(topLeft).translate(GRID_OFFSET),
               animal.render(), FrameBuffer.Color.YELLOW,
               FrameBuffer.Color.BLACK);
           }
@@ -116,7 +120,7 @@ public class BasicConsoleRenderer implements Renderer {
 
     fb.setInputPrompt("Input [back] to return to menu: ");
     //fb.ClearScreen();
-    System.out.print(fb);
+    System.out.print(fb.toString());
   }
 
   /**
@@ -148,6 +152,6 @@ public class BasicConsoleRenderer implements Renderer {
 
     fb.setInputPrompt("Select menu option [1|2|3|4]: ");
     //fb.ClearScreen();
-    System.out.print(fb);
+    System.out.print(fb.toString());
   }
 }

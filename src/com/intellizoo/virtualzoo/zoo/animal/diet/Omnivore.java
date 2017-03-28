@@ -1,5 +1,4 @@
 package com.intellizoo.virtualzoo.zoo.animal.diet;
-import com.intellizoo.virtualzoo.zoo.animal.Animal;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -9,19 +8,17 @@ import com.intellizoo.virtualzoo.zoo.animal.Animal;
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : Diet.java
+ * Nama file         : Omnivore.java
  * Tanggal dibuat    : 3/28/17
  * Tanggal perubahan : 3/28/17
  */
 
 /**
- * Kelas Diet yang merepesentasikan hewan berdasarkan jenis makanannya.
+ * Kelas Omnivore yang merepresentasikan diet omnivora.
  *
  * @author Agus Gunawan
  */
-public abstract class Diet {
-  protected double weight;
-  protected double foodToWeightRatio;
+public class Omnivore extends Diet {
 
   /**
    * Menciptakan diet untuk hewan tertentu dan perbandingan berat terhadap jumlah makanannya.
@@ -29,9 +26,8 @@ public abstract class Diet {
    * @param weight Berat hewan
    * @param foodToWeightRatio Jumlah makanan yang dibutuhkan per satuan berat hewan.
    */
-  public Diet(double weight, double foodToWeightRatio) {
-    this.weight = weight;
-    this.foodToWeightRatio = foodToWeightRatio;
+  public Omnivore(double weight, double foodToWeightRatio) {
+    super(weight, foodToWeightRatio);
   }
 
   /**
@@ -39,12 +35,18 @@ public abstract class Diet {
    *
    * @return Banyaknya daging yang dikonsumsi setiap hari.
    */
-  public abstract double calculateTotalMeatNeeded();
+  @Override
+  public double calculateTotalMeatNeeded() {
+    return weight * foodToWeightRatio / 2.0;
+  }
 
   /**
    * Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif terhadap berat badannnya.
    *
    * @return Banyaknya sayuran yang dikonsumsi setiap hari.
    */
-  public abstract double calculateTotalVegetableNeeded();
+  @Override
+  public double calculateTotalVegetableNeeded() {
+    return weight * foodToWeightRatio / 2.0;
+  }
 }

@@ -1,0 +1,820 @@
+20 40
+50
+Cage Cage1
+8
+WaterHabitat 0 0
+WaterHabitat 0 1
+WaterHabitat 1 0
+WaterHabitat 1 1
+WaterHabitat 2 0
+WaterHabitat 2 1
+WaterHabitat 3 0
+WaterHabitat 3 1
+2
+Barracuda 0 1 10 0
+FrenchAngelFish 2 1 15 0
+Cage Cage2
+3
+LandHabitat 3 2
+LandHabitat 3 3
+LandHabitat 3 4
+1
+Peacock 3 3 45 0
+Cage Cage3
+9
+AirHabitat 4 0
+AirHabitat 4 1
+AirHabitat 4 2
+AirHabitat 5 0
+AirHabitat 5 1
+AirHabitat 5 2
+AirHabitat 6 0
+AirHabitat 6 1
+AirHabitat 6 2
+2
+Eagle 4 1 40 0
+Owl 5 2 20 0
+Cage Cage4
+4
+LandHabitat 5 3
+LandHabitat 5 4
+LandHabitat 6 3
+LandHabitat 6 4
+1
+Peacock 6 4 30 0
+Cage Cage5
+10
+WaterHabitat 7 0
+WaterHabitat 7 1
+WaterHabitat 7 2
+WaterHabitat 7 3
+WaterHabitat 7 4
+WaterHabitat 8 0
+WaterHabitat 8 1
+WaterHabitat 8 2
+WaterHabitat 8 3
+WaterHabitat 8 4
+2
+Lionfish 8 4 30 0
+Ray 7 4 60 0
+Cage Cage6
+8
+LandHabitat 9 0
+LandHabitat 9 1
+LandHabitat 9 2
+LandHabitat 9 3
+LandHabitat 9 4
+LandHabitat 9 5
+LandHabitat 9 6
+LandHabitat 9 7
+2
+Lion 9 6 80 0
+Orangutan 9 7 70 0
+Zone Zone7
+8
+Park 11 0
+Park 11 1
+Park 11 2
+Park 11 3
+Park 12 0
+Park 12 1
+Park 12 2
+Park 12 3
+0
+Zone Zone8
+8
+Restaurant 13 0
+Restaurant 13 1
+Restaurant 13 2
+Restaurant 13 3
+Restaurant 14 0
+Restaurant 14 1
+Restaurant 14 2
+Restaurant 14 3
+0
+Zone Zone9
+4
+Park 15 0
+Park 15 1
+Park 15 2
+Park 15 3
+0
+Cage Cage10
+8
+AirHabitat 16 0
+AirHabitat 16 1
+AirHabitat 16 2
+AirHabitat 16 3
+AirHabitat 17 0
+AirHabitat 17 1
+AirHabitat 17 2
+AirHabitat 17 3
+1
+Parrot 16 3 30 0
+Cage Cage11
+14
+WaterHabitat 18 0
+WaterHabitat 18 1
+WaterHabitat 18 2
+WaterHabitat 18 3
+WaterHabitat 18 4
+WaterHabitat 18 5
+WaterHabitat 18 6
+WaterHabitat 19 0
+WaterHabitat 19 1
+WaterHabitat 19 2
+WaterHabitat 19 3
+WaterHabitat 19 4
+WaterHabitat 19 5
+WaterHabitat 19 6
+4
+Seahorse 18 3 10 0
+Barracuda 18 6 40 0
+Lionfish 19 2 30 0
+FrenchAngelFish 19 5 35 0
+Cage Cage12
+10
+LandHabitat 18 7
+LandHabitat 18 8
+LandHabitat 18 9
+LandHabitat 18 10
+LandHabitat 18 11
+LandHabitat 19 7
+LandHabitat 19 8
+LandHabitat 19 9
+LandHabitat 19 10
+LandHabitat 19 11
+2
+Tiger 18 8 60 0
+Lion 19 11 90 0
+Cage Cage13
+10
+AirHabitat 15 5
+AirHabitat 15 6
+AirHabitat 15 7
+AirHabitat 15 8
+AirHabitat 15 9
+AirHabitat 16 5
+AirHabitat 16 6
+AirHabitat 16 7
+AirHabitat 16 8
+AirHabitat 16 9
+1
+Pigeon 15 5 20 0
+Cage Cage14
+6
+LandHabitat 14 10
+LandHabitat 14 11
+LandHabitat 15 10
+LandHabitat 15 11
+LandHabitat 16 10
+LandHabitat 16 11
+1
+Tiger 15 11 60 1
+Cage Cage15
+10
+WaterHabitat 13 5
+WaterHabitat 13 6
+WaterHabitat 13 7
+WaterHabitat 13 8
+WaterHabitat 13 9
+WaterHabitat 14 5
+WaterHabitat 14 6
+WaterHabitat 14 7
+WaterHabitat 14 8
+WaterHabitat 14 9
+2
+Barracuda 13 5 25 0
+FrenchAngelFish 13 9 30 0
+Cage Cage16
+6
+LandHabitat 11 5
+LandHabitat 11 6
+LandHabitat 11 7
+LandHabitat 12 5
+LandHabitat 12 6
+LandHabitat 12 7
+1
+Lion 12 7 70 1
+Cage Cage17
+16
+AirHabitat 12 11
+AirHabitat 12 12
+AirHabitat 12 13
+AirHabitat 12 14
+AirHabitat 11 9
+AirHabitat 11 10
+AirHabitat 11 11
+AirHabitat 11 12
+AirHabitat 11 13
+AirHabitat 11 14
+AirHabitat 10 9
+AirHabitat 10 10
+AirHabitat 10 11
+AirHabitat 10 12
+AirHabitat 10 13
+AirHabitat 10 14
+3
+Eagle 10 13 60 0
+Owl 10 9 25 0
+Parrot 11 9 15 0
+Cage Cage18
+18
+WaterHabitat 7 9
+WaterHabitat 7 10
+WaterHabitat 7 11
+WaterHabitat 7 12
+WaterHabitat 7 13
+WaterHabitat 7 14
+WaterHabitat 8 9
+WaterHabitat 8 10
+WaterHabitat 8 11
+WaterHabitat 8 12
+WaterHabitat 8 13
+WaterHabitat 8 14
+WaterHabitat 9 9
+WaterHabitat 9 10
+WaterHabitat 9 11
+WaterHabitat 9 12
+WaterHabitat 9 13
+WaterHabitat 9 14
+5
+Barracuda 9 12 35 0
+FrenchAngelFish 9 14 25 0
+Lionfish 8 9 20 0
+Ray 8 14 55 0
+Seahorse 7 14 10 0
+Cage Cage19
+23
+LandHabitat 5 6
+LandHabitat 5 7
+LandHabitat 5 8
+LandHabitat 5 9
+LandHabitat 5 10
+LandHabitat 5 11
+LandHabitat 5 12
+LandHabitat 5 13
+LandHabitat 5 14
+LandHabitat 5 15
+LandHabitat 6 6
+LandHabitat 6 7
+LandHabitat 6 8
+LandHabitat 6 9
+LandHabitat 6 10
+LandHabitat 6 11
+LandHabitat 6 12
+LandHabitat 6 13
+LandHabitat 6 14
+LandHabitat 6 15
+LandHabitat 7 6
+LandHabitat 7 7
+LandHabitat 7 8
+6
+Gorilla 7 8 70 0
+Leopard 6 12 50 0
+Lion 6 15 65 0
+Peacock 7 6 30 0
+Orangutan 5 15 50 0
+Tiger 5 12 40 0
+Cage Cage20
+36
+AirHabitat 0 3
+AirHabitat 0 4
+AirHabitat 0 5
+AirHabitat 0 6
+AirHabitat 0 7
+AirHabitat 0 8
+AirHabitat 0 9
+AirHabitat 0 10
+AirHabitat 0 11
+AirHabitat 0 12
+AirHabitat 0 13
+AirHabitat 0 14
+AirHabitat 0 15
+AirHabitat 1 3
+AirHabitat 1 4
+AirHabitat 1 5
+AirHabitat 1 6
+AirHabitat 1 7
+AirHabitat 1 8
+AirHabitat 1 9
+AirHabitat 1 10
+AirHabitat 1 11
+AirHabitat 1 12
+AirHabitat 1 13
+AirHabitat 1 14
+AirHabitat 1 15
+AirHabitat 2 6
+AirHabitat 2 7
+AirHabitat 2 8
+AirHabitat 2 9
+AirHabitat 2 10
+AirHabitat 3 6
+AirHabitat 3 7
+AirHabitat 3 8
+AirHabitat 3 9
+AirHabitat 3 10
+6
+Eagle 3 10 65 0
+Owl 3 6 25 0
+Parrot 2 6 22 0
+Pigeon 1 15 10 0
+Parrot 1 3 20 0
+Eagle 0 15 60 0
+Cage Cage21
+10
+LandHabitat 2 11
+LandHabitat 2 12
+LandHabitat 2 13
+LandHabitat 2 14
+LandHabitat 2 15
+LandHabitat 3 11
+LandHabitat 3 12
+LandHabitat 3 13
+LandHabitat 3 14
+LandHabitat 3 15
+1
+Lion 3 15 80 1
+Cage Cage22
+17
+LandHabitat 0 16
+LandHabitat 0 17
+LandHabitat 0 18
+LandHabitat 0 19
+LandHabitat 0 20
+LandHabitat 0 21
+LandHabitat 0 22
+LandHabitat 0 23
+LandHabitat 0 24
+LandHabitat 0 25
+LandHabitat 0 26
+LandHabitat 0 27
+LandHabitat 0 28
+LandHabitat 0 29
+LandHabitat 0 30
+LandHabitat 0 31
+LandHabitat 0 32
+2
+Tiger 0 32 50 0
+Lion 0 16 60 0
+Cage Cage23
+21
+WaterHabitat 0 33
+WaterHabitat 0 34
+WaterHabitat 0 35
+WaterHabitat 0 36
+WaterHabitat 0 37
+WaterHabitat 0 38
+WaterHabitat 0 39
+WaterHabitat 1 33
+WaterHabitat 1 34
+WaterHabitat 1 35
+WaterHabitat 1 36
+WaterHabitat 1 37
+WaterHabitat 1 38
+WaterHabitat 1 39
+WaterHabitat 2 33
+WaterHabitat 2 34
+WaterHabitat 2 35
+WaterHabitat 2 36
+WaterHabitat 2 37
+WaterHabitat 2 38
+WaterHabitat 2 39
+1
+Barracuda 2 33 40 1
+Cage Cage24
+21
+AirHabitat 3 33
+AirHabitat 3 34
+AirHabitat 3 35
+AirHabitat 3 36
+AirHabitat 3 37
+AirHabitat 3 38
+AirHabitat 3 39
+AirHabitat 4 33
+AirHabitat 4 34
+AirHabitat 4 35
+AirHabitat 4 36
+AirHabitat 4 37
+AirHabitat 4 38
+AirHabitat 4 39
+AirHabitat 5 33
+AirHabitat 5 34
+AirHabitat 5 35
+AirHabitat 5 36
+AirHabitat 5 37
+AirHabitat 5 38
+AirHabitat 5 39
+1
+Eagle 3 33 75 1
+Cage Cage25
+12
+WaterHabitat 2 26
+WaterHabitat 2 27
+WaterHabitat 2 28
+WaterHabitat 2 29
+WaterHabitat 2 30
+WaterHabitat 2 31
+WaterHabitat 3 26
+WaterHabitat 3 27
+WaterHabitat 3 28
+WaterHabitat 3 29
+WaterHabitat 3 30
+WaterHabitat 3 31
+2
+Lionfish 2 26 20 0
+Seahorse 3 31 10 0
+Cage Cage26
+12
+AirHabitat 2 21
+AirHabitat 2 22
+AirHabitat 2 23
+AirHabitat 2 24
+AirHabitat 3 21
+AirHabitat 3 22
+AirHabitat 3 23
+AirHabitat 3 24
+AirHabitat 4 21
+AirHabitat 4 22
+AirHabitat 4 23
+AirHabitat 4 24
+1
+Eagle 4 24 85 1
+Zone Zone27
+9
+Restaurant 3 17
+Restaurant 3 18
+Restaurant 3 19
+Restaurant 4 17
+Restaurant 4 18
+Restaurant 4 19
+Restaurant 5 17
+Restaurant 5 18
+Restaurant 5 19
+0
+Zone Zone28
+6
+Park 5 17
+Park 5 18
+Park 5 19
+Park 6 17
+Park 6 18
+Park 6 19
+0
+Cage Cage29
+8
+WaterHabitat 5 21
+WaterHabitat 5 22
+WaterHabitat 5 23
+WaterHabitat 5 24
+WaterHabitat 6 21
+WaterHabitat 6 22
+WaterHabitat 6 23
+WaterHabitat 6 24
+1
+Lionfish 6 24 30 0
+Cage Cage30
+12
+LandHabitat 5 26
+LandHabitat 5 27
+LandHabitat 5 28
+LandHabitat 5 29
+LandHabitat 5 30
+LandHabitat 5 31
+LandHabitat 6 26
+LandHabitat 6 27
+LandHabitat 6 28
+LandHabitat 6 29
+LandHabitat 6 30
+LandHabitat 6 31
+1
+Tiger 6 30 60 1
+Cage Cage31
+14
+AirHabitat 7 26
+AirHabitat 7 27
+AirHabitat 7 28
+AirHabitat 7 29
+AirHabitat 7 30
+AirHabitat 7 31
+AirHabitat 7 32
+AirHabitat 8 26
+AirHabitat 8 27
+AirHabitat 8 28
+AirHabitat 8 29
+AirHabitat 8 30
+AirHabitat 8 31
+AirHabitat 8 32
+1
+Parrot 8 32 15 0
+Cage Cage32
+18
+AirHabitat 7 34
+AirHabitat 7 35
+AirHabitat 7 36
+AirHabitat 7 37
+AirHabitat 7 38
+AirHabitat 7 39
+AirHabitat 8 34
+AirHabitat 8 35
+AirHabitat 8 36
+AirHabitat 8 37
+AirHabitat 8 38
+AirHabitat 8 39
+AirHabitat 9 34
+AirHabitat 9 35
+AirHabitat 9 36
+AirHabitat 9 37
+AirHabitat 9 38
+AirHabitat 9 39
+1
+Parrot 7 34 25 0
+Cage Cage33
+6
+LandHabitat 10 34
+LandHabitat 10 35
+LandHabitat 10 36
+LandHabitat 10 37
+LandHabitat 10 38
+LandHabitat 10 39
+1
+Tiger 10 34 50 1
+Cage Cage34
+12
+WaterHabitat 11 34
+WaterHabitat 11 35
+WaterHabitat 11 36
+WaterHabitat 11 37
+WaterHabitat 11 38
+WaterHabitat 11 39
+WaterHabitat 12 34
+WaterHabitat 12 35
+WaterHabitat 12 36
+WaterHabitat 12 37
+WaterHabitat 12 38
+WaterHabitat 12 39
+1
+Barracuda 11 34 40 1
+Cage Cage35
+8
+LandHabitat 11 29
+LandHabitat 11 30
+LandHabitat 11 31
+LandHabitat 11 32
+LandHabitat 12 29
+LandHabitat 12 30
+LandHabitat 12 31
+LandHabitat 12 32
+1
+Lion 12 32 60 1
+Cage Cage36
+13
+AirHabitat 10 26
+AirHabitat 10 27
+AirHabitat 10 28
+AirHabitat 10 29
+AirHabitat 10 30
+AirHabitat 10 31
+AirHabitat 10 32
+AirHabitat 11 26
+AirHabitat 11 27
+AirHabitat 11 28
+AirHabitat 12 26
+AirHabitat 12 27
+AirHabitat 12 28
+1
+Eagle 12 28 70 1
+Cage Cage37
+12
+LandHabitat 10 21
+LandHabitat 10 22
+LandHabitat 10 23
+LandHabitat 10 24
+LandHabitat 11 21
+LandHabitat 11 22
+LandHabitat 11 23
+LandHabitat 11 24
+LandHabitat 12 21
+LandHabitat 12 22
+LandHabitat 12 23
+LandHabitat 12 24
+1
+Peacock 12 24 50 1
+Cage Cage38
+8
+AirHabitat 8 21
+AirHabitat 8 22
+AirHabitat 8 23
+AirHabitat 8 24
+AirHabitat 9 21
+AirHabitat 9 22
+AirHabitat 9 23
+AirHabitat 9 24
+1
+Parrot 9 24 25 0
+Zone Zone39
+8
+Park 8 16
+Park 8 17
+Park 8 18
+Park 8 19
+Park 9 16
+Park 9 17
+Park 9 18
+Park 9 19
+0
+Cage Cage40
+12
+WaterHabitat 10 16
+WaterHabitat 10 17
+WaterHabitat 10 18
+WaterHabitat 10 19
+WaterHabitat 11 16
+WaterHabitat 11 17
+WaterHabitat 11 18
+WaterHabitat 11 19
+WaterHabitat 12 16
+WaterHabitat 12 17
+WaterHabitat 12 18
+WaterHabitat 12 19
+1
+Barracuda 10 16 40 0
+Cage Cage41
+15
+WaterHabitat 14 13
+WaterHabitat 14 14
+WaterHabitat 14 15
+WaterHabitat 14 16
+WaterHabitat 14 17
+WaterHabitat 15 13
+WaterHabitat 15 14
+WaterHabitat 15 15
+WaterHabitat 15 16
+WaterHabitat 15 17
+WaterHabitat 16 13
+WaterHabitat 16 14
+WaterHabitat 16 15
+WaterHabitat 16 16
+WaterHabitat 16 17
+2
+Barracuda 14 13 40 0
+Lionfish 16 17 30 0
+Zone Zone42
+15
+Restaurant 17 13
+Restaurant 17 14
+Restaurant 17 15
+Restaurant 17 16
+Restaurant 17 17
+Restaurant 18 13
+Restaurant 18 14
+Restaurant 18 15
+Restaurant 18 16
+Restaurant 18 17
+Restaurant 19 13
+Restaurant 19 14
+Restaurant 19 15
+Restaurant 19 16
+Restaurant 19 17
+0
+Cage Cage43
+16
+WaterHabitat 18 19
+WaterHabitat 18 20
+WaterHabitat 18 21
+WaterHabitat 18 22
+WaterHabitat 18 23
+WaterHabitat 18 24
+WaterHabitat 18 25
+WaterHabitat 18 26
+WaterHabitat 19 19
+WaterHabitat 19 20
+WaterHabitat 19 21
+WaterHabitat 19 22
+WaterHabitat 19 23
+WaterHabitat 19 24
+WaterHabitat 19 25
+WaterHabitat 19 26
+1
+Seahorse 18 19 20 0
+Cage Cage44
+6
+WaterHabitat 18 28
+WaterHabitat 18 29
+WaterHabitat 18 30
+WaterHabitat 19 28
+WaterHabitat 19 29
+WaterHabitat 19 30
+1
+Ray 19 30 50 0
+Cage Cage45
+25
+AirHabitat 17 33
+AirHabitat 17 34
+AirHabitat 17 35
+AirHabitat 17 36
+AirHabitat 17 37
+AirHabitat 17 38
+AirHabitat 17 39
+AirHabitat 18 33
+AirHabitat 18 34
+AirHabitat 18 35
+AirHabitat 18 36
+AirHabitat 18 37
+AirHabitat 18 38
+AirHabitat 18 39
+AirHabitat 19 33
+AirHabitat 19 34
+AirHabitat 19 35
+AirHabitat 19 36
+AirHabitat 19 37
+AirHabitat 19 38
+AirHabitat 19 39
+AirHabitat 18 31
+AirHabitat 18 32
+AirHabitat 19 31
+AirHabitat 19 32
+1
+Pigeon 19 32 20 0
+Cage Cage46
+21
+LandHabitat 14 33
+LandHabitat 14 34
+LandHabitat 14 35
+LandHabitat 14 36
+LandHabitat 14 37
+LandHabitat 14 38
+LandHabitat 14 39
+LandHabitat 15 33
+LandHabitat 15 34
+LandHabitat 15 35
+LandHabitat 15 36
+LandHabitat 15 37
+LandHabitat 15 38
+LandHabitat 15 39
+LandHabitat 16 33
+LandHabitat 16 34
+LandHabitat 16 35
+LandHabitat 16 36
+LandHabitat 16 37
+LandHabitat 16 38
+LandHabitat 16 39
+1
+Peacock 16 33 40 0
+Cage Cage47
+12
+WaterHabitat 14 26
+WaterHabitat 14 27
+WaterHabitat 14 28
+WaterHabitat 14 29
+WaterHabitat 14 30
+WaterHabitat 14 31
+WaterHabitat 15 26
+WaterHabitat 15 27
+WaterHabitat 15 28
+WaterHabitat 15 29
+WaterHabitat 15 30
+WaterHabitat 15 31
+1
+Ray 14 26 40 0
+Cage Cage48
+6
+AirHabitat 16 26
+AirHabitat 16 27
+AirHabitat 16 28
+AirHabitat 16 29
+AirHabitat 16 30
+AirHabitat 16 31
+1
+Parrot 16 26 30 1
+Zone Zone49
+18
+Restaurant 14 19
+Restaurant 14 20
+Restaurant 14 21
+Restaurant 14 22
+Restaurant 14 23
+Restaurant 14 24
+Restaurant 15 19
+Restaurant 15 20
+Restaurant 15 21
+Restaurant 15 22
+Restaurant 15 23
+Restaurant 15 24
+Restaurant 16 19
+Restaurant 16 20
+Restaurant 16 21
+Restaurant 16 22
+Restaurant 16 23
+Restaurant 16 24
+0
+Zone Zone50
+7
+Entrance 0 2
+Entrance 6 39
+Entrance 10 0
+Exit 13 39
+Exit 19 12
+Exit 19 18
+Exit 19 27
+0

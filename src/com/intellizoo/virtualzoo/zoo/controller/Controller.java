@@ -1,13 +1,14 @@
 package com.intellizoo.virtualzoo.zoo.controller;
 import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
-import com.intellizoo.virtualzoo.renderer.point.Point;
+import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Vector;
 
 // Nama file         : Controller.java
 // Tanggal dibuat    : 28/03/2017
@@ -97,8 +98,8 @@ public class Controller {
    * dipilih, atau telah mencapai jalan keluar (Exit).
    */
   public void tourZoo(){
-    Vector<Road> entrances = new Vector<Road>();
-    Vector<Cell> arr = zoo.getCells();
+    List<Road> entrances = new ArrayList<Road>();
+    List<Cell> arr = zoo.getCells();
     int isAccessible[][] = new int[zoo.getRows()][zoo.getCols()];
     for(int i = 0; i < zoo.getRows(); i++) {
       for(int j = 0; j < zoo.getCols(); j++) {
@@ -110,7 +111,7 @@ public class Controller {
       if(road instanceof Road) {
         isAccessible[road.getPosition().getRow()][road.getPosition().getCol()] = 1;
         if(((Road) road).isEntrance()) {
-          entrances.addElement((Road) road);
+          entrances.add((Road) road);
         } else if(((Road) road).isExit()) {
           isAccessible[road.getPosition().getRow()][road.getPosition().getCol()] = 2;
         }
@@ -162,16 +163,16 @@ public class Controller {
         } while(!direction[cDirection]);
         switch(cDirection) {
           case 0:
-            start = start.add(new Point(-1, 0));
+            start = start.translate(new Point(-1, 0));
             break;
           case 1:
-            start = start.add(new Point(0, 1));
+            start = start.translate(new Point(0, 1));
             break;
           case 2:
-            start = start.add(new Point(1, 0));
+            start = start.translate(new Point(1, 0));
             break;
           case 3:
-            start = start.add(new Point(0, -1));
+            start = start.translate(new Point(0, -1));
             break;
         }
       }

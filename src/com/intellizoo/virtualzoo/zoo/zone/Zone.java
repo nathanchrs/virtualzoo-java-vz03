@@ -1,60 +1,60 @@
 package com.intellizoo.virtualzoo.zoo.zone;
 
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
+import java.util.ArrayList;
+import java.util.List;
 
-// Nama file         : Zone.java
-// Tanggal dibuat    : 27/03/2017
-// Tanggal perubahan : 27/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : Zone.java
+ * Tanggal dibuat    : 3/28/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas Zone yang merepresentasikan zona kumpulan cell.
+ *
  * @author Alvin Sullivan
  */
-public abstract class Zone {
+public class Zone {
 
   private String name;
-  private Cell[] cells;
+  private List<Cell> cells = new ArrayList<>();
 
-  /**
-   * @param name Nama zona.
-   * @brief Constructor.
-   * @details Menciptakan kelas zona yang menyimpan daftar petak-petak dalam zoo.
-   */
   public Zone(String name) {
     this.name = name;
   }
 
-  /**
-   * @param cell Pointer ke Cell yang akan ditambah.
-   * @brief Mendaftarkan petak ke zona ini.
-   */
-  public abstract void AddCell(Cell[] cell) {
-    cells.PushBack(cell);
-  }
-
-  //Getter & Setter
-  public String GetName() {
+  public String getName() {
     return name;
   }
 
-  public void SetName(String name) {
-    this.name = name;
-  }
-
-  /**
-   * @return Reference ke array yang mengandung daftar pointer ke Cell.
-   * @brief Mengembalikan daftar petak-petak yang terdaftar di zona ini.
-   */
-  public Cell[] GetCells() {
+  public List<Cell> getCells() {
     return cells;
   }
 
   /**
-   * @return Jumlah petak yang terdaftar dalam zona ini.
-   * @brief Mengembalikan jumlah petak yang terdaftar dalam zona ini.
+   * Menambahkan sebuah petak ke dalam zona ini.
+   *
+   * @param cell Petak yang akan ditambahkan.
    */
-  public int Size() {
-    return cells.Size();
+  public void addCell(Cell cell) {
+    cells.add(cell);
+  }
+
+  /**
+   * Mengembalikan banyaknya petak dalam zona ini.
+   *
+   * @return Jumlah petak dalam zona ini.
+   */
+  public int size() {
+    return cells.size();
   }
 
 };
