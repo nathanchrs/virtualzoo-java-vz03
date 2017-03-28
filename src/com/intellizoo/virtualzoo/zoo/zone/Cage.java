@@ -1,6 +1,7 @@
 package com.intellizoo.virtualzoo.zoo.zone;
 
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import com.intellizoo.virtualzoo.zoo.animal.AnimalBehavior;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class Cage extends Zone {
   private static final double CAGE_MAX_POPULATION_DENSITY = 0.3;
 
   private List<Animal> animals = new ArrayList<>();
+  private List<Thread> animalBehaviorThreads = new ArrayList<>();
 
   public Cage(String name) {
     super(name);
@@ -55,4 +57,25 @@ public class Cage extends Zone {
   public boolean isFull() {
     return animals.size() >= (CAGE_MAX_POPULATION_DENSITY * size());
   }
-};
+
+  /**
+   * Membuat dan memulai semua thread perilaku hewan untuk hewan dalam kandang ini.
+   */
+  public void startAnimalBehaviorThreads() {
+    for (Animal animal : animals) {
+      AnimalBehavior animalBehavior = new AnimalBehavior(animal, this);
+      Thread animalBehaviorThread = new Thread(animalBehavior);
+      animalBehaviorThreads.add(animalBehaviorThread);
+      animalBehaviorThread.start();
+    }
+  }
+
+  /**
+   * Mengirim sinyal berhenti ke semua thread perilaku hewan untuk hewan dalam kandang ini.
+   */
+  public void terminateAnimalBehaviorThreads() {
+    for (Thread animalBehaviorThread : animalBehaviorThreads) {
+      animalBehaviorThread.interrupt();
+    }
+  }
+}

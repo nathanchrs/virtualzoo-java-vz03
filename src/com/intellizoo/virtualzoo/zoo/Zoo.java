@@ -367,6 +367,28 @@ public class Zoo {
   }
 
   /**
+   * Mulai thread-thread perilaku untuk semua hewan dalam kandang.
+   */
+  public void startBehaviorThreads() {
+    for (Zone zone : zones) {
+      if (zone instanceof Cage) {
+        ((Cage) zone).startAnimalBehaviorThreads();
+      }
+    }
+  }
+
+  /**
+   * Hentikan thread-thread perilaku untuk semua hewan dalam kandang.
+   */
+  public void terminateBehaviorThreads() {
+    for (Zone zone : zones) {
+      if (zone instanceof Cage) {
+        ((Cage) zone).terminateAnimalBehaviorThreads();
+      }
+    }
+  }
+
+  /**
    * Mengembalikan indeks Zoo pada baris dan kolom yang ditentukan.
    *
    * @param row Nilai baris.

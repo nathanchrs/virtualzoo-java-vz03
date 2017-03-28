@@ -13,6 +13,8 @@ package com.intellizoo.virtualzoo;
  * Tanggal perubahan : 3/28/17
  */
 
+import static java.lang.Math.abs;
+
 /**
  * Kelas point yang merepresentasikan sebuah titik.
  *
@@ -98,5 +100,14 @@ public class Point {
    */
   public boolean equals(Point P) {
     return row == P.row && col == P.col;
+  }
+
+  /**
+   * Mengembalikan jarak tegak lurus dari titik ini ke titik p.
+   * @param p Titik yang ingin dicari jaraknya dari titik ini.
+   * @return Jarak tegak lurus dari titik ini ke titik p.
+   */
+  public int distanceTo(Point p) {
+    return abs(this.row - p.row) + abs(this.col - p.col);
   }
 }
