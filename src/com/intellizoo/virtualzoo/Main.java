@@ -1,7 +1,6 @@
 package com.intellizoo.virtualzoo;
 
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.animal.aves.owl.Owl;
 
 public class Main {
@@ -10,6 +9,6 @@ public class Main {
     System.out.print("2+3=");
     Point P = new Point(5,5);
     Owl animal = new Owl(P, 50, true);
-    System.out.println(animal.GetDescription());
+    System.out.println(animal.getDescription());
   }
 }

@@ -27,7 +27,7 @@ public class AnimalTest {
   public void plus() throws Exception {
     Point P = new Point(5, 5);
     Animal animal = new Owl(P, 100, true);
-    assertEquals(animal.GetPosition(), P);
+    assertEquals(animal.getPosition(), P);
   }
 
 }

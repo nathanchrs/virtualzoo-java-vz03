@@ -1,22 +1,24 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces;
-
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import java.util.Vector;
 
-import static com.intellizoo.virtualzoo.zoo.animal.Animal.Reproduction.Ovipar;
-import static com.intellizoo.virtualzoo.zoo.animal.Animal.SkinType.Scales;
+// Nama file         : Pisces.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
 /**
- * Created by aegis on 26/03/17.
+ * Kelas abstrak Pisces yang merepesentasikan kelas hewan Pisces.
+ * @author Agus Gunawan
  */
 public abstract class Pisces extends Animal {
-
-  /** @brief Constructor.
+  /**
    * Menciptakan Pisces yang memiliki skinType "Scale" dan reproduction "Ovipar".
    */
   public Pisces(String name) {
     this.name = name;
-    skin_type = Scales;
-    reproduction = Ovipar;
+    skinType = Animal.SkinType.Scales;
+    reproduction = Animal.Reproduction.Ovipar;
+    preyList = new Vector<String>();
   }
 
 }

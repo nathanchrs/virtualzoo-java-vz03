@@ -1,20 +1,19 @@
-package com.intellizoo.virtualzoo.zoo.animal.pisces.french_angel_fish;
-
-/**
- * Created by aegis on 27/03/17.
- */
-
+package com.intellizoo.virtualzoo.zoo.animal.pisces.frenchangelfish;
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.herbivore.Herbivore;
 import com.intellizoo.virtualzoo.zoo.animal.pisces.Pisces;
 
-/** @class FrenchAngelFish
+// Nama file         : FrenchAngelFish.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
+
+/**
  * Kelas FrenchAngelFish yang merepesentasikan french angelfish.
+ * @author Agus Gunawan
  */
 public class FrenchAngelFish extends Pisces {
-  /** @brief Constructor.
-   * @details Menciptakan seekor french angelfish dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
+  /**
+   * Menciptakan seekor french angelfish dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
    * @param pos Posisi french angelfish.
    * @param weight berat french angelfish.
    * @param wild Kelakuan french angelfish.
@@ -26,17 +25,18 @@ public class FrenchAngelFish extends Pisces {
                   " the Bahamas, and the Gulf of Mexico. It is colored with black" +
                   " but the scales of the body are rimmed with golden yellow." +
                   " This ovipar animal has water as its habitat.";
-    air_animal = false;
-    land_animal = false;
-    water_animal = true;
+    airAnimal = false;
+    landAnimal = false;
+    waterAnimal = true;
     position = pos;
     this.wild = wild;
   }
 
-  /** @brief Melakukan interaksi dengan french angelfish.
+  /**
+   * Melakukan interaksi dengan french angelfish.
    * @return Experience yang dirasakan ketika berinteraksi dengan french angelfish.
    */
-  public String Interact() {
+  public String interact() {
     return "Splash! It is swimming";
   }
 }

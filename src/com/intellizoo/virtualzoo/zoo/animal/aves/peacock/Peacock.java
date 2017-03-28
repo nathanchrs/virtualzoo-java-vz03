@@ -1,23 +1,22 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves.peacock;
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Aves;
 import com.intellizoo.virtualzoo.zoo.animal.diet.omnivore.Omnivore;
 
-/**
- * Created by aegis on 26/03/17.
- */
+// Nama file         : Peacock.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
-/** @class Peacock
+/**
  * Kelas Peacock yang merepesentasikan burung merak.
+ * @author Agus Gunawan
  */
 public class Peacock extends Aves {
-  /** @brief Constructor.
-   * @details Menciptakan seekor elang dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
-   * @param pos Posisi elang.
-   * @param weight berat elang.
-   * @param wild Kelakuan elang.
+  /**
+   * Menciptakan seekor burung merak dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
+   * @param pos Posisi burung merak.
+   * @param weight berat burung merak.
+   * @param wild Kelakuan burung merak.
    */
   public Peacock(Point pos, int weight, boolean wild) {
     super("Peacock");
@@ -27,18 +26,18 @@ public class Peacock extends Aves {
                   " Peacock has colorful tail. The colorful tail of the Peacock is fanned" +
                   " out to be able to show dominance and for the purpose of attracting a" +
                   " mate. This ovipar animal has land as its habitat.";
-    air_animal = false;
-    land_animal = true;
-    water_animal = false;
+    airAnimal = false;
+    landAnimal = true;
+    waterAnimal = false;
     position = pos;
     this.wild = wild;
   }
 
-  /** @brief Melakukan interaksi dengan burung merak.
+  /**
+   * Melakukan interaksi dengan burung merak.
    * @return Experience yang dirasakan ketika berinteraksi dengan burung merak.
    */
-  public String Interact() {
+  public String interact() {
     return "The peacock is spreading its tail";
   }
-
 }

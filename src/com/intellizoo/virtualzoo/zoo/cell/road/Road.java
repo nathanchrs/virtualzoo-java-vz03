@@ -1,28 +1,27 @@
 package com.intellizoo.virtualzoo.zoo.cell.road;
-
-/**
- * Created by Alvin on 26/03/2017.
- */
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
+// Nama file         : Road.java
+// Tanggal dibuat    : 26/03/2017
+// Tanggal perubahan : 26/03/2017
+
 /**
- * @class road Kelas road yang merepresentasikan fasilitas yang berupa jalan.
+ * Kelas road yang merepresentasikan fasilitas yang berupa jalan.
+ * @author Alvin Sullivan
  */
 public class Road extends Cell {
-
   private boolean entrance;
   private boolean exit;
 
   /**
+   * Menciptakan sebuah jalan dengan status aksesibilitas tertentu pada posisi tertentu.
+   * <p>
+   * Jalan dapat berupa jalan biasa, jalan masuk, atau jalan keluar.
    * @param position Posisi dari jalan.
    * @param accessible Status aksesibilitas jalan.
    * @param entrance true jika jalan adalah jalan masuk, false jika tidak.
-   * @param exit true jika jalan adalah jalan keluar, false jika tidak.
-   * @brief Constructor.
-   * @details Menciptakan sebuah jalan dengan status aksesibilitas tertentu pada posisi tertentu.
-   * Jalan dapat berupa jalan biasa, jalan masuk, atau jalan keluar.
+   * @param exit true jika jalan adalah jalan keluar, false jika tidak..
    */
   public Road(Point position, boolean accessible, boolean entrance, boolean exit) {
     super(position, accessible);
@@ -30,45 +29,28 @@ public class Road extends Cell {
     this.exit = exit;
   }
 
-  /**
-   * @return True jika dan hanya jika petak jalan adalah pintu masuk.
-   * @brief Mengecek apakah sebuah petak jalan adalah pintu masuk.
-   */
-  public boolean IsEntrance() {
+  // Getter & Setter
+  public boolean isEntrance() {
     return entrance;
   }
 
-  /**
-   * @param entrance Jika true, mengeset jalan menjadi pintu masuk. Jika false, mengeset jalan
-   * menjadi bukan pintu masuk.
-   * @brief Mengeset apakah sebuah jalan adalah pintu masuk.
-   */
-  public void SetEntrance(boolean entrance) {
+  public void setEntrance(boolean entrance) {
     this.entrance = entrance;
   }
 
-  /**
-   * @return True jika dan hanya jika petak jalan adalah pintu keluar.
-   * @brief Mengecek apakah sebuah petak jalan adalah pintu keluar.
-   */
-  public boolean IsExit() {
+  public boolean isExit() {
     return exit;
   }
 
-  /**
-   * @param exit Jika true, mengeset jalan menjadi pintu keluar. Jika false, mengeset jalan menjadi
-   * bukan pintu keluar.
-   * @brief Mengeset apakah sebuah jalan adalah pintu keluar.
-   */
-  public void SetExit(boolean exit) {
+  public void setExit(boolean exit) {
     this.exit = exit;
   }
 
   /**
-   * @return Representasi teks jalan.
-   * @brief Menampilkan jalan ke console teks.
+   * Mengembalikan representasi teks jalan.
+   * @return Sebuah karakter yang merupakan representasi teks jalan.
    */
-  public char Render() {
+  public char render() {
     return '.';
   }
 };

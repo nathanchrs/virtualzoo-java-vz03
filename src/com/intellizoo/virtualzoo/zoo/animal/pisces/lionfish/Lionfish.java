@@ -1,20 +1,19 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces.lionfish;
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.pisces.Pisces;
 
-/**
- * Created by aegis on 27/03/17.
- */
+// Nama file         : Lionfish.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
-/** @class Lionfish
+/**
  * Kelas Lionfish yang merepesentasikan lionfish.
+ * @author Agus Gunawan
  */
 public class Lionfish extends Pisces {
-  /** @brief Constructor.
-   * @details Menciptakan seekor lionfish dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
+  /**
+   * Menciptakan seekor lionfish dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
    * @param pos Posisi lionfish.
    * @param weight berat lionfish.
    * @param wild Kelakuan lionfish.
@@ -25,17 +24,18 @@ public class Lionfish extends Pisces {
     description = "Lionfish is an animal native to the Indo-Pacific. It is" +
                   " characterized by conspicuous warning coloration and venomous" +
                   " spiky fin rays. This ovipar animal has water as its habitat.";
-    air_animal = false;
-    land_animal = false;
-    water_animal = true;
+    airAnimal = false;
+    landAnimal = false;
+    waterAnimal = true;
     position = pos;
     this.wild = wild;
   }
 
-  /** @brief Melakukan interaksi dengan lionfish.
+  /**
+   * Melakukan interaksi dengan lionfish.
    * @return Experience yang dirasakan ketika berinteraksi dengan lionfish.
    */
-  public String Interact() {
+  public String interact() {
     return "Whoa! I thought it was plant. It is lionfish!";
   }
 }

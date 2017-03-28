@@ -1,20 +1,19 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals.lion;
-
-/**
- * Created by aegis on 27/03/17.
- */
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
-/** @class Lion
+// Nama file         : Lion.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
+
+/**
  * Kelas Lion yang merepesentasikan singa.
+ * @author Agus Gunawan
  */
 public class Lion extends Mammals {
-  /** @brief Constructor.
-   * @details Menciptakan seekor singa dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
+  /**
+   * Menciptakan seekor singa dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
    * @param pos Posisi singa.
    * @param weight berat singa.
    * @param wild Kelakuan singa.
@@ -26,31 +25,32 @@ public class Lion extends Mammals {
                   " cat after the tiger with habit of sleeping during the day and" +
                   " active primarily at night. This vivipar animal has land as" +
                   " its habitat.";
-    air_animal = false;
-    land_animal = true;
-    water_animal = false;
+    airAnimal = false;
+    landAnimal = true;
+    waterAnimal = false;
     position = pos;
     this.wild = wild;
-    AddPrey("Eagle");
-    AddPrey("Owl");
-    AddPrey("Parrot");
-    AddPrey("Peacock");
-    AddPrey("Pigeon");
-    AddPrey("Gorilla");
-    AddPrey("Leopard");
-    AddPrey("Orangutan");
-    AddPrey("Tiger");
-    AddPrey("Chameleon");
-    AddPrey("Cobra");
-    AddPrey("Iguana");
-    AddPrey("KomodoDragon");
-    AddPrey("Python");
+    addPrey("Eagle");
+    addPrey("Owl");
+    addPrey("Parrot");
+    addPrey("Peacock");
+    addPrey("Pigeon");
+    addPrey("Gorilla");
+    addPrey("Leopard");
+    addPrey("Orangutan");
+    addPrey("Tiger");
+    addPrey("Chameleon");
+    addPrey("Cobra");
+    addPrey("Iguana");
+    addPrey("KomodoDragon");
+    addPrey("Python");
   }
 
-  /** @brief Melakukan interaksi dengan singa.
+  /**
+   * Melakukan interaksi dengan singa.
    * @return Experience yang dirasakan ketika berinteraksi dengan singa.
    */
-  public String Interact() {
+  public String interact() {
     return "The lion is yawning";
   }
 }

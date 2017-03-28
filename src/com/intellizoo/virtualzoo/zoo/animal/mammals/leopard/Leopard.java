@@ -1,20 +1,19 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals.leopard;
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
-/**
- * Created by aegis on 27/03/17.
- */
+// Nama file         : Leopard.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
-/** @class Leopard
+/**
  * Kelas Leopard yang merepesentasikan macan tutul.
+ * @author Agus Gunawan
  */
 public class Leopard extends Mammals {
-  /** @brief Constructor.
-   * @details Menciptakan seekor macan tutul dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
+  /**
+   * Menciptakan seekor macan tutul dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
    * @param pos Posisi macan tutul.
    * @param weight berat macan tutul.
    * @param wild Kelakuan macan tutul.
@@ -26,31 +25,32 @@ public class Leopard extends Mammals {
                   " five 'big cats' with ability to adapt to various habitats and" +
                   " could run at speeds of up to 58 kmph. This vivipar animal has" +
                   " land as its habitat.";
-    air_animal = false;
-    land_animal = true;
-    water_animal = false;
+    airAnimal = false;
+    landAnimal = true;
+    waterAnimal = false;
     position = pos;
     this.wild = wild;
-    AddPrey("Eagle");
-    AddPrey("Owl");
-    AddPrey("Parrot");
-    AddPrey("Peacock");
-    AddPrey("Pigeon");
-    AddPrey("Gorilla");
-    AddPrey("Lion");
-    AddPrey("Orangutan");
-    AddPrey("Tiger");
-    AddPrey("Chameleon");
-    AddPrey("Cobra");
-    AddPrey("Iguana");
-    AddPrey("KomodoDragon");
-    AddPrey("Python");
+    addPrey("Eagle");
+    addPrey("Owl");
+    addPrey("Parrot");
+    addPrey("Peacock");
+    addPrey("Pigeon");
+    addPrey("Gorilla");
+    addPrey("Lion");
+    addPrey("Orangutan");
+    addPrey("Tiger");
+    addPrey("Chameleon");
+    addPrey("Cobra");
+    addPrey("Iguana");
+    addPrey("KomodoDragon");
+    addPrey("Python");
   }
 
-  /** @brief Melakukan interaksi dengan macan tutul.
+  /**
+   * Melakukan interaksi dengan macan tutul.
    * @return Experience yang dirasakan ketika berinteraksi dengan macan tutul.
    */
-  public String Interact() {
+  public String interact() {
     return "The leopard is sleeping with its family";
   }
 }

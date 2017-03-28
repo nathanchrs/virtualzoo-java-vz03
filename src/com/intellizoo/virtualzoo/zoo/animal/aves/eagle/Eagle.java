@@ -1,21 +1,19 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves.eagle;
-
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Aves;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
 import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
 
-/**
- * Created by aegis on 26/03/17.
- */
+// Nama file         : Eagle.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
-/** @class Eagle
+/**
  * Kelas Eagle yang merepesentasikan elang.
+ * @author Agus Gunawan
  */
 public class Eagle extends Aves {
-  /** @brief Constructor.
-   * @details Menciptakan seekor elang dengan posisi, berat,
-   * dan kelakuan (buas atau jinak) yang ditentukan.
+  /**
+   * Menciptakan seekor elang dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
    * @param pos Posisi elang.
    * @param weight berat elang.
    * @param wild Kelakuan elang.
@@ -29,26 +27,26 @@ public class Eagle extends Aves {
                   " Hemisphere including Europe, Asia and North America." +
                   " Eagles are also found on the African continent." +
                   " This ovipar animal has land and air as its habitat";
-    air_animal = true;
-    land_animal = true;
-    water_animal = false;
+    airAnimal = true;
+    landAnimal = true;
+    waterAnimal = false;
     position = pos;
     this.wild = wild;
-    AddPrey("Owl");
-    AddPrey("Parrot");
-    AddPrey("Peacock");
-    AddPrey("Pigeon");
-    AddPrey("Chameleon");
-    AddPrey("Cobra");
-    AddPrey("Iguana");
-    AddPrey("Python");
+    addPrey("Owl");
+    addPrey("Parrot");
+    addPrey("Peacock");
+    addPrey("Pigeon");
+    addPrey("Chameleon");
+    addPrey("Cobra");
+    addPrey("Iguana");
+    addPrey("Python");
   }
 
-  /** @brief Melakukan interaksi dengan elang.
+  /**
+   * Melakukan interaksi dengan elang.
    * @return Experience yang dirasakan ketika berinteraksi dengan elang.
    */
-  public String Interact() {
+  public String interact() {
     return "The eagle is eating its food that the zoo keeper gave";
   }
-
 }

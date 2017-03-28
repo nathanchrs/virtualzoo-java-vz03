@@ -1,19 +1,18 @@
 package com.intellizoo.virtualzoo.zoo.animal.diet;
 
-/**
- * Created by aegis on 27/03/17.
- */
+// Nama file         : Diet.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
 
 /** @class Diet
  * Kelas abstrak Diet yang merepesentasikan hewan berdasarkan makanannya.
+ * @author Agus Gunawan
  */
 public abstract class Diet {
   protected int weight;
   protected double ratio;
-  protected boolean carnivore;
-  protected boolean herbivore;
 
-  /** @brief Constructor.
+  /**
    * Menciptakan hewan dengan berat tertentu dan perbandingan berat terhadap
    * jumlah makanannya.
    * @param weight Berat hewan.
@@ -24,18 +23,16 @@ public abstract class Diet {
     this.ratio = ratio;
   }
 
-  /** @brief Menghitung banyaknya daging yang dikonsumsi
-   * setiap hari relatif terhadap berat badannnya.
-   * @details Merupakan pure virtual function.
+  /**
+   * Menghitung banyaknya daging yang dikonsumsi setiap hari relatif terhadap berat badannnya.
    * @return Banyaknya daging yang dikonsumsi setiap hari.
    */
-  public abstract double CalculateTotalMeat();
+  public abstract double calculateTotalMeat();
 
-  /** @brief Menghitung banyaknya sayuran yang dikonsumsi
-   * setiap hari relatif terhadap berat badannnya.
-   * @details Merupakan pure virtual function.
+  /**
+   * Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif terhadap berat badannnya.
    * @return Banyaknya sayuran yang dikonsumsi setiap hari.
    */
-  public abstract double CalculateTotalVegetable();
+  public abstract double calculateTotalVegetable();
 
 }

@@ -1,32 +1,40 @@
 package com.intellizoo.virtualzoo.zoo.animal.diet.omnivore;
-
 import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
 
+// Nama file         : Omnivore.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
+
 /**
- * Created by aegis on 27/03/17.
+ * Kelas Omnivore yang merepesentasikan hewan omnivora.
+ * @author Agus Gunawan
  */
 public class Omnivore extends Diet {
-  /** @brief Constructor.
-   * Menciptakan hewan omnivora dengan berat tertentu.
-   * @param weight Berat dari hewan.
+  /**
+   * Menciptakan hewan omnivora dengan berat tertentu dan perbandingan berat terhadap
+   * jumlah makanannya.
+   * @param weight Berat hewan.
+   * @param ratio Perbandingan berat terhadap jumlah makanan hewan.
    */
   public Omnivore(int weight, double ratio) {
     super(weight, ratio);
   }
 
-  /** @brief Menghitung banyaknya daging yang dikonsumsi setiap hari relatif
+  /**
+   * Menghitung banyaknya daging yang dikonsumsi setiap hari relatif
    * terhadap berat badannnya.
    * @return Banyaknya daging yang dikonsumsi setiap hari.
    */
-  public double CalculateTotalMeat() {
+  public double calculateTotalMeat() {
     return weight * ratio / 2.0;
   }
 
-  /** @brief Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif
+  /**
+   * Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif
    * terhadap berat badannnya.
    * @return Banyaknya sayuran yang dikonsumsi setiap hari.
    */
-  public double CalculateTotalVegetable() {
+  public double calculateTotalVegetable() {
     return weight * ratio / 2.0;
   }
 }

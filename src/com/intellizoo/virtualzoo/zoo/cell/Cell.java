@@ -1,44 +1,35 @@
 package com.intellizoo.virtualzoo.zoo.cell;
-
-/**
- * Created by Alvin on 26/03/2017.
- */
-
 import com.intellizoo.virtualzoo.renderer.renderable.Renderable;
 import com.intellizoo.virtualzoo.renderer.point.Point;
 
+// Nama file         : Cell.java
+// Tanggal dibuat    : 26/03/2017
+// Tanggal perubahan : 26/03/2017
+
 /**
- * @class cell Kelas abstrak cell yang merepesentasikan sebuah petak tanah.
+ * Kelas abstrak cell yang merepesentasikan sebuah petak tanah.
+ * @author Alvin Sullivan
  */
 public abstract class Cell implements Renderable {
-
   private Point position;
   private boolean accessible;
 
   /**
+   * Menciptakan sebuah cell dengan posisi dan status aksesibilitas tertentu.
    * @param position Posisi dari cell.
    * @param accessible Status aksesibilitas dari cell.
-   * @brief Constructor.
-   * @details Menciptakan sebuah cell dengan posisi dan status aksesibilitas tertentu.
    */
   public Cell(Point position, boolean accessible) {
     this.position = position;
     this.accessible = accessible;
   }
 
-  /**
-   * @return Status aksesibiltas dari cell (true jika bisa diakses dan false jika tidak).
-   * @brief Memeriksa status aksesibilitas dari cell.
-   */
-  public boolean IsAccessible() {
+  // Getter
+  public boolean isAccessible() {
     return accessible;
   }
 
-  /**
-   * @return Posisi cell.
-   * @brief Mengembalikan posisi cell.
-   */
-  public Point GetPosition() {
+  public Point getPosition() {
     return position;
   }
-};
+}

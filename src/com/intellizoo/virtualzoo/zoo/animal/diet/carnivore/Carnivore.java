@@ -1,36 +1,38 @@
 package com.intellizoo.virtualzoo.zoo.animal.diet.carnivore;
-
-/**
- * Created by aegis on 27/03/17.
- */
-
 import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
 
-/** @class Carnivore
- * Kelas abstrak Carnivore yang merepesentasikan hewan karnivora.
+// Nama file         : Carnivore.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
+
+/**
+ * Kelas Carnivore yang merepesentasikan hewan karnivora.
+ * @author Agus Gunawan
  */
 public class Carnivore extends Diet {
-  /** @brief Constructor.
-   * Menciptakan hewan karnivora dengan berat tertentu.
-   * @param weight Berat dari hewan.
+  /**
+   * Menciptakan hewan karnivora dengan berat tertentu dan perbandingan berat terhadap
+   * jumlah makanannya.
+   * @param weight Berat hewan.
+   * @param ratio Perbandingan berat terhadap jumlah makanan hewan.
    */
   public Carnivore(int weight, double ratio) {
     super(weight, ratio);
   }
 
-  /** @brief Menghitung banyaknya daging yang dikonsumsi setiap hari relatif
-   * terhadap berat badannnya.
+  /**
+   * Menghitung banyaknya daging yang dikonsumsi setiap hari relatif terhadap berat badannnya.
    * @return Banyaknya daging yang dikonsumsi setiap hari.
    */
-  public double CalculateTotalMeat() {
+  public double calculateTotalMeat() {
     return weight * ratio;
   }
 
-  /** @brief Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif
-   * terhadap berat badannnya.
+  /**
+   * Menghitung banyaknya sayuran yang dikonsumsi setiap hari relatif terhadap berat badannnya.
    * @return Banyaknya sayuran yang dikonsumsi setiap hari.
    */
-  public double CalculateTotalVegetable() {
+  public double calculateTotalVegetable() {
     return 0;
   }
 }

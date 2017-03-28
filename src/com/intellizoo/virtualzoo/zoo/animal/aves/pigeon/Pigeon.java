@@ -25,9 +25,9 @@ public class Pigeon extends Aves {
                   " of the Sahara Desert, Antarctica and its surrounding islands," +
                   " and the high Arctic. This ovipar animal has land and air as" +
                   " its habitat";
-    air_animal = true;
-    land_animal = true;
-    water_animal = false;
+    airAnimal = true;
+    landAnimal = true;
+    waterAnimal = false;
     position = pos;
     this.wild = wild;
   }
@@ -35,7 +35,7 @@ public class Pigeon extends Aves {
   /** @brief Melakukan interaksi dengan burung merpati.
    * @return Experience yang dirasakan ketika berinteraksi dengan burung merpati.
    */
-  public String Interact() {
+  public String interact() {
     return "The pigeon is eating its food that a visitor gave.";
   }
 

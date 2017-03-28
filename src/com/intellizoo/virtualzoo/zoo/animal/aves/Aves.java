@@ -1,29 +1,24 @@
-
 package com.intellizoo.virtualzoo.zoo.animal.aves;
-
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import java.util.Vector;
 
-import static com.intellizoo.virtualzoo.zoo.animal.Animal.Reproduction.Ovipar;
-import static com.intellizoo.virtualzoo.zoo.animal.Animal.SkinType.Feather;
+// Nama file         : Aves.java
+// Tanggal dibuat    : 27/03/2017
+// Tanggal perubahan : 27/03/2017
+
 /**
- * Created by aegis on 26/03/17.
- */
-
-/** @class Aves
  * Kelas abstrak Aves yang merepesentasikan kelas hewan Aves.
+ * @author Agus Gunawan
  */
 public abstract class Aves extends Animal {
-
   /**
-   * @brief Constructor.
-   * @details Menciptakan Aves yang
-   * memiliki skinType "Feather" dan reproduction "Ovipar".
+   * Menciptakan Aves yang memiliki skinType "Feather" dan reproduction "Ovipar".
    * @param name Nama hewan.
    */
   public Aves(String name) {
     this.name = name;
-    skin_type = Feather;
-    reproduction = Ovipar;
+    skinType = Animal.SkinType.Feather;
+    reproduction = Animal.Reproduction.Ovipar;
+    preyList = new Vector<String>();
   }
-
 }
