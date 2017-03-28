@@ -30,6 +30,17 @@ public class Cage extends Zone {
   private List<Animal> animals = new ArrayList<>();
   private List<Thread> animalBehaviorThreads = new ArrayList<>();
 
+  /**
+   * Exception yang terjadi jika mencoba menambahkan hewan sedemikian sehingga hewan dalam kandang
+   * dapat saling memangsa.
+   */
+  public class CageHasPreyOrPredatorException extends RuntimeException {}
+
+  /**
+   * Exception yang terjadi jika mencoba menambahkan hewan melebihi kapasitas kandang.
+   */
+  public class CageFullException extends RuntimeException {}
+
   public Cage(String name) {
     super(name);
   }
@@ -39,13 +50,25 @@ public class Cage extends Zone {
   }
 
   /**
-   * Menambahkan seekor hewan ke dalam kandang ini.
+   * Menambahkan seekor hewan ke dalam kandang ini. Hewan hanya bisa ditambahkan dengan syarat
+   * hewan-hewan liar dalam kandang tersebut tidak saling memangsa.
    *
    * @param animal Hewan yang akan ditambahkan.
    */
   public void addAnimal(Animal animal) {
     if (!isFull()) {
-      animals.add(animal);
+      boolean hasPreyOrPredator = animals.stream().anyMatch(
+          cageAnimal ->
+              (cageAnimal.isWild() && cageAnimal.isPrey(animal.getClass()))
+                  || (animal.isWild() && animal.isPrey(cageAnimal.getClass()))
+      );
+      if (hasPreyOrPredator) {
+        animals.add(animal);
+      } else {
+        throw new CageHasPreyOrPredatorException();
+      }
+    } else {
+      throw new CageFullException();
     }
   }
 
