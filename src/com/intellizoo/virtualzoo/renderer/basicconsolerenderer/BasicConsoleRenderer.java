@@ -1,31 +1,34 @@
 package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+
 import com.intellizoo.virtualzoo.renderer.Renderer;
-import com.intellizoo.virtualzoo.renderer.framebuffer.FrameBuffer;
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
-
 import java.util.List;
 
-// Nama file         : BasicConsoleRenderer.java
-// Tanggal dibuat    : 27/03/2017
-// Tanggal perubahan : 27/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : Aves.java
+ * Tanggal dibuat    : 3/27/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas BasicConsoleRenderer yang berfungsi untuk menggambar objek di atas console teks.
  * @author Jordhy Fernando
  */
 public class BasicConsoleRenderer implements Renderer {
-  private int getMax(int a, int b) {
-    return a > b ? a : b;
-  }
-
-  private int getMin(int a, int b) {
-    return a < b ? a : b;
-  }
 
   /**
    * Menggambar sebuah kebun binatang.
@@ -35,9 +38,9 @@ public class BasicConsoleRenderer implements Renderer {
    * @param useColor Jika true, output tampilan berwarna.
    */
   public void render(Zoo zoo, Point topLeft, Point bottomRight, boolean useColor) {
-    topLeft = new Point(getMax(topLeft.getRow(), 0), getMax(topLeft.getCol(), 0));
-    bottomRight = new Point(getMin(bottomRight.getRow(), zoo.getRows() - 1),
-      getMin(bottomRight.getCol(), zoo.getCols() - 1));
+    topLeft = new Point(max(topLeft.getRow(), 0), max(topLeft.getCol(), 0));
+    bottomRight = new Point(min(bottomRight.getRow(), zoo.getRows() - 1),
+      min(bottomRight.getCol(), zoo.getCols() - 1));
 
     final Point GRID_OFFSET = new Point(3, 3);
     final int ROWS = bottomRight.getRow() - topLeft.getRow() + 1;

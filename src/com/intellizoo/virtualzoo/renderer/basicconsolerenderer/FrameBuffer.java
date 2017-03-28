@@ -1,4 +1,4 @@
-package com.intellizoo.virtualzoo.renderer.framebuffer;
+package com.intellizoo.virtualzoo.renderer.basicconsolerenderer;
 import com.intellizoo.virtualzoo.Point;
 
 // Nama file         : FrameBuffer.java
