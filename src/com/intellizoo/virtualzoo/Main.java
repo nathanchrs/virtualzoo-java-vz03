@@ -1,9 +1,15 @@
 package com.intellizoo.virtualzoo;
 
 import com.intellizoo.virtualzoo.zoo.Zoo;
+import com.intellizoo.virtualzoo.zoo.Zoo.CageNotFoundException;
+import com.intellizoo.virtualzoo.zoo.Zoo.HabitatMismatchException;
+import com.intellizoo.virtualzoo.zoo.Zoo.ZoneAlreadyExistsException;
 import com.intellizoo.virtualzoo.zoo.controller.Controller;
+import com.intellizoo.virtualzoo.zoo.zone.Cage.CageFullException;
+import com.intellizoo.virtualzoo.zoo.zone.Cage.CageHasPreyOrPredatorException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,22 +18,43 @@ public class Main {
 
   /**
    * Program utama.
+   *
    * @param args argumen tambahan saat menjalankan program.
    */
-  public static void main(String [] args) {
+  public static void main(String[] args) {
     File inputFile = new File(INPUT_FILE);
-    Zoo zoo;
+    Zoo zoo = null;
 
     try {
       Scanner scanner = new Scanner(inputFile);
       zoo = new Zoo(scanner);
       scanner.close();
 
-      Controller controller = new Controller(zoo, false);
-      controller.displayMenu();
-
     } catch (FileNotFoundException e) {
-      e.printStackTrace();
+      System.out.println("File input " + inputFile.getAbsolutePath() + " tidak ditemukan.");
+    } catch (CageFullException e) {
+      System.out.println("Pada file input, terdapat kandang yang terisi lebih dari kapasitasnya.");
+    } catch (CageHasPreyOrPredatorException e) {
+      System.out.println(
+          "Pada file input, terdapat hewan mangsa dan predator liar yang ditempatkan bersama.");;
+    } catch (CageNotFoundException e) {
+      System.out.println("Pada file input, terdapat nama kandang yang tidak dikenali.");
+    } catch (ZoneAlreadyExistsException e) {
+      System.out.println("Pada file input, terdapat nama zona yang duplikat.");
+    } catch (HabitatMismatchException e) {
+      System.out.println("Pada file input, terdapat hewan yang ditempatkan pada petak dengan"
+          + " habitat yang tidak sesuai.");
+    } catch (InputMismatchException e) {
+      System.out.println("Format file input tidak dikenali:");
+      System.out.println(e.getMessage());
     }
+
+    if (zoo == null) {
+      System.out.println("Menggunakan Zoo kosong...");
+      zoo = new Zoo(10, 10);
+    }
+
+    Controller controller = new Controller(zoo, false);
+    controller.displayMenu();
   }
 }

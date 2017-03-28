@@ -42,6 +42,7 @@ public class ZooTest {
   @Test
   public void testaddCell_noState() {
     Zoo zoo = new Zoo(10, 10);
+    zoo.addZone(new Zone("Park1"));
     Point p = new Point(5, 5);
     Cell cell = new Park(p, true);
     zoo.addCell(cell, "Park1");
