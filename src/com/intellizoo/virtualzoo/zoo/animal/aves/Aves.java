@@ -1,24 +1,21 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import java.util.Vector;
 
-// Nama file         : Aves.java
-// Tanggal dibuat    : 27/03/2017
-// Tanggal perubahan : 27/03/2017
+/*
+ * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
+ * Kelompok 1 - IntelliZoo
+ * - 13515001 [K-01] Jonathan Christopher
+ * - 13515004 [K-01] Jordhy Fernando
+ * - 13515048 [K-03] Alvin Sullivan
+ * - 13515143 [K-02] Agus Gunawan
+ * ***
+ * Nama file         : AirAnimal.java
+ * Tanggal dibuat    : 3/28/17
+ * Tanggal perubahan : 3/28/17
+ */
 
 /**
  * Kelas abstrak Aves yang merepesentasikan kelas hewan Aves.
  * @author Agus Gunawan
  */
-public abstract class Aves extends Animal {
-  /**
-   * Menciptakan Aves yang memiliki skinType "Feather" dan reproduction "Ovipar".
-   * @param name Nama hewan.
-   */
-  public Aves(String name) {
-    this.name = name;
-    skinType = Animal.SkinType.Feather;
-    reproduction = Animal.Reproduction.Ovipar;
-    preyList = new Vector<String>();
-  }
-}
+public abstract class Aves extends Animal {}

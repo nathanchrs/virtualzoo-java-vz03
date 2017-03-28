@@ -1,3 +1,4 @@
+package com.intellizoo.virtualzoo.zoo.animal;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -7,8 +8,12 @@
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : ${NAME}.java
- * Tanggal dibuat    : ${DATE}
- * Tanggal perubahan : ${DATE}
+ * Nama file         : AirAnimal.java
+ * Tanggal dibuat    : 3/28/17
+ * Tanggal perubahan : 3/28/17
  */
- 
+
+/**
+ * Tagging interface untuk hewan udara.
+ */
+public interface AirAnimal {}

@@ -1,11 +1,11 @@
 package com.intellizoo.virtualzoo.zoo;
 import com.intellizoo.virtualzoo.renderer.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.aves.eagle.Eagle;
-import com.intellizoo.virtualzoo.zoo.animal.aves.owl.Owl;
-import com.intellizoo.virtualzoo.zoo.animal.aves.parrot.Parrot;
-import com.intellizoo.virtualzoo.zoo.animal.aves.peacock.Peacock;
-import com.intellizoo.virtualzoo.zoo.animal.aves.pigeon.Pigeon;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Eagle;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Parrot;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Peacock;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Pigeon;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.gorilla.Gorilla;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.leopard.Leopard;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.lion.Lion;
@@ -304,7 +304,7 @@ public class Zoo {
       if(cage instanceof Cage) {
         Vector<Animal> animals = ((Cage) cage).getAnimals();
         for (Animal animal : animals) {
-          meat += animal.getDiet().calculateTotalMeat();
+          meat += animal.getDiet().calculateTotalMeatNeeded();
         }
       }
     }
@@ -322,7 +322,7 @@ public class Zoo {
       if(cage instanceof Cage) {
         Vector<Animal> animals = ((Cage) cage).getAnimals();
         for(Animal animal : animals) {
-          vegetable += animal.getDiet().calculateTotalVegetable();
+          vegetable += animal.getDiet().calculateTotalVegetableNeeded();
         }
       }
     }

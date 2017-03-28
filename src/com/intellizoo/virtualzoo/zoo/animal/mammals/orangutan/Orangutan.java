@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals.orangutan;
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.omnivore.Omnivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
 // Nama file         : Orangutan.java

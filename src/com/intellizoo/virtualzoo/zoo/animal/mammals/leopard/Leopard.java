@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals.leopard;
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
 // Nama file         : Leopard.java

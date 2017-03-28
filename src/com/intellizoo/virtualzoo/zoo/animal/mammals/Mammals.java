@@ -19,6 +19,6 @@ public abstract class Mammals extends Animal {
     this.name = name;
     skinType = Animal.SkinType.Fur;
     reproduction = Animal.Reproduction.Vivipar;
-    preyList = new Vector<String>();
+    preys = new Vector<String>();
   }
 }

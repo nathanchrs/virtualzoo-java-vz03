@@ -1,7 +1,6 @@
-package com.intellizoo.virtualzoo.zoo.animal.aves.peacock;
+package com.intellizoo.virtualzoo.zoo.animal.aves;
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.aves.Aves;
-import com.intellizoo.virtualzoo.zoo.animal.diet.omnivore.Omnivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 
 // Nama file         : Peacock.java
 // Tanggal dibuat    : 27/03/2017

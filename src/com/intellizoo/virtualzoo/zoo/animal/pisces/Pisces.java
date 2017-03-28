@@ -18,7 +18,7 @@ public abstract class Pisces extends Animal {
     this.name = name;
     skinType = Animal.SkinType.Scales;
     reproduction = Animal.Reproduction.Ovipar;
-    preyList = new Vector<String>();
+    preys = new Vector<String>();
   }
 
 }

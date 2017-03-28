@@ -1,6 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.reptile.komododragon;
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.carnivore.Carnivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.Reptile;
 
 // Nama file         : KomodoDragon.java

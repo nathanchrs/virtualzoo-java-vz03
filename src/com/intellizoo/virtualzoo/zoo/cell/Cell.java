@@ -1,5 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell;
-import com.intellizoo.virtualzoo.renderer.renderable.Renderable;
+import com.intellizoo.virtualzoo.renderer.Renderable;
 import com.intellizoo.virtualzoo.renderer.point.Point;
 
 // Nama file         : Cell.java

@@ -1,7 +1,6 @@
-package com.intellizoo.virtualzoo.zoo.animal.aves.parrot;
+package com.intellizoo.virtualzoo.zoo.animal.aves;
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.aves.Aves;
-import com.intellizoo.virtualzoo.zoo.animal.diet.herbivore.Herbivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
 
 // Nama file         : Parrot.java
 // Tanggal dibuat    : 27/03/2017

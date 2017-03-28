@@ -1,8 +1,7 @@
-package com.intellizoo.virtualzoo.zoo.animal.aves.pigeon;
+package com.intellizoo.virtualzoo.zoo.animal.aves;
 
 import com.intellizoo.virtualzoo.renderer.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.aves.Aves;
-import com.intellizoo.virtualzoo.zoo.animal.diet.herbivore.Herbivore;
+import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
 
 /**
  * Created by aegis on 26/03/17.
