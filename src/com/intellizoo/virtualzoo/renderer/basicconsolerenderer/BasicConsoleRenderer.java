@@ -6,7 +6,7 @@ import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
-import com.intellizoo.virtualzoo.zoo.zone.cage.Cage;
+import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import java.util.Vector;
 
 // Nama file         : BasicConsoleRenderer.java

@@ -27,7 +27,7 @@ import com.intellizoo.virtualzoo.zoo.cell.park.Park;
 import com.intellizoo.virtualzoo.zoo.cell.restaurant.Restaurant;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
-import com.intellizoo.virtualzoo.zoo.zone.cage.Cage;
+import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import java.util.Scanner;
 import java.util.Vector;
 
