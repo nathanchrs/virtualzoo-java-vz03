@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.WaterAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
@@ -14,7 +15,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 public class Seahorse extends Pisces implements WaterAnimal {
 
   /**
-   * Menciptakan seekor kuda laut dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
+   * Menciptakan seekor kuda laut dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    *
    * @param name Nama kuda laut.
    * @param position Posisi kuda laut.

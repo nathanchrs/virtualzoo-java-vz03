@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.reptile;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
@@ -13,8 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
  */
 public class Chameleon extends Reptile implements LandAnimal {
   /**
-   * Menciptakan seekor bunglon dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor bunglon dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama bunglon.
    * @param position Posisi bunglon.
    * @param weight berat bunglon.

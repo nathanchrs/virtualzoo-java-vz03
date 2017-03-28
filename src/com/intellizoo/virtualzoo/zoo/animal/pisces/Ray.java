@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.WaterAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
@@ -13,8 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
  */
 public class Ray extends Pisces implements WaterAnimal {
   /**
-   * Menciptakan seekor ikan pari dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor ikan pari dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama ikan pari.
    * @param position Posisi ikan pari.
    * @param weight berat ikan pari.

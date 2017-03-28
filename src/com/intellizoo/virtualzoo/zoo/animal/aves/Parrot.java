@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.AirAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
@@ -14,8 +15,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
  */
 public class Parrot extends Aves implements AirAnimal, LandAnimal {
   /**
-   * Menciptakan seekor burung beo dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor burung beo dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama burung beo.
    * @param position Posisi burung beo.
    * @param weight berat burung beo.

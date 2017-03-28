@@ -1,7 +1,9 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Mammals;
 
 // Nama file         : Gorilla.java
 // Tanggal dibuat    : 27/03/2017
@@ -13,8 +15,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
  */
 public class Gorilla extends Mammals implements LandAnimal {
   /**
-   * Menciptakan seekor gorilla dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor gorilla dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama gorilla.
    * @param position Posisi gorilla.
    * @param weight berat gorilla.

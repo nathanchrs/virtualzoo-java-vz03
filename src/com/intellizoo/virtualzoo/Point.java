@@ -8,7 +8,7 @@ package com.intellizoo.virtualzoo;
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : Point.java
+ * Nama file         : point.java
  * Tanggal dibuat    : 3/26/17
  * Tanggal perubahan : 3/28/17
  */
@@ -73,33 +73,34 @@ public class Point {
   }
 
   /**
-   * Menambahkan (mentranslasi) current point dengan point P.
+   * Menambahkan (mentranslasi) current point dengan point p.
    *
-   * @param P point yang ditambahkan.
-   * @return point hasil penambahan dengan point P.
+   * @param p point yang ditambahkan.
+   * @return point hasil penambahan dengan point p.
    */
-  public Point translate(Point P) {
-    return new Point(row + P.row, col + P.col);
+  public Point translate(Point p) {
+    return new Point(row + p.row, col + p.col);
   }
 
   /**
-   * Mengurangi/mentranslasi dengan negatif dari current point dengan point P.
+   * Mengurangi/mentranslasi dengan negatif dari current point dengan point p.
    *
-   * @param P point yang dikurangkan.
-   * @return point hasil pengurangan dengan point P.
+   * @param p point yang dikurangkan.
+   * @return point hasil pengurangan dengan point p.
    */
-  public Point subtract(Point P) {
-    return new Point(row - P.row, col - P.col);
+  public Point subtract(Point p) {
+
+    return new Point(row - p.row, col - p.col);
   }
 
   /**
-   * Memeriksa kesamaan point ini dengan point P.
+   * Memeriksa kesamaan point ini dengan point p.
    *
-   * @param P point yang akan dibandingkan dengan point ini.
-   * @return Mengembalikan true jika point ini dengan point P bernilai sama.
+   * @param p point yang akan dibandingkan dengan point ini.
+   * @return Mengembalikan true jika point ini dengan point p bernilai sama.
    */
-  public boolean equals(Point P) {
-    return row == P.row && col == P.col;
+  public boolean equals(Point p) {
+    return row == p.row && col == p.col;
   }
 
   /**

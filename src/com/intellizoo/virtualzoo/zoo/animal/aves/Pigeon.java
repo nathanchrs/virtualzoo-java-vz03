@@ -10,10 +10,9 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
  * @author Agus Gunawan
  */
 public class Pigeon extends Aves implements AirAnimal, LandAnimal {
-  /** @brief Constructor.
-   * @details Menciptakan seekor burung merpati dengan nama, posisi, berat,
+  /**
+   * Menciptakan seekor burung merpati dengan nama, posisi, berat,
    * dan kelakuan (buas atau jinak) yang ditentukan.
-   *
    * @param name Nama burung merpati.
    * @param position Posisi burung merpati.
    * @param weight berat burung merpati.
@@ -33,7 +32,8 @@ public class Pigeon extends Aves implements AirAnimal, LandAnimal {
         + " its habitat";
   }
 
-  /** @brief Melakukan interaksi dengan burung merpati.
+  /**
+   * Melakukan interaksi dengan burung merpati.
    * @return Experience yang dirasakan ketika berinteraksi dengan burung merpati.
    */
   public String interact() {

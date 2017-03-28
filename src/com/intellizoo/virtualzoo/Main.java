@@ -10,7 +10,11 @@ public class Main {
 
   private static final String INPUT_FILE = "zoo.txt";
 
-  public static void main(String args[]) {
+  /**
+   * Program utama.
+   * @param args argumen tambahan saat menjalankan program.
+   */
+  public static void main(String [] args) {
     File inputFile = new File(INPUT_FILE);
     Zoo zoo;
 

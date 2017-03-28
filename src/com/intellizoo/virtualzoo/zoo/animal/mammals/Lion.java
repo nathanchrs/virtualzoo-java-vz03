@@ -1,7 +1,12 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
-import com.intellizoo.virtualzoo.zoo.animal.aves.*;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Eagle;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Parrot;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Peacock;
+import com.intellizoo.virtualzoo.zoo.animal.aves.Pigeon;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.Chameleon;
 import com.intellizoo.virtualzoo.zoo.animal.reptile.Cobra;
@@ -19,8 +24,8 @@ import com.intellizoo.virtualzoo.zoo.animal.reptile.Python;
  */
 public class Lion extends Mammals implements LandAnimal {
   /**
-   * Menciptakan seekor singa dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor singa dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama singa.
    * @param position Posisi singa.
    * @param weight berat singa.

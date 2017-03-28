@@ -1,11 +1,10 @@
 package com.intellizoo.virtualzoo.zoo.controller;
 
-import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
 import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.renderer.basicconsolerenderer.BasicConsoleRenderer;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -62,25 +61,31 @@ public class Controller {
           break;
         case 4:
           exitMenuLoop = true;
+          break;
+        default:
       }
     }
   }
 
   /**
-   * Menampilkan kebun binatang di atas layar dengan batas yang ditentukan pengguna. Menampilkan
-   * juga posisi hewan-hewan di atas layar.
+   * Menampilkan kebun binatang di atas layar dengan batas yang ditentukan pengguna.
+   *
+   * <p>Menampilkan juga posisi hewan-hewan di atas layar.
    */
   public void displayZoo() {
     zoo.startBehaviorThreads();
 
-    BasicConsoleRenderer renderer = new BasicConsoleRenderer();
     System.out.print("Input map limit (r1, c1, r2, c2 | from 0 to row/column count - 1): ");
-    int r1, c1, r2, c2;
     Scanner reader = new Scanner(System.in);
+    int r1;
     r1 = reader.nextInt();
+    int c1;
     c1 = reader.nextInt();
+    int r2;
     r2 = reader.nextInt();
+    int c2;
     c2 = reader.nextInt();
+    BasicConsoleRenderer renderer = new BasicConsoleRenderer();
     renderer.render(zoo, new Point(r1, c1), new Point(r2, c2), useColor);
     String input;
     do {
@@ -91,19 +96,23 @@ public class Controller {
   }
 
   /**
-   * Melakukan tour keliling kebun binatang. <p> Memilih salah satu jalan masuk (Entrance) secara
-   * acak dan menampilkan serangkaian experience yang dialami pengunjung. Experience yang dirasakan
-   * berdasarkan interaksi dengan hewan-hewan yang ada di setiap Cage yang bersinggungan dengan
-   * current Cell. Pemilihan jalan tour dilakukan dengan memilih next Cell bertipe Road yang
-   * bersinggungan dengan current Cell yang belum pernah dikunjungi sebelumnya. Jika ada lebih dari
-   * satu Cell bertipe Road yang dapat dipilih, pemilihan dilakukan secara acak. Penulusuran akan
-   * berhenti saat sudah tidak ada lagi Road yang dapat dipilih, atau telah mencapai jalan keluar
-   * (Exit).
+   * Melakukan tour keliling kebun binatang.
+   *
+   * <p>Memilih salah satu jalan masuk (Entrance) secara acak dan
+   * menampilkan serangkaian experience yang dialami pengunjung.
+   * Experience yang dirasakan berdasarkan interaksi dengan hewan-hewan yang
+   * ada di setiap Cage yang bersinggungan dengan current Cell.
+   * Pemilihan jalan tour dilakukan dengan memilih next Cell bertipe Road
+   * yang bersinggungan dengan current Cell yang belum pernah
+   * dikunjungi sebelumnya. Jika ada lebih dari satu Cell bertipe Road yang
+   * dapat dipilih, pemilihan dilakukan secara acak.
+   * Penulusuran akan berhenti saat sudah tidak ada lagi Road yang dapat
+   * dipilih, atau telah mencapai jalan keluar (Exit).
    */
   public void tourZoo() {
     List<Road> entrances = new ArrayList<Road>();
     List<Cell> arr = zoo.getCells();
-    int isAccessible[][] = new int[zoo.getRows()][zoo.getCols()];
+    int [][] isAccessible = new int[zoo.getRows()][zoo.getCols()];
     for (int i = 0; i < zoo.getRows(); i++) {
       for (int j = 0; j < zoo.getCols(); j++) {
         isAccessible[i][j] = 0;
@@ -122,11 +131,11 @@ public class Controller {
     }
 
     Random rand = new Random();
-    int nEntrance = rand.nextInt(entrances.size());
-    Point start = entrances.get(nEntrance).getPosition();
+    int numOfEntrances = rand.nextInt(entrances.size());
+    Point start = entrances.get(numOfEntrances).getPosition();
     boolean pathExist;
-    int cDirection;
-    boolean direction[] = new boolean[4];
+    int currDirection;
+    boolean [] direction = new boolean[4];
     do {
       pathExist = false;
       direction[0] = false;
@@ -135,7 +144,7 @@ public class Controller {
       direction[3] = false;
       System.out.println("Current Position" + start.getRow() + " " + start.getCol());
       System.out.print(zoo.listNeighboringInteractions(start));
-      cDirection = rand.nextInt(4);
+      currDirection = rand.nextInt(4);
       isAccessible[start.getRow()][start.getCol()] = 0;
       if (start.getRow() + 1 < zoo.getRows()
           && ((isAccessible[start.getRow() + 1][start.getCol()] == 1)
@@ -162,9 +171,9 @@ public class Controller {
       }
       if (pathExist) {
         do {
-          cDirection = rand.nextInt(4);
-        } while (!direction[cDirection]);
-        switch (cDirection) {
+          currDirection = rand.nextInt(4);
+        } while (!direction[currDirection]);
+        switch (currDirection) {
           case 0:
             start = start.translate(new Point(-1, 0));
             break;
@@ -177,6 +186,7 @@ public class Controller {
           case 3:
             start = start.translate(new Point(0, -1));
             break;
+          default:
         }
       }
     } while (pathExist && isAccessible[start.getRow()][start.getCol()] != 2);

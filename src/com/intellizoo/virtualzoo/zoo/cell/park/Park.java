@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell.park;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
@@ -12,7 +13,6 @@ import com.intellizoo.virtualzoo.zoo.cell.Cell;
  */
 public class Park extends Cell {
   /**
-   *
    * Menciptakan sebuah taman dengan status aksesibilitas tertentu pada posisi tertentu.
    * @param position Posisi dari taman.
    * @param accessible Status aksesibilitas taman.
@@ -28,4 +28,4 @@ public class Park extends Cell {
   public char render() {
     return 'p';
   }
-};
+}

@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.reptile;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
@@ -7,14 +8,14 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 // Tanggal dibuat    : 27/03/2017
 // Tanggal perubahan : 27/03/2017
 
-/** @class Iguana
+/**
  * Kelas Iguana yang merepesentasikan iguana.
  * @author Agus Gunawan
  */
 public class Iguana extends Reptile implements LandAnimal {
   /**
-   * Menciptakan seekor iguana dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor iguana dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama iguana.
    * @param position Posisi iguana.
    * @param weight berat iguana.

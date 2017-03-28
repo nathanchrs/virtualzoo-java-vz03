@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
@@ -13,8 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
  */
 public class Orangutan extends Mammals implements LandAnimal {
   /**
-   * Menciptakan seekor orangutan dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor orangutan dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama orangutan.
    * @param position Posisi orangutan.
    * @param weight berat orangutan.
@@ -37,7 +38,7 @@ public class Orangutan extends Mammals implements LandAnimal {
    * @return Experience yang dirasakan ketika berinteraksi dengan orangutan.
    */
   public String interact() {
-    return  "The orangutan is hanging around the trees, picking every fruits and" +
-            " eating them";
+    return  "The orangutan is hanging around the trees, picking every fruits and"
+            + " eating them";
   }
 }

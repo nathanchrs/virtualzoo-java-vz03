@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.reptile;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
@@ -6,7 +7,11 @@ import com.intellizoo.virtualzoo.zoo.animal.aves.Parrot;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Peacock;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Pigeon;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.*;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Gorilla;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Leopard;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Lion;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Orangutan;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Tiger;
 
 // Nama file         : Python.java
 // Tanggal dibuat    : 27/03/2017
@@ -18,8 +23,8 @@ import com.intellizoo.virtualzoo.zoo.animal.mammals.*;
  */
 public class Python extends Reptile implements LandAnimal {
   /**
-   * Menciptakan seekor ular piton dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor ular piton dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama ular piton.
    * @param position Posisi ular piton.
    * @param weight berat ular piton.

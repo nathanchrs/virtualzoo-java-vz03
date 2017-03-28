@@ -26,12 +26,12 @@ public class FrameBuffer {
   public static final String CS_INITIATOR = "\033[";
   public static final String CS_TERMINATOR = "m";
   public static final String RESET = "0";
-  public static final String FG_COLOR_CONSTANTS[] = {
+  public static final String [] FG_COLOR_CONSTANTS = {
       "", // unused (transparent)
       "30", "31", "32", "33", "34", "35", "36", "37",
       "1;30", "1;31", "1;32", "1;33", "1;34", "1;35", "1;36", "1;37"
   };
-  public static final String BG_COLOR_CONSTANTS[] = {
+  public static final String [] BG_COLOR_CONSTANTS = {
       "", // unused (transparent)
       "40", "41", "42", "43", "44", "45", "46", "47",
       // background colors only support the faint 8 colors
@@ -41,9 +41,9 @@ public class FrameBuffer {
   private int rows;
   private int cols;
   private boolean colored;
-  private char contents[];
-  private Color fgColors[];
-  private Color bgColors[];
+  private char [] contents;
+  private Color [] fgColors;
+  private Color [] bgColors;
   private String inputPrompt;
 
   /**
@@ -103,19 +103,19 @@ public class FrameBuffer {
    * Menggambar sebuah karakter pada posisi tertentu di FrameBuffer dengan warna tulisan dan latar
    * yang ditentukan.
    *
-   * @param P Posisi tempat karacter akan digambar.
+   * @param p Posisi tempat karacter akan digambar.
    * @param content Karakter yang akan digambar.
    * @param fgColor Warna karakter (foreground) yang akan digambar.
    * @param bgColor Warna latar (background) dari karakter yang akan digambar.
    */
-  public void drawPoint(Point P, char content, Color fgColor, Color bgColor) {
-    if (P.inArea(rows, cols)) {
-      contents[idx(P)] = content;
+  public void drawPoint(Point p, char content, Color fgColor, Color bgColor) {
+    if (p.inArea(rows, cols)) {
+      contents[idx(p)] = content;
       if (fgColor != Color.TRANSPARENT) {
-        fgColors[idx(P)] = bgColor;
+        fgColors[idx(p)] = bgColor;
       }
       if (bgColor != Color.TRANSPARENT) {
-        bgColors[idx(P)] = bgColor;
+        bgColors[idx(p)] = bgColor;
       }
     }
   }
@@ -124,17 +124,17 @@ public class FrameBuffer {
    * Menggambar sebuah garis horizontal pada posisi yang ditentukan dengan warna tulisan dan latar
    * yang ditentukan.
    *
-   * @param P1 Posisi awal garis yang akan digambar.
-   * @param P2 Posisi akhir garis yang akan digambar.
+   * @param p1 Posisi awal garis yang akan digambar.
+   * @param p2 Posisi akhir garis yang akan digambar.
    * @param content Karakter yang merepresentasikan garis yang akan digambar.
    * @param fgColor Warna tulisan (foreground) dari garis yang akan digambar.
    * @param bgColor Warna latar (background) dari garis yang akan digambar.
    */
-  public void drawHorizontalLine(Point P1, Point P2, char content, Color fgColor, Color bgColor) {
-    int i1 = P1.getCol() < P2.getCol() ? P1.getCol() : P2.getCol();
-    int i2 = P1.getCol() < P2.getCol() ? P2.getCol() : P1.getCol();
+  public void drawHorizontalLine(Point p1, Point p2, char content, Color fgColor, Color bgColor) {
+    int i1 = p1.getCol() < p2.getCol() ? p1.getCol() : p2.getCol();
+    int i2 = p1.getCol() < p2.getCol() ? p2.getCol() : p1.getCol();
     for (int i = i1; i <= i2; i++) {
-      drawPoint(new Point(P1.getRow(), i), content, fgColor, bgColor);
+      drawPoint(new Point(p1.getRow(), i), content, fgColor, bgColor);
     }
   }
 
@@ -142,17 +142,17 @@ public class FrameBuffer {
    * Menggambar sebuah garis vertikal pada posisi yang ditentukan dengan warna tulisan dan latar
    * yang ditentukan.
    *
-   * @param P1 Posisi awal garis yang akan digambar.
-   * @param P2 Posisi akhir garis yang akan digambar.
+   * @param p1 Posisi awal garis yang akan digambar.
+   * @param p2 Posisi akhir garis yang akan digambar.
    * @param content Karakter yang merepresentasikan garis yang akan digambar.
    * @param fgColor Warna tulisan (foreground) dari garis yang akan digambar.
    * @param bgColor Warna latar (background) dari garis yang akan digambar.
    */
-  public void drawVerticalLine(Point P1, Point P2, char content, Color fgColor, Color bgColor) {
-    int i1 = P1.getRow() < P2.getRow() ? P1.getRow() : P2.getRow();
-    int i2 = P1.getRow() < P2.getRow() ? P2.getRow() : P1.getRow();
+  public void drawVerticalLine(Point p1, Point p2, char content, Color fgColor, Color bgColor) {
+    int i1 = p1.getRow() < p2.getRow() ? p1.getRow() : p2.getRow();
+    int i2 = p1.getRow() < p2.getRow() ? p2.getRow() : p1.getRow();
     for (int i = i1; i <= i2; i++) {
-      drawPoint(new Point(i, P1.getCol()), content, fgColor, bgColor);
+      drawPoint(new Point(i, p1.getCol()), content, fgColor, bgColor);
     }
   }
 
@@ -180,14 +180,14 @@ public class FrameBuffer {
             }
             break;
           }
-          Point P = new Point(row, col);
-          if (P.inArea(rows, cols)) {
-            contents[idx(P)] = str.charAt(it);
+          Point p = new Point(row, col);
+          if (p.inArea(rows, cols)) {
+            contents[idx(p)] = str.charAt(it);
             if (fgColor != Color.TRANSPARENT) {
-              fgColors[idx(P)] = fgColor;
+              fgColors[idx(p)] = fgColor;
             }
             if (bgColor != Color.TRANSPARENT) {
-              bgColors[idx(P)] = bgColor;
+              bgColors[idx(p)] = bgColor;
             }
           }
           it++;
@@ -206,7 +206,7 @@ public class FrameBuffer {
    * @param topLeft Posisi kiri atas dari text box yang akan digambar.
    * @param bottomRight Posisi kanan bawah dari text box yang akan digambar.
    * @param borderCharacter Karakter yang merepresentasikan garis pembatas persegi panjang yang akan
-   * digambar.
+   digambar.
    * @param textColor Warna dari text di persegi panjang yang akan digambar.
    * @param bgColor Warna latar dari persegi panjang yang akan digambar.
    * @param borderColor Warna garis pembatas persegi panjang yang digambar.
@@ -215,21 +215,21 @@ public class FrameBuffer {
       Color textColor, Color bgColor, Color borderColor) {
     for (int row = topLeft.getRow(); row <= bottomRight.getRow(); row++) {
       for (int col = topLeft.getCol(); col <= bottomRight.getCol(); col++) {
-        Point P = new Point(row, col);
-        if (P.inArea(rows, cols)) {
+        Point p = new Point(row, col);
+        if (p.inArea(rows, cols)) {
           if (row == topLeft.getRow() || row == bottomRight.getRow()
               || col == topLeft.getCol() || col == bottomRight.getCol()) {
-            contents[idx(P)] = borderCharacter;
+            contents[idx(p)] = borderCharacter;
             if (textColor != Color.TRANSPARENT) {
-              fgColors[idx(P)] = textColor;
+              fgColors[idx(p)] = textColor;
             }
             if (borderColor != Color.TRANSPARENT) {
-              bgColors[idx(P)] = borderColor;
+              bgColors[idx(p)] = borderColor;
             }
           } else {
             if (bgColor != Color.TRANSPARENT) {
-              contents[idx(P)] = BLANK;
-              bgColors[idx(P)] = bgColor;
+              contents[idx(p)] = BLANK;
+              bgColors[idx(p)] = bgColor;
             }
           }
         }
@@ -246,22 +246,22 @@ public class FrameBuffer {
     StringBuilder outputBuffer = new StringBuilder();
     for (int row = 0; row < rows; row++) {
       for (int col = 0; col < cols; col++) {
-        Point P = new Point(row, col);
+        Point p = new Point(row, col);
         // Output color-specifying control characters
         if (colored) {
           outputBuffer.append(CS_INITIATOR + RESET);
-          if (fgColors[idx(P)] != Color.TRANSPARENT) {
-            Color color = fgColors[idx(P)];
+          if (fgColors[idx(p)] != Color.TRANSPARENT) {
+            Color color = fgColors[idx(p)];
             outputBuffer.append(FG_COLOR_CONSTANTS[color.ordinal()]).append(";");
           }
-          if (bgColors[idx(P)] != Color.TRANSPARENT) {
-            Color color = bgColors[idx(P)];
+          if (bgColors[idx(p)] != Color.TRANSPARENT) {
+            Color color = bgColors[idx(p)];
             outputBuffer.append(BG_COLOR_CONSTANTS[color.ordinal()]);
           }
           outputBuffer.append(CS_TERMINATOR);
         }
         // Output actual character to be printed
-        outputBuffer.append(contents[idx(P)]);
+        outputBuffer.append(contents[idx(p)]);
         // Output reset control characters
         if (colored) {
           outputBuffer.append(CS_INITIATOR).append(RESET).append(";").append(CS_TERMINATOR);
@@ -292,10 +292,10 @@ public class FrameBuffer {
   /**
    * Mengembalikan indeks di FrameBuffer pada posisi yang ditentukan.
    *
-   * @param P Nilai titik.
+   * @param p Nilai titik.
    * @return Nilai indeks di FrameBuffer.
    */
-  private int idx(Point P) {
-    return P.getRow() * cols + P.getCol();
+  private int idx(Point p) {
+    return p.getRow() * cols + p.getCol();
   }
 }

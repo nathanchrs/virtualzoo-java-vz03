@@ -3,11 +3,9 @@ package com.intellizoo.virtualzoo.zoo.animal;
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.renderer.Renderable;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
-
 import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat.HabitatType;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -111,6 +109,7 @@ public abstract class Animal implements Renderable {
         return this instanceof LandAnimal;
       case WaterHabitat:
         return this instanceof WaterAnimal;
+      default:
     }
     return false;
   }
@@ -126,9 +125,8 @@ public abstract class Animal implements Renderable {
 
   /**
    * Melakukan interaksi dengan seekor hewan.
-   *
-   * @return string yang menggambarkan experience yang dapat didengar, dirasakan, atau dilihat
-   * seorang pengunjung.
+   * @return string yang menggambarkan experience yang dapat didengar, dirasakan,
+   atau dilihat seorang pengunjung.
    */
   public abstract String interact();
 

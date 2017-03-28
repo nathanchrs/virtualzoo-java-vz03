@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.mammals;
+
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
 
 /*

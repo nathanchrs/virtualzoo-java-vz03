@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell.restaurant;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
@@ -26,4 +27,4 @@ public class Restaurant extends Cell {
   public char render() {
     return 'r';
   }
-};
+}

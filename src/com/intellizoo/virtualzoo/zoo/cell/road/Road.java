@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell.road;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
@@ -16,8 +17,8 @@ public class Road extends Cell {
 
   /**
    * Menciptakan sebuah jalan dengan status aksesibilitas tertentu pada posisi tertentu.
-   * <p>
-   * Jalan dapat berupa jalan biasa, jalan masuk, atau jalan keluar.
+   *
+   * <p>Jalan dapat berupa jalan biasa, jalan masuk, atau jalan keluar.
    * @param position Posisi dari jalan.
    * @param accessible Status aksesibilitas jalan.
    * @param entrance true jika jalan adalah jalan masuk, false jika tidak.
@@ -53,4 +54,4 @@ public class Road extends Cell {
   public char render() {
     return '.';
   }
-};
+}

@@ -27,8 +27,8 @@ import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
 import com.intellizoo.virtualzoo.zoo.cell.park.Park;
 import com.intellizoo.virtualzoo.zoo.cell.restaurant.Restaurant;
 import com.intellizoo.virtualzoo.zoo.cell.road.Road;
-import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
+import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -107,7 +107,8 @@ public class Zoo {
       cellCount = reader.nextInt();
       for (int j = 0; j < cellCount; j++) {
         String cellType;
-        int row, col;
+        int row;
+        int col;
         cellType = reader.next();
         row = reader.nextInt();
         col = reader.nextInt();
@@ -137,13 +138,14 @@ public class Zoo {
       animalCount = reader.nextInt();
       for (int j = 0; j < animalCount; j++) {
         String species;
-        int row, col;
-        int weight;
-        boolean wild;
         species = reader.next();
+        int row;
         row = reader.nextInt();
+        int col;
         col = reader.nextInt();
+        int weight;
         weight = reader.nextInt();
+        boolean wild;
         wild = reader.nextInt() != 0;
         Point pos = new Point(row, col);
         if (species.equalsIgnoreCase("Eagle")) {

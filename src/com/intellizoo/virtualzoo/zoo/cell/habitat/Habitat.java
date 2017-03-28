@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.cell.habitat;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 
@@ -47,6 +48,7 @@ public class Habitat extends Cell {
         return 'l';
       case WaterHabitat:
         return 'w';
+      default:
     }
     return ' ';
   }

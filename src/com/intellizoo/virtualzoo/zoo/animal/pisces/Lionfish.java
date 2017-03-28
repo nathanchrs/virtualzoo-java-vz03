@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.WaterAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
@@ -13,7 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
  */
 public class Lionfish extends Pisces implements WaterAnimal {
   /**
-   * Menciptakan seekor lionfish dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
+   * Menciptakan seekor lionfish dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    *
    * @param name Nama lionfish.
    * @param position Posisi lionfish.

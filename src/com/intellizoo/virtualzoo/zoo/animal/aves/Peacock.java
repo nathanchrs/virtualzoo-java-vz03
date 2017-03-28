@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
@@ -13,8 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
  */
 public class Peacock extends Aves implements LandAnimal {
   /**
-   * Menciptakan seekor burung merak dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor burung merak dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama burung merak.
    * @param position Posisi burung merak.
    * @param weight berat burung merak.

@@ -55,7 +55,7 @@ public class AnimalBehavior implements Runnable {
 
       // Cari posisi yang dapat didatangi hewan selanjutnya berada di sisi posisi saat ini
       // (Habitatnya harus sesuai dengan jenis hewan)
-      Point destinationPoints[] = cage.getCells().stream()
+      Point [] destinationPoints = cage.getCells().stream()
           .filter(c -> c instanceof Habitat && animal.isValidHabitat(((Habitat) c).getType()))
           .map(Cell::getPosition)
           .filter(point -> point.distanceTo(animal.getPosition()) == 1)

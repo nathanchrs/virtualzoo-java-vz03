@@ -1,4 +1,5 @@
 package com.intellizoo.virtualzoo.zoo.animal.pisces;
+
 import com.intellizoo.virtualzoo.Point;
 import com.intellizoo.virtualzoo.zoo.animal.WaterAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
@@ -13,8 +14,8 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Herbivore;
  */
 public class FrenchAngelFish extends Pisces implements WaterAnimal {
   /**
-   * Menciptakan seekor french angelfish dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   *
+   * Menciptakan seekor french angelfish dengan nama, posisi, berat,
+   * dan kelakuan (buas atau jinak) yang ditentukan.
    * @param name Nama french angelfish.
    * @param position Posisi french angelfish.
    * @param weight berat french angelfish.
