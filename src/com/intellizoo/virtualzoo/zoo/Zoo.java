@@ -7,21 +7,21 @@ import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Parrot;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Peacock;
 import com.intellizoo.virtualzoo.zoo.animal.aves.Pigeon;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.gorilla.Gorilla;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.leopard.Leopard;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.lion.Lion;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.orangutan.Orangutan;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.tiger.Tiger;
-import com.intellizoo.virtualzoo.zoo.animal.pisces.barracuda.Barracuda;
-import com.intellizoo.virtualzoo.zoo.animal.pisces.frenchangelfish.FrenchAngelFish;
-import com.intellizoo.virtualzoo.zoo.animal.pisces.lionfish.Lionfish;
-import com.intellizoo.virtualzoo.zoo.animal.pisces.ray.Ray;
-import com.intellizoo.virtualzoo.zoo.animal.pisces.seahorse.Seahorse;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.chameleon.Chameleon;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.cobra.Cobra;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.iguana.Iguana;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.komododragon.KomodoDragon;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.python.Python;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Gorilla;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Leopard;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Lion;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Orangutan;
+import com.intellizoo.virtualzoo.zoo.animal.mammals.Tiger;
+import com.intellizoo.virtualzoo.zoo.animal.pisces.Barracuda;
+import com.intellizoo.virtualzoo.zoo.animal.pisces.FrenchAngelFish;
+import com.intellizoo.virtualzoo.zoo.animal.pisces.Lionfish;
+import com.intellizoo.virtualzoo.zoo.animal.pisces.Ray;
+import com.intellizoo.virtualzoo.zoo.animal.pisces.Seahorse;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Chameleon;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Cobra;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Iguana;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.KomodoDragon;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Python;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
 import com.intellizoo.virtualzoo.zoo.cell.park.Park;
@@ -137,73 +137,73 @@ public class Zoo {
       for (int j = 0; j < animalCount; j++) {
         String species;
         int row, col;
-        double weight;
+        int weight;
         boolean wild;
         species = reader.next();
         row = reader.nextInt();
         col = reader.nextInt();
-        weight = reader.nextDouble();
+        weight = reader.nextInt();
         wild = reader.nextBoolean();
         Point pos = new Point(row, col);
         if (species.equalsIgnoreCase("Eagle")) {
           Eagle animal = new Eagle(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Owl")) {
-          Owl animal = new Owl(pos, weight, wild);
+          Owl animal = new Owl(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Parrot")) {
-          Parrot animal = new Parrot(pos, weight, wild);
+          Parrot animal = new Parrot(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Peacock")) {
-          Peacock animal = new Peacock(pos, weight, wild);
+          Peacock animal = new Peacock(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Pigeon")) {
-          Pigeon animal = new Pigeon(pos, weight, wild);
+          Pigeon animal = new Pigeon(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Barracuda")) {
-          Barracuda animal = new Barracuda(pos, weight, wild);
+          Barracuda animal = new Barracuda(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("FrenchAngelFish")) {
-          FrenchAngelFish animal = new FrenchAngelFish(pos, weight, wild);
+          FrenchAngelFish animal = new FrenchAngelFish(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Lionfish")) {
-          Lionfish animal = new Lionfish(pos, weight, wild);
+          Lionfish animal = new Lionfish(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Ray")) {
-          Ray animal = new Ray(pos, weight, wild);
+          Ray animal = new Ray(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Seahorse")) {
-          Seahorse animal = new Seahorse(pos, weight, wild);
+          Seahorse animal = new Seahorse(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Gorilla")) {
-          Gorilla animal = new Gorilla(pos, weight, wild);
+          Gorilla animal = new Gorilla(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Leopard")) {
-          Leopard animal = new Leopard(pos, weight, wild);
+          Leopard animal = new Leopard(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Lion")) {
-          Lion animal = new Lion(pos, weight, wild);
+          Lion animal = new Lion(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Orangutan")) {
-          Orangutan animal = new Orangutan(pos, weight, wild);
+          Orangutan animal = new Orangutan(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Tiger")) {
-          Tiger animal = new Tiger(pos, weight, wild);
+          Tiger animal = new Tiger(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Chameleon")) {
-          Chameleon animal = new Chameleon(pos, weight, wild);
+          Chameleon animal = new Chameleon(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Cobra")) {
-          Cobra animal = new Cobra(pos, weight, wild);
+          Cobra animal = new Cobra(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Iguana")) {
-          Iguana animal = new Iguana(pos, weight, wild);
+          Iguana animal = new Iguana(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("KomodoDragon")) {
-          KomodoDragon animal = new KomodoDragon(pos, weight, wild);
+          KomodoDragon animal = new KomodoDragon(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else if (species.equalsIgnoreCase("Python")) {
-          Python animal = new Python(pos, weight, wild);
+          Python animal = new Python(species, pos, weight, wild);
           addAnimal(animal, zoneName);
         } else {
           //throw InputException();

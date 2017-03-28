@@ -1,5 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
 import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 
 // Nama file         : Peacock.java
@@ -10,26 +11,25 @@ import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
  * Kelas Peacock yang merepesentasikan burung merak.
  * @author Agus Gunawan
  */
-public class Peacock extends Aves {
+public class Peacock extends Aves implements LandAnimal {
   /**
-   * Menciptakan seekor burung merak dengan posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
-   * @param pos Posisi burung merak.
+   * Menciptakan seekor burung merak dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang ditentukan.
+   *
+   * @param name Nama burung merak.
+   * @param position Posisi burung merak.
    * @param weight berat burung merak.
    * @param wild Kelakuan burung merak.
    */
-  public Peacock(Point pos, int weight, boolean wild) {
-    super("Peacock");
-    diet = new Omnivore(weight, 0.15);
-    description = "The Peacock is found in many locations including Burma, Indian," +
-                  " and Sri Lanka. The main body of the Peacock is bluish green in color." +
-                  " Peacock has colorful tail. The colorful tail of the Peacock is fanned" +
-                  " out to be able to show dominance and for the purpose of attracting a" +
-                  " mate. This ovipar animal has land as its habitat.";
-    airAnimal = false;
-    landAnimal = true;
-    waterAnimal = false;
-    position = pos;
+  public Peacock(String name, Point position, int weight, boolean wild) {
+    this.name = name;
+    this.position = position;
+    this.diet = new Omnivore(weight, 0.15);
     this.wild = wild;
+    this.description = "The Peacock is found in many locations including Burma, Indian,"
+        + " and Sri Lanka. The main body of the Peacock is bluish green in color."
+        + " Peacock has colorful tail. The colorful tail of the Peacock is fanned"
+        + " out to be able to show dominance and for the purpose of attracting a"
+        + " mate. This ovipar animal has land as its habitat.";
   }
 
   /**

@@ -1,11 +1,13 @@
 package com.intellizoo.virtualzoo.zoo.animal.aves;
 
 import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.zoo.animal.AirAnimal;
+import com.intellizoo.virtualzoo.zoo.animal.LandAnimal;
 import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.chameleon.Chameleon;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.cobra.Cobra;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.iguana.Iguana;
-import com.intellizoo.virtualzoo.zoo.animal.reptile.python.Python;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Chameleon;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Cobra;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Iguana;
+import com.intellizoo.virtualzoo.zoo.animal.reptile.Python;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
@@ -25,8 +27,17 @@ import com.intellizoo.virtualzoo.zoo.animal.reptile.python.Python;
  *
  * @author Agus Gunawan
  */
-public class Eagle extends Aves {
+public class Eagle extends Aves implements AirAnimal, LandAnimal {
 
+  /**
+   * Menciptakan seekor burung elang dengan nama, posisi, berat, dan kelakuan (buas atau jinak) yang
+   * ditentukan.
+   *
+   * @param name Nama burung hantu.
+   * @param position Posisi burung hantu.
+   * @param weight berat burung hantu.
+   * @param wild Kelakuan burung hantu.
+   */
   public Eagle(String name, Point position, double weight, boolean wild) {
     this.name = name;
     this.position = position;

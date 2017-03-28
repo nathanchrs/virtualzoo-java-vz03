@@ -7,7 +7,8 @@ import com.intellizoo.virtualzoo.zoo.animal.Animal;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
-import java.util.Vector;
+
+import java.util.List;
 
 // Nama file         : BasicConsoleRenderer.java
 // Tanggal dibuat    : 27/03/2017
@@ -42,8 +43,8 @@ public class BasicConsoleRenderer implements Renderer {
     final int ROWS = bottomRight.getRow() - topLeft.getRow() + 1;
     final int COLS = bottomRight.getCol() - topLeft.getCol() + 1;
 
-    Vector<Cell> cells = zoo.getCells();
-    Vector<Zone> zones = zoo.getZones();
+    List<Cell> cells = zoo.getCells();
+    List<Zone> zones = zoo.getZones();
     FrameBuffer fb = new FrameBuffer(ROWS + 5, COLS + GRID_OFFSET.getCol() * 2 + 24, useColor);
     fb.clear();
 
@@ -86,7 +87,7 @@ public class BasicConsoleRenderer implements Renderer {
     for(Zone cage : zones) {
       if (cage instanceof Cage) {
         // Redraw cells that are inside a cage
-        Vector<Cell> cageCells = cage.getCells();
+        List<Cell> cageCells = cage.getCells();
         for(Cell cell : cageCells) {
           Point cageCellsPos = cell.getPosition();
           if(cageCellsPos.getRow() >= topLeft.getRow()
@@ -99,7 +100,7 @@ public class BasicConsoleRenderer implements Renderer {
         }
 
         // Draw animals
-        Vector<Animal> animals = cage.getAnimals();
+        List<Animal> animals = ((Cage) cage).getAnimals();
         for (Animal animal: animals) {
           Point animalPos = animal.getPosition();
           if (animalPos.getRow() >= topLeft.getRow()
