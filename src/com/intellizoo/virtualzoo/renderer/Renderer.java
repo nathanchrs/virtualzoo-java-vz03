@@ -1,5 +1,6 @@
 package com.intellizoo.virtualzoo.renderer;
-import com.intellizoo.virtualzoo.Point;
+
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 
 // Nama file         : Renderer.java

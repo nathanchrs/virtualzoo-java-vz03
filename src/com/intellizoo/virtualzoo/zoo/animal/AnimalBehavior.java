@@ -12,13 +12,11 @@ package com.intellizoo.virtualzoo.zoo.animal;
  * Tanggal perubahan : 3/28/17
  */
 
-import com.intellizoo.virtualzoo.Point;
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
-import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
+import com.intellizoo.virtualzoo.zoo.cell.Habitat;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.Random;
 
 /**
@@ -55,7 +53,7 @@ public class AnimalBehavior implements Runnable {
 
       // Cari posisi yang dapat didatangi hewan selanjutnya berada di sisi posisi saat ini
       // (Habitatnya harus sesuai dengan jenis hewan)
-      Point destinationPoints[] = cage.getCells().stream()
+      Point [] destinationPoints = cage.getCells().stream()
           .filter(c -> c instanceof Habitat && animal.isValidHabitat(((Habitat) c).getType()))
           .map(Cell::getPosition)
           .filter(point -> point.distanceTo(animal.getPosition()) == 1)

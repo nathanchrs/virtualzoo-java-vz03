@@ -55,5 +55,4 @@ public class Zone {
   public int size() {
     return cells.size();
   }
-
-};
+}

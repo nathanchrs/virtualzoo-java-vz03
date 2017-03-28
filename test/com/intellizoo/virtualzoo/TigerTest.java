@@ -1,10 +1,13 @@
 package com.intellizoo.virtualzoo;
 
+import static junit.framework.TestCase.assertEquals;
+
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.mammals.Tiger;
+import com.intellizoo.virtualzoo.zoo.animal.Tiger;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+
 /**
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
  * Kelompok 1 - intellizoo
@@ -13,10 +16,12 @@ import static org.junit.Assert.*;
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : com.intellizoo.virtualzoo.AnimalTest.java
- * Tanggal dibuat    : 25/03/2017
- * Tanggal perubahan : 25/03/2017
+ * Nama file         : com.intellizoo.virtualzoo.TigerTest.java
+ * Tanggal dibuat    : 28/03/2017
+ * Tanggal perubahan : 28/03/2017
  * Deskripsi         : -
+ *
+ * @author : Agus Gunawan
  */
 public class TigerTest {
 
@@ -24,7 +29,7 @@ public class TigerTest {
   public void testinteract_noState() {
     Point p = new Point(5, 5);
     Animal animal = new Tiger("Tigery", p, 100, true);
-    assertEquals("The tiger is roaring. The sound that tiger produce is rawwrrrrr!"
-                  , animal.interact());
+    assertEquals("The tiger is roaring. The sound that tiger produce is rawwrrrrr!",
+        animal.interact());
   }
 }

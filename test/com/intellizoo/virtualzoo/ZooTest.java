@@ -1,16 +1,19 @@
 package com.intellizoo.virtualzoo;
 
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.Zoo;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
-import com.intellizoo.virtualzoo.zoo.animal.aves.Owl;
+import com.intellizoo.virtualzoo.zoo.animal.Owl;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
-import com.intellizoo.virtualzoo.zoo.cell.habitat.Habitat;
-import com.intellizoo.virtualzoo.zoo.cell.park.Park;
+import com.intellizoo.virtualzoo.zoo.cell.Habitat;
+import com.intellizoo.virtualzoo.zoo.cell.Park;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 /**
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek
  * Kelompok 1 - intellizoo
@@ -19,10 +22,12 @@ import static org.junit.Assert.*;
  * - 13515048 [K-03] Alvin Sullivan
  * - 13515143 [K-02] Agus Gunawan
  * ***
- * Nama file         : com.intellizoo.virtualzoo.BarracudaTest.java
- * Tanggal dibuat    : 25/03/2017
- * Tanggal perubahan : 25/03/2017
+ * Nama file         : com.intellizoo.virtualzoo.ZooTest.java
+ * Tanggal dibuat    : 28/03/2017
+ * Tanggal perubahan : 28/03/2017
  * Deskripsi         : -
+ *
+ * @author : Agus Gunawan
  */
 public class ZooTest {
 
