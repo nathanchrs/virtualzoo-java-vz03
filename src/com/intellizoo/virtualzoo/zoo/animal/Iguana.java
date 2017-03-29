@@ -1,7 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal;
 
 import com.intellizoo.virtualzoo.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Omnivore;
 
 // Nama file         : Iguana.java
 // Tanggal dibuat    : 27/03/2017

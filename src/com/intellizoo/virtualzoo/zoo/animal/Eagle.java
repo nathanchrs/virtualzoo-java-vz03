@@ -1,7 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal;
 
 import com.intellizoo.virtualzoo.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 
 /*
  * VirtualZoo (Java) - Tugas Besar IF2210 Pemrograman Berorientasi Objek

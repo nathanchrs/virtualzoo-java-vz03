@@ -16,6 +16,7 @@ import com.intellizoo.virtualzoo.point.Point;
 
 /**
  * Observer dari event Move pada Animal.
+ * @author Jonathan Christopher
  */
 public interface AnimalMoveEventListener {
 

@@ -18,7 +18,7 @@ import com.intellizoo.virtualzoo.point.Point;
 /**
  * Interface renderable yang merepresentasikan perilaku objek yang dapat digambar di atas layar.
  *
- * @author Alvin Sullivan
+ * @author Jordhy Fernando
  */
 public interface Renderable {
 

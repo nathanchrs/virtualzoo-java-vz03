@@ -2,8 +2,6 @@ package com.intellizoo.virtualzoo.zoo.animal;
 
 import com.intellizoo.virtualzoo.point.Point;
 
-import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
-
 // Nama file         : KomodoDragon.java
 // Tanggal dibuat    : 27/03/2017
 // Tanggal perubahan : 27/03/2017
