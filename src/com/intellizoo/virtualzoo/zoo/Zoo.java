@@ -2,26 +2,26 @@ package com.intellizoo.virtualzoo.zoo;
 
 import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.zoo.animal.Animal;
+import com.intellizoo.virtualzoo.zoo.animal.Barracuda;
+import com.intellizoo.virtualzoo.zoo.animal.Chameleon;
+import com.intellizoo.virtualzoo.zoo.animal.Cobra;
 import com.intellizoo.virtualzoo.zoo.animal.Eagle;
+import com.intellizoo.virtualzoo.zoo.animal.FrenchAngelFish;
+import com.intellizoo.virtualzoo.zoo.animal.Gorilla;
+import com.intellizoo.virtualzoo.zoo.animal.Iguana;
+import com.intellizoo.virtualzoo.zoo.animal.KomodoDragon;
+import com.intellizoo.virtualzoo.zoo.animal.Leopard;
+import com.intellizoo.virtualzoo.zoo.animal.Lion;
+import com.intellizoo.virtualzoo.zoo.animal.Lionfish;
+import com.intellizoo.virtualzoo.zoo.animal.Orangutan;
 import com.intellizoo.virtualzoo.zoo.animal.Owl;
 import com.intellizoo.virtualzoo.zoo.animal.Parrot;
 import com.intellizoo.virtualzoo.zoo.animal.Peacock;
 import com.intellizoo.virtualzoo.zoo.animal.Pigeon;
-import com.intellizoo.virtualzoo.zoo.animal.Gorilla;
-import com.intellizoo.virtualzoo.zoo.animal.Leopard;
-import com.intellizoo.virtualzoo.zoo.animal.Lion;
-import com.intellizoo.virtualzoo.zoo.animal.Orangutan;
-import com.intellizoo.virtualzoo.zoo.animal.Tiger;
-import com.intellizoo.virtualzoo.zoo.animal.Barracuda;
-import com.intellizoo.virtualzoo.zoo.animal.FrenchAngelFish;
-import com.intellizoo.virtualzoo.zoo.animal.Lionfish;
+import com.intellizoo.virtualzoo.zoo.animal.Python;
 import com.intellizoo.virtualzoo.zoo.animal.Ray;
 import com.intellizoo.virtualzoo.zoo.animal.Seahorse;
-import com.intellizoo.virtualzoo.zoo.animal.Chameleon;
-import com.intellizoo.virtualzoo.zoo.animal.Cobra;
-import com.intellizoo.virtualzoo.zoo.animal.Iguana;
-import com.intellizoo.virtualzoo.zoo.animal.KomodoDragon;
-import com.intellizoo.virtualzoo.zoo.animal.Python;
+import com.intellizoo.virtualzoo.zoo.animal.Tiger;
 import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.Habitat;
 import com.intellizoo.virtualzoo.zoo.cell.Park;
@@ -44,8 +44,8 @@ import java.util.Scanner;
  * - 13515143 [K-02] Agus Gunawan
  * ***
  * Nama file         : Zoo.java
- * Tanggal dibuat    : 3/28/17
- * Tanggal perubahan : 3/28/17
+ * Tanggal dibuat    : 28/03/17
+ * Tanggal perubahan : 28/03/17
  */
 
 /**

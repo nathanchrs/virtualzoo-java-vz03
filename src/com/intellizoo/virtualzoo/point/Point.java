@@ -9,8 +9,8 @@ package com.intellizoo.virtualzoo.point;
  * - 13515143 [K-02] Agus Gunawan
  * ***
  * Nama file         : Point.java
- * Tanggal dibuat    : 3/26/17
- * Tanggal perubahan : 3/28/17
+ * Tanggal dibuat    : 26/03/17
+ * Tanggal perubahan : 26/03/17
  */
 
 import static java.lang.Math.abs;

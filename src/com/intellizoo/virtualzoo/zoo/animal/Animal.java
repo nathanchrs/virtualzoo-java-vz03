@@ -2,7 +2,6 @@ package com.intellizoo.virtualzoo.zoo.animal;
 
 import com.intellizoo.virtualzoo.point.Point;
 import com.intellizoo.virtualzoo.renderable.Renderable;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
 import com.intellizoo.virtualzoo.zoo.cell.Habitat.HabitatType;
 import java.util.ArrayList;
 import java.util.List;

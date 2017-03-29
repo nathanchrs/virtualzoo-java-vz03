@@ -12,6 +12,11 @@ import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Kelas Main.
+ *
+ * @author Jonathan Christopher
+ */
 public class Main {
 
   private static final String INPUT_FILE = "zoo.txt";

@@ -2,8 +2,8 @@ package com.intellizoo.virtualzoo;
 
 import static junit.framework.TestCase.assertEquals;
 
-import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Diet;
+import com.intellizoo.virtualzoo.zoo.animal.Carnivore;
+import com.intellizoo.virtualzoo.zoo.animal.Diet;
 import org.junit.Test;
 
 /**

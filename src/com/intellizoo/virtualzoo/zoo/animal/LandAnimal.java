@@ -9,11 +9,12 @@ package com.intellizoo.virtualzoo.zoo.animal;
  * - 13515143 [K-02] Agus Gunawan
  * ***
  * Nama file         : LandAnimal.java
- * Tanggal dibuat    : 3/28/17
- * Tanggal perubahan : 3/28/17
+ * Tanggal dibuat    : 28/03/17
+ * Tanggal perubahan : 28/03/17
  */
 
 /**
  * Tagging interface untuk hewan darat.
+ * @author Jonathan Christopher
  */
 public interface LandAnimal {}

@@ -11,12 +11,12 @@ import com.intellizoo.virtualzoo.zoo.animal.Animal;
  * - 13515143 [K-02] Agus Gunawan
  * ***
  * Nama file         : Reptile.java
- * Tanggal dibuat    : 3/27/17
- * Tanggal perubahan : 3/28/17
+ * Tanggal dibuat    : 27/03/17
+ * Tanggal perubahan : 27/03/17
  */
 
 /**
  * Kelas abstrak Reptile yang merepesentasikan kelas hewan reptil.
- * @author Agus Gunawan
+ * @author Jordhy Fernando
  */
 public abstract class Reptile extends Animal {}

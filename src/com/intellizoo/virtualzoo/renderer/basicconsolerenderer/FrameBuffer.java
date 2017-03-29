@@ -9,7 +9,7 @@ import com.intellizoo.virtualzoo.point.Point;
 /**
  * Kelas FrameBuffer yang berfungsi untuk mengatur tampilan pada layar.
  *
- * @author Jordhy Fernando
+ * @author Jonathan Christopher
  */
 public class FrameBuffer {
 

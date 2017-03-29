@@ -1,7 +1,6 @@
 package com.intellizoo.virtualzoo.zoo.animal;
 
 import com.intellizoo.virtualzoo.point.Point;
-import com.intellizoo.virtualzoo.zoo.animal.diet.Carnivore;
 
 // Nama file         : Cobra.java
 // Tanggal dibuat    : 27/03/2017
