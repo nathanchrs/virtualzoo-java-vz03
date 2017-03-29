@@ -21,8 +21,6 @@ import java.util.Scanner;
 public class Controller {
 
   private Zoo zoo;
-  private boolean useColor;
-
 
   /**
    * Melakukan tour keliling kebun binatang.
@@ -39,7 +37,7 @@ public class Controller {
    * dipilih, atau telah mencapai jalan keluar (Exit).
    */
   public void tourZoo() {
-    List<Road> entrances = new ArrayList<Road>();
+    List<Road> entrances = new ArrayList<>();
     List<Cell> arr = zoo.getCells();
     int [][] isAccessible = new int[zoo.getRows()][zoo.getCols()];
     for (int i = 0; i < zoo.getRows(); i++) {
@@ -120,12 +118,7 @@ public class Controller {
       }
     } while (pathExist && isAccessible[start.getRow()][start.getCol()] != 2);
 
-    System.out.print("Input [back] to return to menu: ");
-    Scanner reader = new Scanner(System.in);
-    String input;
-    do {
-      input = reader.next();
-    } while (!input.equals("back"));
+
   }
 
 }

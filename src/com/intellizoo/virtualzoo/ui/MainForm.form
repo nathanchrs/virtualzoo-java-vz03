@@ -9,22 +9,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <scrollpane id="e94ed" binding="zooScrollPane">
-        <constraints border-constraint="Center"/>
-        <properties>
-          <minimumSize width="300" height="300"/>
-          <preferredSize width="600" height="500"/>
-        </properties>
-        <border type="none">
-          <size top="0" left="20" bottom="0" right="20"/>
-        </border>
-        <children>
-          <component id="9920f" class="com.intellizoo.virtualzoo.ui.ZooDisplay" binding="zooDisplay">
-            <constraints/>
-            <properties/>
-          </component>
-        </children>
-      </scrollpane>
       <grid id="3edd9" binding="bottomPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="South"/>
         <properties/>
@@ -37,6 +21,12 @@
               <text value="Buka dari File"/>
             </properties>
           </component>
+          <component id="f417d" class="javax.swing.JButton" binding="tourButton">
+            <constraints/>
+            <properties>
+              <text value="Tur Kebun Binatang"/>
+            </properties>
+          </component>
           <component id="ac500" class="javax.swing.JButton" binding="foodConsumptionButton">
             <constraints/>
             <properties>
@@ -46,12 +36,51 @@
           </component>
         </children>
       </grid>
-      <component id="71455" class="javax.swing.JList" binding="interactionsList">
-        <constraints border-constraint="East"/>
+      <splitpane id="69032" binding="mainSplitPane">
+        <constraints border-constraint="Center"/>
         <properties>
-          <preferredSize width="200" height="0"/>
+          <orientation value="0"/>
         </properties>
-      </component>
+        <border type="none"/>
+        <children>
+          <scrollpane id="e94ed" binding="zooScrollPane">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties>
+              <minimumSize width="300" height="300"/>
+              <preferredSize width="600" height="500"/>
+            </properties>
+            <border type="none">
+              <size top="0" left="20" bottom="0" right="20"/>
+            </border>
+            <children>
+              <component id="9920f" class="com.intellizoo.virtualzoo.ui.ZooDisplay" binding="zooDisplay">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="f610a" binding="interactionScrollPane">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ba3a2" class="javax.swing.JTextArea" binding="interactionTextArea">
+                <constraints/>
+                <properties>
+                  <editable value="false"/>
+                  <lineWrap value="false"/>
+                  <preferredSize width="300" height="100"/>
+                  <text value=":: VirtualZoo by IntelliZoo ::&#10;"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </splitpane>
     </children>
   </grid>
 </form>

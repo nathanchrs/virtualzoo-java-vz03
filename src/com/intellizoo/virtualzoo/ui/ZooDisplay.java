@@ -111,6 +111,20 @@ public class ZooDisplay extends JPanel {
             ZOO_CELL_WIDTH - 2,
             ZOO_CELL_HEIGHT - 2
         );
+
+        if (cell instanceof Road) {
+          if (((Road) cell).isEntrance()) {
+            graphics.setColor(Color.blue);
+          } else if (((Road) cell).isExit()) {
+            graphics.setColor(Color.green);
+          }
+          graphics.drawRect(
+              col * ZOO_CELL_WIDTH + 3,
+              row * ZOO_CELL_HEIGHT + 3,
+              ZOO_CELL_WIDTH - 6,
+              ZOO_CELL_HEIGHT - 6
+          );
+        }
       }
     }
 
