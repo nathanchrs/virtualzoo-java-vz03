@@ -65,7 +65,9 @@
             <constraints>
               <splitpane position="right"/>
             </constraints>
-            <properties/>
+            <properties>
+              <preferredSize width="300" height="100"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="ba3a2" class="javax.swing.JTextArea" binding="interactionTextArea">
@@ -73,7 +75,6 @@
                 <properties>
                   <editable value="false"/>
                   <lineWrap value="false"/>
-                  <preferredSize width="300" height="100"/>
                   <text value=":: VirtualZoo by IntelliZoo ::&#10;"/>
                 </properties>
               </component>

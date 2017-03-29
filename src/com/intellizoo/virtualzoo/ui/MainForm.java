@@ -20,8 +20,11 @@ import com.intellizoo.virtualzoo.zoo.cell.Cell;
 import com.intellizoo.virtualzoo.zoo.cell.Road;
 import com.intellizoo.virtualzoo.zoo.zone.Cage;
 import com.intellizoo.virtualzoo.zoo.zone.Zone;
+import java.awt.Adjustable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +32,12 @@ import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 
 /**
  * Kelas form utama dari tampilan program.
@@ -93,6 +95,8 @@ public class MainForm implements AnimalMoveEventListener {
             openedZoo = new Zoo(scanner);
             scanner.close();
             setZoo(openedZoo);
+            interactionTextArea
+                .append("\nMembuka Zoo dari file " + inputFile.getAbsolutePath() + "...\n");
           } catch (Exception exception) {
             JOptionPane.showMessageDialog(mainPanel, "File input gagal dibuka.");
           }
@@ -108,6 +112,7 @@ public class MainForm implements AnimalMoveEventListener {
       @Override
       public void actionPerformed(ActionEvent e) {
         tourZoo();
+        scrollToBottom(interactionScrollPane);
       }
     });
   }
@@ -119,6 +124,7 @@ public class MainForm implements AnimalMoveEventListener {
   /**
    * Mengaitkan zoo yang diberikan dengan tampilan pada form ini, dan juga mendaftarkan penanganan
    * event-event untuk isi Zoo.
+   *
    * @param zoo Zoo yang akan dikaitkan dengan tampilan di form ini.
    */
   public void setZoo(Zoo zoo) {
@@ -180,22 +186,19 @@ public class MainForm implements AnimalMoveEventListener {
   /**
    * Melakukan tour keliling kebun binatang.
    *
-   * <p>Memilih salah satu jalan masuk (Entrance) secara acak dan
-   * menampilkan serangkaian experience yang dialami pengunjung.
-   * Experience yang dirasakan berdasarkan interaksi dengan hewan-hewan yang
-   * ada di setiap Cage yang bersinggungan dengan current Cell.
-   * Pemilihan jalan tour dilakukan dengan memilih next Cell bertipe Road
-   * yang bersinggungan dengan current Cell yang belum pernah
-   * dikunjungi sebelumnya. Jika ada lebih dari satu Cell bertipe Road yang
-   * dapat dipilih, pemilihan dilakukan secara acak.
-   * Penulusuran akan berhenti saat sudah tidak ada lagi Road yang dapat
+   * <p>Memilih salah satu jalan masuk (Entrance) secara acak dan menampilkan serangkaian experience
+   * yang dialami pengunjung. Experience yang dirasakan berdasarkan interaksi dengan hewan-hewan
+   * yang ada di setiap Cage yang bersinggungan dengan current Cell. Pemilihan jalan tour dilakukan
+   * dengan memilih next Cell bertipe Road yang bersinggungan dengan current Cell yang belum pernah
+   * dikunjungi sebelumnya. Jika ada lebih dari satu Cell bertipe Road yang dapat dipilih, pemilihan
+   * dilakukan secara acak. Penulusuran akan berhenti saat sudah tidak ada lagi Road yang dapat
    * dipilih, atau telah mencapai jalan keluar (Exit).
    */
   public void tourZoo() {
-    List<Cell> arr = zoo.getCells();
     interactionTextArea.append("\nStarting tour...\n");
+    zooDisplay.clearTrail();
 
-    int [][] isAccessible = new int[zoo.getRows()][zoo.getCols()];
+    int[][] isAccessible = new int[zoo.getRows()][zoo.getCols()];
     for (int i = 0; i < zoo.getRows(); i++) {
       for (int j = 0; j < zoo.getCols(); j++) {
         isAccessible[i][j] = 0;
@@ -203,6 +206,7 @@ public class MainForm implements AnimalMoveEventListener {
     }
 
     List<Road> entrances = new ArrayList<>();
+    List<Cell> arr = zoo.getCells();
     for (Cell road : arr) {
       if (road instanceof Road) {
         isAccessible[road.getPosition().getRow()][road.getPosition().getCol()] = 1;
@@ -215,6 +219,7 @@ public class MainForm implements AnimalMoveEventListener {
     }
     if (entrances.isEmpty()) {
       interactionTextArea.append("No entrance found.\n");
+      return;
     }
 
     Random rand = new Random();
@@ -222,7 +227,7 @@ public class MainForm implements AnimalMoveEventListener {
     Point start = entrances.get(numOfEntrances).getPosition();
     boolean pathExist;
     int currDirection;
-    boolean [] direction = new boolean[4];
+    boolean[] direction = new boolean[4];
     do {
       pathExist = false;
       direction[0] = false;
@@ -230,8 +235,10 @@ public class MainForm implements AnimalMoveEventListener {
       direction[2] = false;
       direction[3] = false;
 
-      interactionTextArea.append("Current position: (" + start.getRow() + "," + start.getCol() + ")\n");
+      interactionTextArea
+          .append("Current position: (" + start.getRow() + "," + start.getCol() + ")\n");
       interactionTextArea.append(zoo.listNeighboringInteractions(start) + "\n");
+      zooDisplay.addTrail(start);
 
       currDirection = rand.nextInt(4);
       isAccessible[start.getRow()][start.getCol()] = 0;
@@ -280,6 +287,19 @@ public class MainForm implements AnimalMoveEventListener {
       }
     } while (pathExist && isAccessible[start.getRow()][start.getCol()] != 2);
 
-    interactionTextArea.append("\n");
+    interactionTextArea.append("The tour has ended.\n");
+  }
+
+  private void scrollToBottom(JScrollPane scrollPane) {
+    JScrollBar verticalBar = scrollPane.getVerticalScrollBar();
+    AdjustmentListener downScroller = new AdjustmentListener() {
+      @Override
+      public void adjustmentValueChanged(AdjustmentEvent e) {
+        Adjustable adjustable = e.getAdjustable();
+        adjustable.setValue(adjustable.getMaximum());
+        verticalBar.removeAdjustmentListener(this);
+      }
+    };
+    verticalBar.addAdjustmentListener(downScroller);
   }
 }

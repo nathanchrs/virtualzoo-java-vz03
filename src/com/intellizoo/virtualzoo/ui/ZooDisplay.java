@@ -26,6 +26,7 @@ import com.intellizoo.virtualzoo.zoo.zone.Zone;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -41,6 +42,7 @@ public class ZooDisplay extends JPanel {
   private static final int ZOO_CELL_HEIGHT = 20;
 
   private Zoo zoo;
+  private List<Point> trail = new ArrayList<>();
 
   public ZooDisplay() {
     setBorder(BorderFactory.createLineBorder(Color.black));
@@ -162,5 +164,24 @@ public class ZooDisplay extends JPanel {
         }
       }
     }
+
+    // Draw trail
+    for (Point trailPoint : trail) {
+      graphics.setColor(Color.white);
+      graphics.fillRect(
+          trailPoint.getCol() * ZOO_CELL_WIDTH + 8,
+          trailPoint.getRow() * ZOO_CELL_HEIGHT + 8,
+          ZOO_CELL_WIDTH - 16,
+          ZOO_CELL_HEIGHT - 16
+      );
+    }
+  }
+
+  public void addTrail(Point trailPoint) {
+    trail.add(trailPoint);
+  }
+
+  public void clearTrail() {
+    trail.clear();
   }
 }
